@@ -16,15 +16,20 @@ namespace qcspublish
 		{
 			
 			jsondata = JsonConvert.DeserializeObject<RasterColorMap[]>(
-				File.ReadAllText(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\exampleRasterColorMap.json"))
+				File.ReadAllText(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\RasterColorMap.json"))
 				.ToDictionary(k => k.fileName, v => v.colorMaps);
+		}
+
+		public Boolean HasColorMappingOfFile(string fileName)
+		{
+			return jsondata.ContainsKey(fileName);
 		}
 
 		public RGBColors ColorsOfValueInFile(string fileName, double value)
 		{
 			if (!jsondata.ContainsKey(fileName))
 			{
-				throw new NotSupportedException(string.Format("{0} is not included in exampleRasterColorMap.json", fileName));
+				throw new NotSupportedException(string.Format("{0} is not included in RasterColorMap.json", fileName));
 			}
 
 			//will throw exception if value is bigger than greatest upper boundary

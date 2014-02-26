@@ -15,5 +15,12 @@ namespace qcspublish
 		/// <param name="value"></param>
 		/// <returns></returns>
 		RGBColors ColorsOfValueInFile(string fileName, double value);
+
+		/// <summary>
+		/// Checks if file has mapping.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <returns></returns>
+		Boolean HasColorMappingOfFile(string fileName);
 	}
 }
