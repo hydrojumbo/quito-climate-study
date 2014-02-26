@@ -130,24 +130,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColorMap.cs" />
+    <Compile Include="ValueColorMap.cs" />
     <Compile Include="ColorRepository.cs" />
     <Compile Include="GdalConfiguration.cs" />
     <Compile Include="GdalNativeConfiguration.cs" />
     <Compile Include="IColorRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RasterColorMap.cs" />
+    <Compile Include="ColorMap.cs" />
     <Compile Include="RGBColors.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="packages.config" />
-    <None Include="RasterColorMap.json">
+    <None Include="ColorMap.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="GdalConfiguration.vb" />

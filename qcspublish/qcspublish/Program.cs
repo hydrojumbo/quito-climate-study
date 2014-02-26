@@ -146,8 +146,9 @@ namespace qcspublish
 						blue[cell] = (byte)colors.Blue;
 					}
 
+					string resultName = colorRepo.ResultFileName(fi.Name);
 					//write new output 		
-					using (Dataset output = srcDrv.Create(resultDir + fi.Name, band.XSize, band.YSize, 3, DataType.GDT_Byte, null))
+					using (Dataset output = srcDrv.Create(resultDir + resultName, band.XSize, band.YSize, 3, DataType.GDT_Byte, null))
 					{
 						if (output == null)
 						{
@@ -170,7 +171,7 @@ namespace qcspublish
 						output.WriteRaster(0, 0, band.XSize, band.YSize, colorData, band.XSize, band.YSize, 3, null, 0, 0, 0);
 						output.FlushCache();
 					}
-					processedDatasets.Add(fi.Name);
+					processedDatasets.Add(resultName);
 				}				
 			}
 			return processedDatasets;
@@ -221,9 +222,10 @@ namespace qcspublish
 						featureCollection.Add(feature);
 					}
 					GeoJsonWriter wtr = new GeoJsonWriter();
+					
 					string layerJson = wtr.Write(featureCollection);
-					File.WriteAllText(resultDir.FullName + fi.Name.Replace(".shp", ".json"), layerJson);
-					File.WriteAllText(resultDir.FullName + fi.Name.Replace(".shp", ".csv"), bldr.ToString());
+					File.WriteAllText(resultDir.FullName + colorRepo.ResultFileName(fi.Name), layerJson);
+					File.WriteAllText(resultDir.FullName + colorRepo.ResultFileName(fi.Name).Replace(".json", ".csv"), bldr.ToString());
 					processedDatasets.Add(fi.Name);
 				}				
 			}

@@ -10,30 +10,42 @@ namespace qcspublish
 {
 	public class ColorRepository : IColorRepository
 	{
-		private Dictionary<string, ColorMap[]> jsondata;
+		private List<ColorMap> jsondata;
 
 		public ColorRepository()
 		{
-			
-			jsondata = JsonConvert.DeserializeObject<RasterColorMap[]>(
-				File.ReadAllText(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\RasterColorMap.json"))
-				.ToDictionary(k => k.fileName, v => v.colorMaps);
+
+			jsondata = JsonConvert.DeserializeObject<ColorMap[]>(
+				File.ReadAllText(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\ColorMap.json")).ToList();
 		}
 
 		public Boolean HasColorMappingOfFile(string fileName)
 		{
-			return jsondata.ContainsKey(fileName);
+			return jsondata.Any(a => a.fileName.Equals(fileName));
 		}
 
 		public RGBColors ColorsOfValueInFile(string fileName, double value)
 		{
-			if (!jsondata.ContainsKey(fileName))
-			{
-				throw new NotSupportedException(string.Format("{0} is not included in RasterColorMap.json", fileName));
-			}
+			ValidateFileName(fileName);
 
 			//will throw exception if value is bigger than greatest upper boundary
-			return new RGBColors(jsondata[fileName].Where(r => value <= r.upperBoundary).OrderBy(a => a.upperBoundary).First().color);
+			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName)).First().colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color);			
 		}
+
+		private void ValidateFileName(string fileName)
+		{
+			if (!jsondata.Any(a => a.fileName.Equals(fileName)))
+			{
+				throw new NotSupportedException(string.Format("{0} is not included in ColorMap.json", fileName));
+			}
+		}
+
+		public string ResultFileName(string fileName)
+		{
+			ValidateFileName(fileName);
+			return jsondata.Where(r => r.fileName.Equals(fileName)).First().resultName;
+		}
+
+
 	}
 }

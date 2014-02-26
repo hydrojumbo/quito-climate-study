@@ -22,5 +22,8 @@ namespace qcspublish
 		/// <param name="fileName"></param>
 		/// <returns></returns>
 		Boolean HasColorMappingOfFile(string fileName);
+
+		
+		string ResultFileName(string fileName);
 	}
 }

@@ -1,0 +1,258 @@
+[
+	{
+		"fileName": "tmed_dif_alto.tif",
+		"resultName": "tmed_dif_alto.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 2.5,
+				"color": "#FFBEBE"
+			},
+			{
+				"upperBoundary": 999999,
+				"color": "#CD6666"
+			}
+		]
+	},
+	{
+		"fileName": "hist_tmed_an.tif",
+		"resultName": "hist_tmed_an.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "hist_prec_tot.tif",
+		"resultName": "hist_prec_tot.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 500,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 1000,
+				"color": "#A1F24B"
+			},
+			{
+				"upperBoundary": 1500,
+				"color": "#38E009"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 2500,
+				"color": "#1A93AB"
+			},
+			{
+				"upperBoundary": 3000,
+				"color": "#204B91"
+			},
+			{
+				"upperBoundary": 9999999,
+				"color": "#0C1078"
+			}
+		]
+	},
+	{
+		"fileName": "cuenca_final_weap_4.shp",
+		"resultName": "annual_precip_drought.json",
+		"clrFile": "",
+		"clrField": "Precip_dry",
+		"colorMaps": [
+			{
+				"upperBoundary": 750,
+				"color": "#20CC10"
+			},
+			{
+				"upperBoundary": 1000,
+				"color": "#33DB6E"
+			},
+			{
+				"upperBoundary": 1250,
+				"color": "#28EBC4"
+			},
+			{
+				"upperBoundary": 1500,
+				"color": "#29C7F2"
+			},
+			{
+				"upperBoundary": 1750,
+				"color": "#2F6FED"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#720E30"
+			}
+		]
+	},
+	{
+		"fileName": "cuenca_final_weap_4.shp",
+		"resultName": "annual_precip_historic.json",
+		"clrFile": "",
+		"clrField": "Precip",
+		"colorMaps": [
+			{
+				"upperBoundary": 750,
+				"color": "#20CC10"
+			},
+			{
+				"upperBoundary": 1000,
+				"color": "#33DB6E"
+			},
+			{
+				"upperBoundary": 1250,
+				"color": "#28EBC4"
+			},
+			{
+				"upperBoundary": 1500,
+				"color": "#29C7F2"
+			},
+			{
+				"upperBoundary": 1750,
+				"color": "#2F6FED"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#720E30"
+			}
+		]
+	},
+	{
+		"fileName": "zonas_all.shp.tif",
+		"resultName": "demand_coverage_2000.json",
+		"clrFile": "",
+		"clrField": "Id",
+		"colorMaps": [
+			{
+				"upperBoundary": 1,
+				"color": "#4CE600"
+			}
+		]
+	},
+	{
+		"fileName": "conduccion.shp",
+		"resultName": "lines_of_conduction.json",
+		"clrFile": "",
+		"clrField": "FID",
+		"colorMaps": [
+			{
+				"upperBoundary": 6,
+				"color": "#AB5500"
+			}
+		]
+	},
+	{
+		"fileName": "cuenca_final_weap_4.shp",
+		"resultName": "Paramo_Future.json",
+		"clrFile": "",
+		"clrField": "Pr_2050",
+		"colorMaps": [
+			{
+				"upperBoundary": 20,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 40,
+				"color": "#71EB2F"
+			},
+			{
+				"upperBoundary": 60,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 80,
+				"color": "#216E9E"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#C10780"
+			}
+		]
+	},
+	{
+		"fileName": "cuenca_final_weap_4.shp",
+		"resultName": "Paramo_Historical.json",
+		"clrFile": "",
+		"clrField": "Pr_2007",
+		"colorMaps": [
+			{
+				"upperBoundary": 20,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 40,
+				"color": "#71EB2F"
+			},
+			{
+				"upperBoundary": 60,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 80,
+				"color": "#216E9E"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#C10780"
+			}
+		]
+	},
+	{
+		"fileName": "cuenca_final_weap_4.shp",
+		"resultName": "Paramo_Loss.json",
+		"clrFile": "",
+		"clrField": "Pr_diff",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#0F5000"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#94F700"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#F5F500"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FC8B00"
+			},
+			{
+				"upperBoundary": 100,
+				"color": "#F50000"
+			}
+		]
+	}
+]
