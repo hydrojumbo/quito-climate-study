@@ -14,7 +14,7 @@ namespace qcspublish
 		/// <param name="fileName"></param>
 		/// <param name="value"></param>
 		/// <returns></returns>
-		RGBColors ColorsOfValueInFile(string fileName, double value);
+		RGBColors ColorsOfValueInFile(string fileName, string resultName, double value);
 
 		/// <summary>
 		/// Checks if file has mapping.
@@ -22,8 +22,8 @@ namespace qcspublish
 		/// <param name="fileName"></param>
 		/// <returns></returns>
 		Boolean HasColorMappingOfFile(string fileName);
+				
 
-		
-		string ResultFileName(string fileName);
+		IEnumerable<string> ResultFileName(string fileName);
 	}
 }

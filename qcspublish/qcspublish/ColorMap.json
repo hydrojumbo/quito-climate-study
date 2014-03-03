@@ -84,7 +84,7 @@
 		]
 	},
 	{
-		"fileName": "cuenca_final_weap_4.shp",
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "annual_precip_drought.json",
 		"clrFile": "",
 		"clrField": "Precip_dry",
@@ -116,7 +116,7 @@
 		]
 	},
 	{
-		"fileName": "cuenca_final_weap_4.shp",
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "annual_precip_historic.json",
 		"clrFile": "",
 		"clrField": "Precip",
@@ -148,7 +148,7 @@
 		]
 	},
 	{
-		"fileName": "zonas_all.shp.tif",
+		"fileName": "zonas_all.shp",
 		"resultName": "demand_coverage_2000.json",
 		"clrFile": "",
 		"clrField": "Id",
@@ -172,7 +172,7 @@
 		]
 	},
 	{
-		"fileName": "cuenca_final_weap_4.shp",
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Future.json",
 		"clrFile": "",
 		"clrField": "Pr_2050",
@@ -200,7 +200,7 @@
 		]
 	},
 	{
-		"fileName": "cuenca_final_weap_4.shp",
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Historical.json",
 		"clrFile": "",
 		"clrField": "Pr_2007",
@@ -228,7 +228,7 @@
 		]
 	},
 	{
-		"fileName": "cuenca_final_weap_4.shp",
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Loss.json",
 		"clrFile": "",
 		"clrField": "Pr_diff",

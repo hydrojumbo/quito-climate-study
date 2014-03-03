@@ -84,14 +84,13 @@ namespace qcspublish
 			DirectoryInfo di = new DirectoryInfo(srcDir);
 			int filesToProcess = di.GetFiles("*" + extension).Count();
 			if (filesToProcess > 0)
-			{
-				Console.WriteLine(string.Format("Processing {0} files matching '*{0}'", extension));
+			{				
 				DirectoryInfo resultDir = new DirectoryInfo(resultDirectory);
 				if (!resultDir.Exists)
 				{
 					resultDir.Create();
 				}
-				
+								
 				if (extension == ".tif")
 				{
 
@@ -125,53 +124,55 @@ namespace qcspublish
 			foreach (FileInfo fi in FilesInDirectoryWithExtension(extension, di))
 			{
 				if (colorRepo.HasColorMappingOfFile(fi.Name) && !processedDatasets.Contains(fi.Name))
-				{
-					Console.WriteLine("Processing " + fi.Name + "...");
-
-					//read data from source raster
-					Dataset src = Gdal.Open(fi.FullName, Access.GA_ReadOnly);
-					Band band = src.GetRasterBand(1);
-					float[] r = new float[band.XSize * band.YSize];
-					byte[] red = new byte[band.XSize * band.YSize];
-					byte[] green = new byte[band.XSize * band.YSize];
-					byte[] blue = new byte[band.XSize * band.YSize];
-					band.ReadRaster(0, 0, band.XSize, band.YSize, r, band.XSize, band.YSize, 0, 0);
-
-					//assign values to rgb rasters to produce new raster with rgb bands matching color pattern
-					for (int cell = 0; cell < r.Length; cell++)
+				{					
+					foreach (string resultName in colorRepo.ResultFileName(fi.Name))
 					{
-						RGBColors colors = colorRepo.ColorsOfValueInFile(fi.Name, r[cell]);
-						red[cell] = (byte)colors.Red;
-						green[cell] = (byte)colors.Green;
-						blue[cell] = (byte)colors.Blue;
-					}
+						Console.WriteLine(string.Format("Processing {0} into {1}...", fi.Name, resultName));
 
-					string resultName = colorRepo.ResultFileName(fi.Name);
-					//write new output 		
-					using (Dataset output = srcDrv.Create(resultDir + resultName, band.XSize, band.YSize, 3, DataType.GDT_Byte, null))
-					{
-						if (output == null)
+						//read data from source raster
+						Dataset src = Gdal.Open(fi.FullName, Access.GA_ReadOnly);
+						Band band = src.GetRasterBand(1);
+						float[] r = new float[band.XSize * band.YSize];
+						byte[] red = new byte[band.XSize * band.YSize];
+						byte[] green = new byte[band.XSize * band.YSize];
+						byte[] blue = new byte[band.XSize * band.YSize];
+						band.ReadRaster(0, 0, band.XSize, band.YSize, r, band.XSize, band.YSize, 0, 0);
+
+						//assign values to rgb rasters to produce new raster with rgb bands matching color pattern
+						for (int cell = 0; cell < r.Length; cell++)
 						{
-							Console.WriteLine("Can't create " + args[0]);
-							System.Environment.Exit(-1);
+							RGBColors colors = colorRepo.ColorsOfValueInFile(fi.Name, resultName, r[cell]);
+							red[cell] = (byte)colors.Red;
+							green[cell] = (byte)colors.Green;
+							blue[cell] = (byte)colors.Blue;
 						}
-						//set metadata
-						output.SetProjection(src.GetProjection());
-						double[] geotransform = new double[0];
-						src.GetGeoTransform(geotransform);
-						output.SetGeoTransform(geotransform);
 
-						//prepare data for write
-						int[] colorData = new int[red.Length * 3];
-						red.CopyTo(colorData, 0);
-						green.CopyTo(colorData, red.Length);
-						blue.CopyTo(colorData, red.Length + green.Length);
+						//write new output 		
+						using (Dataset output = srcDrv.Create(resultDir + resultName, band.XSize, band.YSize, 3, DataType.GDT_Byte, null))
+						{
+							if (output == null)
+							{
+								Console.WriteLine("Can't create " + args[0]);
+								System.Environment.Exit(-1);
+							}
+							//set metadata
+							output.SetProjection(src.GetProjection());
+							double[] geotransform = new double[0];
+							src.GetGeoTransform(geotransform);
+							output.SetGeoTransform(geotransform);
 
-						//write data to disk
-						output.WriteRaster(0, 0, band.XSize, band.YSize, colorData, band.XSize, band.YSize, 3, null, 0, 0, 0);
-						output.FlushCache();
-					}
-					processedDatasets.Add(resultName);
+							//prepare data for write
+							int[] colorData = new int[red.Length * 3];
+							red.CopyTo(colorData, 0);
+							green.CopyTo(colorData, red.Length);
+							blue.CopyTo(colorData, red.Length + green.Length);
+
+							//write data to disk
+							output.WriteRaster(0, 0, band.XSize, band.YSize, colorData, band.XSize, band.YSize, 3, null, 0, 0, 0);
+							output.FlushCache();
+						}
+						processedDatasets.Add(resultName);	
+					}					
 				}				
 			}
 			return processedDatasets;
@@ -190,43 +191,46 @@ namespace qcspublish
 		{
 			foreach (FileInfo fi in FilesInDirectoryWithExtension(extension, di))
 			{
-				if (!processedDatasets.Contains(fi.Name))
+				if (colorRepo.HasColorMappingOfFile(fi.Name) && !processedDatasets.Contains(fi.Name))
 				{
-					Console.WriteLine("Processing " + fi.Name + "...");
-					StringBuilder bldr = new StringBuilder();
-
-					NetTopologySuite.IO.ShapefileDataReader dataReader = new NetTopologySuite.IO.ShapefileDataReader(fi.FullName, new GeometryFactory());
-					ArrayList featureCollection = new ArrayList();
-					bldr.AppendLine(string.Join(",", dataReader.DbaseHeader.Fields.Select(a => a.Name))); //write csv file header
-					while (dataReader.Read())
+					foreach (string resultName in colorRepo.ResultFileName(fi.Name))
 					{
-						NetTopologySuite.Features.Feature feature = new NetTopologySuite.Features.Feature();
-						feature.Geometry = dataReader.Geometry;
+						Console.WriteLine(string.Format("Processing {0} into {1}...", fi.Name, resultName));
+						StringBuilder bldr = new StringBuilder();
 
-						int length = dataReader.DbaseHeader.NumFields;
-						string[] keys = new string[length];
-						for (int i = 0; i < length; i++)
+						NetTopologySuite.IO.ShapefileDataReader dataReader = new NetTopologySuite.IO.ShapefileDataReader(fi.FullName, new GeometryFactory());
+						ArrayList featureCollection = new ArrayList();
+						bldr.AppendLine(string.Join(",", dataReader.DbaseHeader.Fields.Select(a => a.Name))); //write csv file header
+						while (dataReader.Read())
 						{
-							keys[i] = dataReader.DbaseHeader.Fields[i].Name;
-						}
+							NetTopologySuite.Features.Feature feature = new NetTopologySuite.Features.Feature();
+							feature.Geometry = dataReader.Geometry;
 
-						feature.Attributes = new AttributesTable();
-						List<string> csvLine = new List<string>();
-						for (int i = 0; i < length; i++)
-						{
-							object val = dataReader.GetValue(i);
-							feature.Attributes.AddAttribute(keys[i], val);
-							csvLine.Add(val.ToString());
+							int length = dataReader.DbaseHeader.NumFields;
+							string[] keys = new string[length];
+							for (int i = 0; i < length; i++)
+							{
+								keys[i] = dataReader.DbaseHeader.Fields[i].Name;
+							}
+
+							feature.Attributes = new AttributesTable();
+							List<string> csvLine = new List<string>();
+							for (int i = 0; i < length; i++)
+							{
+								object val = dataReader.GetValue(i);
+								feature.Attributes.AddAttribute(keys[i], val);
+								csvLine.Add(val.ToString());
+							}
+							bldr.AppendLine(string.Join(",", csvLine));
+							featureCollection.Add(feature);
 						}
-						bldr.AppendLine(string.Join(",", csvLine));
-						featureCollection.Add(feature);
-					}
-					GeoJsonWriter wtr = new GeoJsonWriter();
-					
-					string layerJson = wtr.Write(featureCollection);
-					File.WriteAllText(resultDir.FullName + colorRepo.ResultFileName(fi.Name), layerJson);
-					File.WriteAllText(resultDir.FullName + colorRepo.ResultFileName(fi.Name).Replace(".json", ".csv"), bldr.ToString());
-					processedDatasets.Add(fi.Name);
+						GeoJsonWriter wtr = new GeoJsonWriter();
+
+						string layerJson = wtr.Write(featureCollection);
+						File.WriteAllText(resultDir.FullName + resultName, layerJson);
+						File.WriteAllText(resultDir.FullName + resultName.Replace(".json", ".csv"), bldr.ToString());
+						processedDatasets.Add(fi.Name);
+					}					
 				}				
 			}
 			return processedDatasets;
