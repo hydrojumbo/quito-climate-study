@@ -60,9 +60,15 @@ namespace qcspublish
 			List<string> processedVectors = new List<string>();
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
-			processedRasters = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
-			processedVectors = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
+			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
+			processedRasters = rasterResults.Item1;
+			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
+			processedVectors = vectorResults.Item1;
 			sw.Stop();
+			Console.WriteLine("*********");
+			Console.WriteLine("Unknown color maps in colormap.json, these files were not processed:");
+			rasterResults.Item2.AddRange(vectorResults.Item2);
+			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
 			Console.ReadKey();
 		}		
@@ -75,14 +81,16 @@ namespace qcspublish
 		/// <param name="resultDir"></param>
 		/// <param name="srcDrv"></param>
 		/// <param name="colorRepo"></param>
-		private static List<string> ProcessDatasets(string[] args, string srcDir, string resultDirectory, IColorRepository colorRepo, string extension, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessDatasets(string[] args, string srcDir, string resultDirectory, IColorRepository colorRepo, string extension, List<string> processedDatasets)
 		{			
 			if (!extension.Equals(".tif") && !extension.Equals(".shp"))
 			{
 				throw new NotSupportedException("Only '.tif' and '.shp' files are supported.");
 			}
 			DirectoryInfo di = new DirectoryInfo(srcDir);
+			List<string> skipped = new List<string>();
 			int filesToProcess = di.GetFiles("*" + extension).Count();
+			Tuple<List<string>, List<string>> results;				
 			if (filesToProcess > 0)
 			{				
 				DirectoryInfo resultDir = new DirectoryInfo(resultDirectory);
@@ -90,24 +98,29 @@ namespace qcspublish
 				{
 					resultDir.Create();
 				}
-								
+				
 				if (extension == ".tif")
 				{
-
-					processedDatasets = ProcessRasterFiles(args, colorRepo, extension, di, resultDir, processedDatasets);
+					results = ProcessRasterFiles(args, colorRepo, extension, di, resultDir, processedDatasets);
+					processedDatasets = results.Item1;
+					skipped.AddRange(results.Item2);
 				}
 				else
 				{
-					processedDatasets = ProcessVectorFiles(args, colorRepo, extension, di, resultDir, processedDatasets);
+					results = ProcessVectorFiles(args, colorRepo, extension, di, resultDir, processedDatasets);
+					processedDatasets = results.Item1;
+					skipped.AddRange(results.Item2);
 				}				
 			}	
 			
 			//recurse through subdirectories
 			foreach (DirectoryInfo subDi in di.GetDirectories())
 			{
-				processedDatasets = ProcessDatasets(args, subDi.FullName, resultDirectory, colorRepo, extension, processedDatasets);
+				results = ProcessDatasets(args, subDi.FullName, resultDirectory, colorRepo, extension, processedDatasets);
+				processedDatasets = results.Item1;
+				skipped.AddRange(results.Item2);
 			}
-			return processedDatasets;
+			return new Tuple<List<string>,List<string>>(processedDatasets, skipped);
 		}
 
 		/// <summary>
@@ -118,13 +131,14 @@ namespace qcspublish
 		/// <param name="extension"></param>
 		/// <param name="di"></param>
 		/// <param name="resultDir"></param>
-		private static List<string> ProcessRasterFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessRasterFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
 		{			
-			OSGeo.GDAL.Driver srcDrv = Gdal.GetDriverByName("GTiff");			
+			OSGeo.GDAL.Driver srcDrv = Gdal.GetDriverByName("GTiff");
+			List<string> skipped = new List<string>();
 			foreach (FileInfo fi in FilesInDirectoryWithExtension(extension, di))
 			{
 				if (colorRepo.HasColorMappingOfFile(fi.Name) && !processedDatasets.Contains(fi.Name))
-				{					
+				{
 					foreach (string resultName in colorRepo.ResultFileName(fi.Name))
 					{
 						Console.WriteLine(string.Format("Processing {0} into {1}...", fi.Name, resultName));
@@ -171,11 +185,15 @@ namespace qcspublish
 							output.WriteRaster(0, 0, band.XSize, band.YSize, colorData, band.XSize, band.YSize, 3, null, 0, 0, 0);
 							output.FlushCache();
 						}
-						processedDatasets.Add(resultName);	
-					}					
-				}				
+						processedDatasets.Add(resultName);
+					}
+				}
+				else
+				{
+					skipped.Add(fi.Name);
+				}
 			}
-			return processedDatasets;
+			return new Tuple<List<string>, List<string>>(processedDatasets, skipped);
 		}
 
 		/// <summary>
@@ -187,8 +205,9 @@ namespace qcspublish
 		/// <param name="di"></param>
 		/// <param name="resultDir"></param>
 		/// <remarks>See http://nettopologysuite.googlecode.com/svn/branches/v2.0/NetTopologySuite.Samples.Console/SimpleTests/Attributes/AttributesTest.cs </remarks>
-		private static List<string> ProcessVectorFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessVectorFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
 		{
+			List<string> skipped = new List<string>();
 			foreach (FileInfo fi in FilesInDirectoryWithExtension(extension, di))
 			{
 				if (colorRepo.HasColorMappingOfFile(fi.Name) && !processedDatasets.Contains(fi.Name))
@@ -230,10 +249,14 @@ namespace qcspublish
 						File.WriteAllText(resultDir.FullName + resultName, layerJson);
 						File.WriteAllText(resultDir.FullName + resultName.Replace(".json", ".csv"), bldr.ToString());
 						processedDatasets.Add(fi.Name);
-					}					
-				}				
+					}
+				}
+				else
+				{
+					skipped.Add(fi.Name);
+				}
 			}
-			return processedDatasets;
+			return new Tuple<List<string>, List<string>>(processedDatasets, skipped);
 		}
 
 		private static FileInfo[] FilesInDirectoryWithExtension(string extension, DirectoryInfo di)

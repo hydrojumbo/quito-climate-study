@@ -29,7 +29,7 @@ namespace qcspublish
 			}
 			else
 			{
-				Console.WriteLine(string.Format("{0} not included in jsondata.", fileName));
+				// Console.WriteLine(string.Format("{0} not included in jsondata.", fileName));
 				return false;
 			}
 			
