@@ -41,7 +41,7 @@ namespace azureUploader
 		public async Task Upload(string localDirectory, string remoteContainerPath)
 		{
 			CloudBlobClient client = csa.CreateCloudBlobClient();
-			ConfigureCorsOnStorageAccount(client);
+			ConfigureCorsAndLoggingOnStorageAccount(client);
 			client.RetryPolicy = new Microsoft.WindowsAzure.Storage.RetryPolicies.ExponentialRetry();
 			await UploadFilesOfDirectory(localDirectory, remoteContainerPath, client);
 			return;
@@ -86,18 +86,13 @@ namespace azureUploader
 			{
 				await Task.WhenAll(uploads);
 			}			
-
-			List<Task> subdirectories = new List<Task>();
+			
 			foreach (DirectoryInfo child in local.GetDirectories())
 			{
 				string nextContainer = remoteContainerPath.Contains("$root") ? child.Name : remoteContainerPath + "/" + child.Name;
-				subdirectories.Add(UploadFilesOfDirectory(child.FullName,  nextContainer, client));
-			}
-			if (subdirectories.Count() > 0)
-			{
-				await Task.WhenAll(subdirectories);
-			}
-			
+				await UploadFilesOfDirectory(child.FullName,  nextContainer, client);
+			}					
+			return;
 		}
 
 		/// <summary>
@@ -274,7 +269,7 @@ namespace azureUploader
 		/// </summary>
 		/// <remarks>See: http://msdn.microsoft.com/en-us/library/windowsazure/dn535601.aspx </remarks>
 		/// <param name="client"></param>
-		private static void ConfigureCorsOnStorageAccount(CloudBlobClient client)
+		private static void ConfigureCorsAndLoggingOnStorageAccount(CloudBlobClient client)
 		{
 			CorsProperties cps = new CorsProperties();
 			cps.CorsRules.Add(new CorsRule()
@@ -294,7 +289,7 @@ namespace azureUploader
 			sp.HourMetrics.RetentionDays = 1;
 			sp.HourMetrics.Version = "1.0";
 			client.SetServiceProperties(sp,
-			new BlobRequestOptions() { MaximumExecutionTime = TimeSpan.FromSeconds(30) }
+			new BlobRequestOptions() { MaximumExecutionTime = TimeSpan.FromSeconds(300) }
 			,
 			null);
 		}

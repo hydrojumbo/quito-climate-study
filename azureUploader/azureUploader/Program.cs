@@ -39,8 +39,7 @@
 			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
 #endif
 			Stopwatch sw = new Stopwatch();
-			sw.Start();
-			Console.WriteLine(string.Format("Uploading files from {0}", localDir));
+			sw.Start();			
 			Task t = UploadFiles(accountName, actkey, localDir);
 
 			t.ContinueWith((str) =>
