@@ -69,11 +69,18 @@ namespace azureUploader
 			else
 			{ 
 				container = client.GetContainerReference(remoteContainerPath);
-				await container.CreateIfNotExistsAsync();
-				await container.SetPermissionsAsync(new BlobContainerPermissions()
+				try
 				{
-					PublicAccess = BlobContainerPublicAccessType.Blob
-				});			
+					await container.CreateIfNotExistsAsync();
+					await container.SetPermissionsAsync(new BlobContainerPermissions()
+					{
+						PublicAccess = BlobContainerPublicAccessType.Blob
+					});
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine(string.Format("Exception configuring container. {0} may be an illegal name. \n Message: {1}. \n Inner exception: {2}. \n\n Press any key to exit.", remoteContainerPath, ex.Message, ex.InnerException));
+				}							
 			}
 									
 			DirectoryInfo local = new DirectoryInfo(localDirectory);

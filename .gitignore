@@ -11,3 +11,7 @@ obj/
 *.ccproj.user
 *.csproj.user
 packages/
+azureUploader/azureUploader/bin/
+azureUploader/azureUploader/obj/
+qcspublish/qcspublish/bin/
+qcspublish/qcspublish/obj/
