@@ -41,6 +41,8 @@ namespace azureUploader
 		public async Task Upload(string localDirectory, string remoteContainerPath)
 		{
 			CloudBlobClient client = csa.CreateCloudBlobClient();
+			ConfigureCorsOnStorageAccount(client);
+			client.RetryPolicy = new Microsoft.WindowsAzure.Storage.RetryPolicies.ExponentialRetry();
 			await UploadFilesOfDirectory(localDirectory, remoteContainerPath, client);
 			return;
 		}
@@ -54,27 +56,48 @@ namespace azureUploader
 		/// <returns></returns>
 		private async Task UploadFilesOfDirectory(string localDirectory, string remoteContainerPath, CloudBlobClient client)
 		{
-			CloudBlobContainer container = client.GetContainerReference(remoteContainerPath);
-			await container.CreateIfNotExistsAsync();
-			await container.SetPermissionsAsync(new BlobContainerPermissions()
+			Console.WriteLine("");
+			Console.WriteLine("Uploading files from " + localDirectory + "...");
+			CloudBlobContainer container;
+			string filePrefix = "";
+			if (remoteContainerPath.Contains("/"))
 			{
-				PublicAccess = BlobContainerPublicAccessType.Blob
-			});
-			ConfigureCorsOnStorageAccount(client);
+				string[] directoryStructure = remoteContainerPath.Split('/');
+				container = client.GetContainerReference(directoryStructure[0]);
+				filePrefix = string.Join("/", directoryStructure.Skip(1));
+			}
+			else
+			{ 
+				container = client.GetContainerReference(remoteContainerPath);
+				await container.CreateIfNotExistsAsync();
+				await container.SetPermissionsAsync(new BlobContainerPermissions()
+				{
+					PublicAccess = BlobContainerPublicAccessType.Blob
+				});			
+			}
+									
 			DirectoryInfo local = new DirectoryInfo(localDirectory);
 			List<Task> uploads = new List<Task>();
 			foreach (FileInfo file in local.GetFiles())
 			{
-				uploads.Add(ProcessAndUploadFile(file, container));
+				uploads.Add(ProcessAndUploadFile(file, container, filePrefix));
 			}
-			await Task.WhenAll(uploads);
+			if (uploads.Count() > 0)
+			{
+				await Task.WhenAll(uploads);
+			}			
 
 			List<Task> subdirectories = new List<Task>();
 			foreach (DirectoryInfo child in local.GetDirectories())
 			{
-				subdirectories.Add(UploadFilesOfDirectory(child.FullName, remoteContainerPath.Replace("$root", "") + "/" + child.Name, client));
+				string nextContainer = remoteContainerPath.Contains("$root") ? child.Name : remoteContainerPath + "/" + child.Name;
+				subdirectories.Add(UploadFilesOfDirectory(child.FullName,  nextContainer, client));
 			}
-			await Task.WhenAll(subdirectories);
+			if (subdirectories.Count() > 0)
+			{
+				await Task.WhenAll(subdirectories);
+			}
+			
 		}
 
 		/// <summary>
@@ -83,22 +106,37 @@ namespace azureUploader
 		/// <param name="file"></param>
 		/// <param name="container"></param>
 		/// <returns></returns>
-		private async Task ProcessAndUploadFile(FileInfo file, CloudBlobContainer container)
+		private async Task ProcessAndUploadFile(FileInfo file, CloudBlobContainer container, string filePrefix)
 		{
-			if (file.Extension.Contains("json") || file.Extension.Contains("html"))
+			try
 			{
-				MemoryStream ms = GzipCompressFile(file.FullName);
-				await UploadFile(ms, file, container);
-			}
-			else
-			{
-				using (FileStream fs = new FileStream(file.FullName, FileMode.Open))
+				if (file.Extension.Contains("json") || file.Extension.Contains("html"))
 				{
-					MemoryStream mss = new MemoryStream();
-					fs.CopyTo(mss);
-					await UploadFile(mss, file, container);
-				}				
+					using (MemoryStream ms = new MemoryStream())
+					{
+						using (GZipStream gzip = new GZipStream(ms, CompressionMode.Compress, true))
+						{
+							using (FileStream fs = new FileStream(file.FullName, FileMode.Open))
+							{
+								fs.CopyTo(gzip);
+							}							
+						}
+						ms.Position = 0;
+						await UploadFile(ms, file, container, filePrefix);					
+					}
+				}
+				else
+				{
+					using (FileStream fs = new FileStream(file.FullName, FileMode.Open))
+					{
+						await UploadFile(fs, file, container, filePrefix);
+					}
+				}
 			}
+			catch (Exception ex)
+			{
+				Console.WriteLine(string.Format("Exception uploading {0}. Message: {1}. Inner exception: {2}", file.FullName, ex.Message, ex.InnerException));
+			}			
 			
 			return;
 		}			
@@ -106,64 +144,97 @@ namespace azureUploader
 		/// <summary>
 		/// Assigns metadata and uploads the file stream
 		/// </summary>
-		/// <param name="ms"></param>
+		/// <param name="stream"></param>
 		/// <param name="file"></param>
 		/// <param name="container"></param>
 		/// <returns></returns>
-		private async Task UploadFile(MemoryStream ms, FileInfo file, CloudBlobContainer container)
+		private async Task UploadFile(Stream stream, FileInfo file, CloudBlobContainer container, string filePrefix)
 		{
-
-			CloudBlockBlob blob = container.GetBlockBlobReference(file.Name);			
+			//get blob with nested structure
+			string fileWithDirectoryPrefix = string.IsNullOrEmpty(filePrefix) ? file.Name : filePrefix + "/" + file.Name;
+			CloudBlockBlob blob = container.GetBlockBlobReference(fileWithDirectoryPrefix);			
 			blob.Properties.CacheControl = CacheControlAgeForResource(file.Extension);
 			
 			switch (file.Extension)
 			{
-				case "json":
+				case ".json":
 					blob.Properties.ContentType = "application/json";
 					blob.Properties.ContentEncoding = "gzip";
 					break;
 
-				case "csv":
+				case ".csv":
 					blob.Properties.ContentType = "text/csv";
 					blob.Properties.ContentDisposition = "attachment;filename=" + file.Name;
 					break;
 
-				case "tif":
+				case ".tif":
 					blob.Properties.ContentType = "image/tiff";			
 					break;
 
-				case "pdf":
+				case ".pdf":
 					blob.Properties.ContentType = "application/pdf"; //see: http://www.rfc-editor.org/rfc/rfc3778.txt
 					blob.Properties.ContentDisposition = "attachment;filename=" + file.Name;
 					break;
 
-				case "html":
+				case ".html":
 					blob.Properties.ContentType = "text/html";
 					blob.Properties.ContentEncoding = "gzip";
 					break;
 
-				case "ico":
+				case ".ico":
 					blob.Properties.ContentType = "image/vnd.microsoft.icon";
 					break;
 
-				case "htaccess":
+				case ".htaccess":
 					blob.Properties.ContentType = "text/plain";
 					break;
 
-				case "txt":
+				case ".txt":
 					blob.Properties.ContentType = "text/plain";
 					break;
 
-				case "js":
+				case ".js":
 					blob.Properties.ContentType = "application/javascript";
 					break;
 
-				case "css":
+				case ".css":
 					blob.Properties.ContentType = "text/css";
 					break;
 
-				case "md":
+				case ".md":
 					blob.Properties.ContentType = "text/plain";
+					break;
+
+				case ".gitignore":
+					blob.Properties.ContentType = "text/plain";
+					break;
+
+				case ".jpg":
+					blob.Properties.ContentType = "image/jpeg";
+					break;
+
+				case ".png":
+					blob.Properties.ContentType = "image/png";
+					break;
+
+				case ".gif":
+					blob.Properties.ContentType = "image/gif";
+					break;
+
+				case ".eot":
+					blob.Properties.ContentType = "application/vnd.ms-fontobject";
+					break;
+
+				case ".svg":
+					blob.Properties.ContentType = "image/svg+xml";
+					break;
+
+				case ".ttf":
+					blob.Properties.ContentType = "font/ttf";
+					break;
+
+				case ".woff":
+					blob.Properties.ContentType = "font/x-woff";
 					break;
 
 				default:
@@ -174,7 +245,17 @@ namespace azureUploader
 					break;
 			}
 
-			await blob.UploadFromStreamAsync(ms);
+			try
+			{
+				await blob.UploadFromStreamAsync(stream);
+				Console.WriteLine("Uploaded " + file.Name + "...");
+			}
+			catch (Exception ex)
+			{ 
+				Console.WriteLine(string.Format("Exception uploading file {0} to {1} with message {2}, inner exception {3}", file.Name, fileWithDirectoryPrefix, ex.Message, ex.InnerException));
+				Console.WriteLine("Press any key to continue...");
+				Console.ReadKey();
+			}			
 			return;
 		}
 
@@ -216,32 +297,6 @@ namespace azureUploader
 			new BlobRequestOptions() { MaximumExecutionTime = TimeSpan.FromSeconds(30) }
 			,
 			null);
-		}
-
-		/// <summary>
-		/// Compress file from local system, returns compressed stream ready to write to remote source.
-		/// </summary>
-		/// <param name="fileName"></param>
-		/// <returns></returns>
-		private MemoryStream GzipCompressFile(string fileName)
-		{			
-			// Read file into byte array buffer.
-			byte[] b;
-			using (FileStream f = new FileStream(fileName, FileMode.Open))
-			{
-				b = new byte[f.Length];
-				f.Read(b, 0, (int)f.Length);
-			}
-
-			// Use GZipStream to write compressed bytes to target file.
-			using (MemoryStream f2 = new MemoryStream())
-			using (GZipStream gz = new GZipStream(f2, CompressionMode.Compress, false))
-			{
-				gz.Write(b, 0, b.Length);
-				gz.Flush();
-				f2.Position = 0; //reset position after write has been fully flushed
-				return f2;
-			}
 		}
 	}
 }
