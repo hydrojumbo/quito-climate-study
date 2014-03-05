@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace azureUploader
+﻿namespace azureUploader
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Diagnostics;
+	using System.Linq;
+	using System.Text;
+	using System.Threading.Tasks;
+
 	/// <summary>
 	/// Uploads built and tiled static resources to Azure storage directory, publishing the web application.
 	/// </summary>
@@ -14,15 +15,48 @@ namespace azureUploader
 		/// <summary>
 		/// Validates and uploads a built quito-climate-study application to an Azure storage account.
 		/// </summary>
-		/// <param name="args">Azure storage account name, Azure storage account key.</param>
+		/// <param name="args">Azure storage account name, Azure storage account key, local path to quito-climate-study/dist directory.</param>
 		static void Main(string[] args)
 		{
+#if !DEBUG
 			if (args.Length < 3)
-				throw new NotSupportedException("Storage account name, key, and local path to quito-climate-study with prepared output files are required parameters.");
+			{
+				Console.WriteLine("Storage account name, key, and local path to quito-climate-study/dist directory (e.g. C:/dev/quito/quito-climate-study/dist) are required parameters.");
+				return;
+			}
 
-			RasterUploader _rasterEngine = new RasterUploader(args[0], args[1], args[2], "tiles");
-			VectorUploader _vectorEngine = new VectorUploader(args[0], args[1], args[2], "vector");
+			if (!args[2].Split('\\').Last().Equals("dist"))
+			{
+				Console.WriteLine("Third argument must specify the path of the 'dist' directory. If there is no 'dist' directory in quito-climate-study, follow online instructions to build the site.");
+				return;
+			}			
+			string accountName = args[0];
+			string actkey = args[1];
+			string localDir = args[2];
+#else
+			string accountName = "quitoestudiodeclima";
+			string actkey = "4Tv4PaJ75Dp7VGc8TYS0VX7ckiM4UWmCZySRQBDgYGL6BZCs3B+3C9juvzBIn9Xp1xGypVCUikiIIoGqcsJWmg==";
+			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
+#endif
+			Stopwatch sw = new Stopwatch();
+			sw.Start();
+			Console.WriteLine(string.Format("Uploading files from {0}", localDir));
+			Task t = UploadFiles(accountName, actkey, localDir);
 
+			t.ContinueWith((str) =>
+			{
+				Console.WriteLine(str.Status.ToString());
+				Console.WriteLine("Complete");
+			});
+			t.Wait();
+			sw.Stop();
+			Console.WriteLine(string.Format("Upload completed in {0} seconds", sw.Elapsed.TotalSeconds));
+		}
+
+		public async static Task UploadFiles(string accountName, string actkey, string localDir)
+		{
+			Uploader uploader = new Uploader(accountName, actkey);
+			await uploader.Upload(localDir, "$root");
 		}
 	}
 }
