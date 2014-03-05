@@ -146,6 +146,26 @@ namespace azureUploader
 					blob.Properties.ContentType = "image/vnd.microsoft.icon";
 					break;
 
+				case "htaccess":
+					blob.Properties.ContentType = "text/plain";
+					break;
+
+				case "txt":
+					blob.Properties.ContentType = "text/plain";
+					break;
+
+				case "js":
+					blob.Properties.ContentType = "application/javascript";
+					break;
+
+				case "css":
+					blob.Properties.ContentType = "text/css";
+					break;
+
+				case "md":
+					blob.Properties.ContentType = "text/plain";
+					break;
+
 				default:
 					blob.Properties.ContentType = "application/octetstream";
 					blob.Properties.ContentDisposition = "attachment;filename=" + file.Name;
