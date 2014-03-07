@@ -1,0 +1,104 @@
+{
+	"fileName": "service_areas_final.shp",
+	"resultName": "Population_Sensitivity.json",
+	"clrFile": "",
+	"clrField": "Pop_growth",
+	"colorMaps": [
+		{
+			"upperBoundary": "Bajo",
+			"color": "#10F500"
+		},
+		{
+			"upperBoundary": "Medio",
+			"color": "#F5F500"
+		},
+		{
+			"upperBoundary": "Alto",
+			"color": "#E60000"
+		}			
+	]
+},
+{
+	"fileName": "service_areas_final.shp",
+	"resultName": "Scenario2_Coverage.json",
+	"clrFile": "",
+	"clrField": "FID",
+	"colorMaps": [
+		{
+			"upperBoundary": "Bajo",
+			"color": "#FFEBBE"
+		},
+		{
+			"upperBoundary": "Medio",
+			"color": "#FFA77F"
+		},
+		{
+			"upperBoundary": "Alto",
+			"color": "#A80000"
+		}			
+
+	]
+},
+{
+	"fileName": "service_areas_final.shp",
+	"resultName": "Scenario3_Coverage.json",
+	"clrFile": "",
+	"clrField": "FID",
+	"colorMaps": [
+		{
+			"upperBoundary": "Bajo",
+			"color": "#FFFFBE"
+		},
+		{
+			"upperBoundary": "Medio",
+			"color": "#FFFF00"
+		},
+		{
+			"upperBoundary": "Alto",
+			"color": "#A8A800"
+		}			
+
+	]
+},
+{
+	"fileName": "service_areas_final.shp",
+	"resultName": "Scenario4_Coverage.json",
+	"clrFile": "",
+	"clrField": "FID",
+	"colorMaps": [
+		{
+			"upperBoundary": "Bajo",
+			"color": "#FFEBBE"
+		},
+		{
+			"upperBoundary": "Medio",
+			"color": "#FFA77F"
+		},
+		{
+			"upperBoundary": "Alto",
+			"color": "#A80000"
+		}			
+
+	]
+},
+{
+	"fileName": "service_areas_final.shp",
+	"resultName": "Scenario5_Coverage.json",
+	"clrFile": "",
+	"clrField": "FID",
+	"colorMaps": [
+		{
+			"upperBoundary": "Bajo",
+			"color": "#E9FFBE"
+		},
+		{
+			"upperBoundary": "Medio",
+			"color": "#AAFF00"
+		},
+		{
+			"upperBoundary": "Alto",
+			"color": "#70A800"
+		}			
+
+	]
+}

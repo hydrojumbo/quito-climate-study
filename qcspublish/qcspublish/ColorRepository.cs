@@ -35,6 +35,17 @@ namespace qcspublish
 			
 		}
 
+		/// <summary>
+		/// Returns the field name to use to project a new color property into the output's attributes for binding on UI.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns></returns>
+		public string ColorFieldForOutput(string fileName, string resultName)
+		{
+			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().clrField;
+		}
+
 		public RGBColors ColorsOfValueInFile(string fileName, string resultName, double value)
 		{
 			ValidateFileName(fileName);

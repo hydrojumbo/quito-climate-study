@@ -27,8 +27,26 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view="">
+    <div class="header">
+      <ul class="nav nav-pills">
+        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="#Somos">Los participantes</a></li>
+        <li><a href="#Metodologia">Metodología</a></li>
+        <li><a href="#Principales">Principales logros</a></li>
+        <li><a href="#Medidas">Medidas de adaptación</a></li>
+        <!--<li><a href="#Vulnerability/agua&season">Test Vulnerability</a></li>-->
+      </ul>
+      <h3 class="text-muted">quito climate study</h3>
     </div>
+    
+    <!-- Top-level routing applied here -->
+    <div class="container-fluid" data-ng-view>
+    </div>
+    
+    <div class="footer">
+      <img height="40" src="images/cdkn-logo.png" alt="CDKN Logo">
+      <img height="40" src="images/sei.jpg" alt="SEI Logo">
+    </div>    
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -75,7 +93,8 @@
         <script src="scripts/controllers/report.js"></script>
         <script src="scripts/directives/documents.js"></script>
         <script src="scripts/directives/contentList.js"></script>
-        <script src="scripts/directives/contentPanel.js"></script>
+        <script src="scripts/directives/contentPanel.js"></script>        
+        <script src="scripts/controllers/vulnerability.js"></script>
         <!-- endbuild -->
 </body>
 </html>

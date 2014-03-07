@@ -14,7 +14,7 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-
+  
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -257,7 +257,10 @@ module.exports = function (grunt) {
             'views/{,*/}*.html',
             'bower-components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            'raster/**',
+            'documents/**',
+            'vector/**'
           ]
         }, {
           expand: true,
@@ -323,7 +326,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {

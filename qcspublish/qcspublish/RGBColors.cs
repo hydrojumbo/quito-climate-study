@@ -15,10 +15,12 @@ namespace qcspublish
 		private int red;
 		private int green;
 		private int blue;
+		private string hexColor;
 
 		public int Red { get { return red; } }
 		public int Green { get { return green; } }
 		public int Blue { get { return blue; } }
+		public string HexColor { get { return hexColor; } }
 
 		public RGBColors(string hexColor)
 		{
@@ -26,6 +28,7 @@ namespace qcspublish
 			this.red = color.R;
 			this.green = color.G;
 			this.blue = color.B;
+			this.hexColor = hexColor;
 		}
 	}
 }

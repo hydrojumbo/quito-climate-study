@@ -201,6 +201,34 @@
 	},
 	{
 		"fileName": "cuencas_final_weap_4.shp",
+		"resultName": "Paramo_Future.json",
+		"clrFile": "",
+		"clrField": "Pr_2050",
+		"colorMaps": [
+			{
+				"upperBoundary": 20,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 40,
+				"color": "#71EB2F"
+			},
+			{
+				"upperBoundary": 60,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 80,
+				"color": "#216E9E"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#C10780"
+			}
+		]
+	},
+	{
+		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Historical.json",
 		"clrFile": "",
 		"clrField": "Pr_2007",
@@ -252,6 +280,118 @@
 			{
 				"upperBoundary": 100,
 				"color": "#F50000"
+			}
+		]
+	},
+	{
+		"fileName": "DMQ_outline.shp",
+		"resultName": "DMQ_outline.json",
+		"clrFile": "",
+		"clrField": "FID",
+		"colorMaps": [
+			{
+				"upperBoundary": 1,
+				"color": "#C9F2D0"
+			}			
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Population_2010.json",
+		"clrFile": "",
+		"clrField": "2010_Pop",
+		"colorMaps": [
+			{
+				"upperBoundary": 10000,
+				"color": "#10F500"
+			},
+			{
+				"upperBoundary": 50000,
+				"color": "#73F700"
+			},
+			{
+				"upperBoundary": 100000,
+				"color": "#BAF700"
+			},
+			{
+				"upperBoundary": 250000,
+				"color": "#F5F500"
+			},
+			{
+				"upperBoundary": 500000,
+				"color": "#FCB100"
+			},
+			{
+				"upperBoundary": 750000,
+				"color": "#FC6900"
+			},
+			{
+				"upperBoundary": 1000000,
+				"color": "#E60000"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Population_2050.json",
+		"clrFile": "",
+		"clrField": "2050_Pop",
+		"colorMaps": [
+			{
+				"upperBoundary": 10000,
+				"color": "#10F500"
+			},
+			{
+				"upperBoundary": 50000,
+				"color": "#73F700"
+			},
+			{
+				"upperBoundary": 100000,
+				"color": "#BAF700"
+			},
+			{
+				"upperBoundary": 250000,
+				"color": "#F5F500"
+			},
+			{
+				"upperBoundary": 500000,
+				"color": "#FCB100"
+			},
+			{
+				"upperBoundary": 750000,
+				"color": "#FC6900"
+			},
+			{
+				"upperBoundary": 1000000,
+				"color": "#E60000"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Population_Growth_2010_2050.json",
+		"clrFile": "",
+		"clrField": "Pop_growth",
+		"colorMaps": [
+			{
+				"upperBoundary": 50.0,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 60.0,
+				"color": "#FAD155"
+			},
+			{
+				"upperBoundary": 70.0,
+				"color": "#F2A72E"
+			},
+			{
+				"upperBoundary": 80.0,
+				"color": "#AD5313"
+			},
+			{
+				"upperBoundary": 90.0,
+				"color": "#000000"
 			}
 		]
 	}

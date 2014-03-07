@@ -26,7 +26,9 @@ namespace qcspublish
 		/// <returns></returns>
 		[DllImport("kernel32.dll", CharSet=CharSet.Auto, SetLastError=true)]
 		public static extern bool SetEnvironmentVariable(string lpName, string lpValue);
-		
+
+		public static string appNamespace = "quito-";
+		public static string appColorNamspace = "quito-color";
 		static void Main(string[] args)
 		{
 			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
@@ -43,7 +45,7 @@ namespace qcspublish
 			string rasterout = @"rasterout\";
 			string vectorout = @"vectorout\";			
 			string tifResultDir = srcDir + rasterout;
-			string shpResultDir = srcDir + vectorout;
+			string shpResultDir = srcDir + vectorout;			
 			
 			if (args.Length == 1)
 			{
@@ -60,15 +62,17 @@ namespace qcspublish
 			List<string> processedVectors = new List<string>();
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
-			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
-			processedRasters = rasterResults.Item1;
+			
+			// Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
+			// processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
 			sw.Stop();
 			Console.WriteLine("*********");
-			Console.WriteLine("Unknown color maps in colormap.json, these files were not processed:");
-			rasterResults.Item2.AddRange(vectorResults.Item2);
-			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
+			// Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
+			// rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
+			Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
+			vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
 			Console.ReadKey();
 		}		
@@ -219,27 +223,41 @@ namespace qcspublish
 
 						NetTopologySuite.IO.ShapefileDataReader dataReader = new NetTopologySuite.IO.ShapefileDataReader(fi.FullName, new GeometryFactory());
 						ArrayList featureCollection = new ArrayList();
-						bldr.AppendLine(string.Join(",", dataReader.DbaseHeader.Fields.Select(a => a.Name))); //write csv file header
+						List<string> csvHdr = dataReader.DbaseHeader.Fields.Select(a => a.Name).ToList();
+						csvHdr.Add(appColorNamspace);
+						bldr.AppendLine(string.Join(",", csvHdr)); //write csv file header
 						while (dataReader.Read())
 						{
 							NetTopologySuite.Features.Feature feature = new NetTopologySuite.Features.Feature();
 							feature.Geometry = dataReader.Geometry;
 
-							int length = dataReader.DbaseHeader.NumFields;
-							string[] keys = new string[length];
-							for (int i = 0; i < length; i++)
+							int numFields = dataReader.DbaseHeader.NumFields + 1;
+							string[] keys = new string[numFields];
+							int colorValueField = 0;
+							for (int i = 0; i < numFields - 1; i++)
 							{
 								keys[i] = dataReader.DbaseHeader.Fields[i].Name;
+								if (keys[i].Equals(colorRepo.ColorFieldForOutput(fi.Name, resultName)))
+								{
+									colorValueField = i;
+								}
 							}
+							keys[numFields - 1] = appColorNamspace;
 
+							//add attributes from source attribute table
 							feature.Attributes = new AttributesTable();
-							List<string> csvLine = new List<string>();
-							for (int i = 0; i < length; i++)
+							List<string> csvLine = new List<string>();							
+							for (int i = 0; i < numFields - 1; i++)
 							{
 								object val = dataReader.GetValue(i);
 								feature.Attributes.AddAttribute(keys[i], val);
 								csvLine.Add(val.ToString());
 							}
+
+							//add additional attribute for color binding
+							csvLine.Add(colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor);
+							feature.Attributes.AddAttribute(appColorNamspace, colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor);
+
 							bldr.AppendLine(string.Join(",", csvLine));
 							featureCollection.Add(feature);
 						}
