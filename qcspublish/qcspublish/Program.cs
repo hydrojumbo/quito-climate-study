@@ -51,8 +51,7 @@ namespace qcspublish
 			{
 				srcDir = args[0];
 			}			
-
-			//if app scales, or additional implementations made (e.g. database table), use DI for this dependency
+						
 			IColorRepository colorRepo = new ColorRepository();
 
 			//see: http://sharpmap.codeplex.com/discussions/421752			
@@ -63,10 +62,13 @@ namespace qcspublish
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
 			
+			//compute - todo: why does running both raster and vector data sometimes result in memory exception?
 			// Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
 			// processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
+			
+			//reporting
 			sw.Stop();
 			Console.WriteLine("*********");
 			// Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
@@ -222,7 +224,7 @@ namespace qcspublish
 						StringBuilder bldr = new StringBuilder();
 
 						NetTopologySuite.IO.ShapefileDataReader dataReader = new NetTopologySuite.IO.ShapefileDataReader(fi.FullName, new GeometryFactory());
-						ArrayList featureCollection = new ArrayList();
+						NetTopologySuite.Features.FeatureCollection featureCollection = new NetTopologySuite.Features.FeatureCollection();
 						List<string> csvHdr = dataReader.DbaseHeader.Fields.Select(a => a.Name).ToList();
 						csvHdr.Add(appColorNamspace);
 						bldr.AppendLine(string.Join(",", csvHdr)); //write csv file header
@@ -261,9 +263,9 @@ namespace qcspublish
 							bldr.AppendLine(string.Join(",", csvLine));
 							featureCollection.Add(feature);
 						}
-						GeoJsonWriter wtr = new GeoJsonWriter();
-
+						GeoJsonWriter wtr = new GeoJsonWriter();						
 						string layerJson = wtr.Write(featureCollection);
+						
 						File.WriteAllText(resultDir.FullName + resultName, layerJson);
 						File.WriteAllText(resultDir.FullName + resultName.Replace(".json", ".csv"), bldr.ToString());
 						processedDatasets.Add(fi.Name);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('quitoClimateStudyApp')
-  .service('Vulnerabilidad', function Vulnerabilidad() {
+  .service('Vulnerabilidad', ['$http', function Vulnerabilidad($http) {
     // vulnerabilities
     var vulnerabilities = [
     	{
@@ -25,31 +25,31 @@ angular.module('quitoClimateStudyApp')
                                     name: 'Digital Elevation Map',
                                     data: 'dem',                                    
                                     type: 'raster',
-                                    isSelected: false
+                                    isSelected: true
                                 },
                                 {
                                     name: 'DMQ Outline',
                                     data: 'DMQ_outline',
                                     type: 'vector',
-                                    isSelected: false                           
+                                    isSelected: true                           
                                 },
                                 {
                                     name: 'Lines of Conduction',
                                     data: 'lines_of_conduction',                                    
                                     type: 'vector',
-                                    isSelected: false
+                                    isSelected: true
                                 },
                                 {
                                     name: 'Catchment Watersheds ',
                                     data: 'cuencas_final_weap_4',
                                     type: 'vector',
-                                    isSelected: false                            
+                                    isSelected: true                            
                                 },
                                 {
                                     name: 'Urban Service Areas',
                                     data: 'service_areas_final',                                    
                                     type: 'vector',
-                                    isSelected: false
+                                    isSelected: true
                                 }
                             ]
                         }                        
@@ -169,6 +169,38 @@ angular.module('quitoClimateStudyApp')
             return _.pluck(vulnerabilities, 'name');
         },
 
+        getVectorLayers: function(vulnerability, questionName) {
+            var selectedLayers = [];
+            var question = 
+                _.findWhere(
+                    _.findWhere(vulnerabilities, {name : vulnerability }).questions, 
+                    {name: questionName});
+
+
+            _.each(question.base, function(section) { 
+                selectedLayers.push(getSelectedLayersOfSection(section));
+            });
+            _.each(question.exposures, function(section) { 
+                selectedLayers.push(getSelectedLayersOfSection(section));
+            });
+            _.each(question.sensitivityAnalysis, function(section) { 
+                selectedLayers.push(getSelectedLayersOfSection(section));
+            });
+            _.each(question.vulnerability2050, function(section) { 
+                selectedLayers.push(getSelectedLayersOfSection(section));
+            });
+            
+            return _.flatten(selectedLayers);
+        },
+
+        getRasterLayers: function() {
+            
+        },
+
+        getSelectedLayersOfQuestion: function(vulnerability, questionName){
+            _.filter(_.findWhere(_.findWhere(vulnerabilities, {name : vulnerability }).questions, {name: questionName}));
+        },
+
         getIntroOfVulnerabilityByName: function(name){
             var vuln = _.findWhere(vulnerabilities, { name: name });
             return {
@@ -188,10 +220,19 @@ angular.module('quitoClimateStudyApp')
                     description: q.description
                 };
             });
-        },
+        },    
 
         getQuestionByName: function(vulnerability, name){
             return _.findWhere(_.findWhere(vulnerabilities, {name : vulnerability }).questions, {name : name });
+        },
+
+        getPathOfVector: function(name) {
+            return 'vector/' + name + '.json';
+        },
+
+        getPathToRootOfRaster: function(name) {
+            return 'raster/' + name + '/';
         }
     };
-  });
+
+  }]);
