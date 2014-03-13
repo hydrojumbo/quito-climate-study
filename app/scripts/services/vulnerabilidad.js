@@ -25,11 +25,11 @@ angular.module('quitoClimateStudyApp')
                                     name: 'Digital Elevation Map',
                                     data: 'dem',                                    
                                     type: 'raster',
-                                    isSelected: true
+                                    isSelected: false
                                 },
                                 {
                                     name: 'DMQ Outline',
-                                    data: 'DMQ_outline',
+                                    data: 'DMQ_outline_wgs1984',
                                     type: 'vector',
                                     isSelected: true                           
                                 },
@@ -37,19 +37,19 @@ angular.module('quitoClimateStudyApp')
                                     name: 'Lines of Conduction',
                                     data: 'lines_of_conduction',                                    
                                     type: 'vector',
-                                    isSelected: true
+                                    isSelected: false
                                 },
                                 {
                                     name: 'Catchment Watersheds ',
                                     data: 'cuencas_final_weap_4',
                                     type: 'vector',
-                                    isSelected: true                            
+                                    isSelected: false                            
                                 },
                                 {
                                     name: 'Urban Service Areas',
-                                    data: 'service_areas_final',                                    
+                                    data: 'Urban_Service_Areas',                                    
                                     type: 'vector',
-                                    isSelected: true
+                                    isSelected: false
                                 }
                             ]
                         }                        
@@ -103,12 +103,12 @@ angular.module('quitoClimateStudyApp')
                             layers: 
                             [
                                 {
-                                    name: 'Historic (1971 - 2007)',
+                                    name: 'Historic (2007)',
                                     data: 'Paramo_Historical',                                    
                                     type: 'vector'
                                 },
                                 {
-                                    name: 'Drought',
+                                    name: 'Future (2050)',
                                     data: 'Paramo_Future',
                                     type: 'vector',
                                     isSelected: false                           
@@ -129,20 +129,26 @@ angular.module('quitoClimateStudyApp')
                             layers: 
                             [
                                 {
-                                    name: 'Historic (1971 - 2007)',
-                                    data: 'Paramo_Historical',                                    
+                                    name: 'Historic (2010 Census)',
+                                    data: 'Population_2010',                                    
                                     type: 'vector',
                                     isSelected: false
                                 },
                                 {
-                                    name: 'Drought',
-                                    data: 'Paramo_Future',
+                                    name: 'Future (2050)',
+                                    data: 'Population_2050',
                                     type: 'vector',
                                     isSelected: false                           
                                 },
                                 {
-                                    name: 'Percent Loss (2050)',
-                                    data: 'Paramo_Loss',
+                                    name: 'Percent Growth (2010 - 2050)',
+                                    data: 'Population_Growth_2010_2050',
+                                    type: 'vector',
+                                    isSelected: false                           
+                                },
+                                {
+                                    name: 'Levels of Sensitivity (Bajo, Medio, Alto)',
+                                    data: 'Population_Sensitivity',
                                     type: 'vector',
                                     isSelected: false                           
                                 }
@@ -155,7 +161,30 @@ angular.module('quitoClimateStudyApp')
                             section: 'Satisfecha de Demandas - Agua Potable Urbano Frente',
                             layers: 
                             [
-                                
+                                {
+                                    name: 'Temp Increase + Population Growth Sensitivity ',
+                                    data: 'Scenario2_Coverage',                                    
+                                    type: 'vector',
+                                    isSelected: false
+                                },
+                                {
+                                    name: 'Temp Increase + Drought + Population Growth Sensitivity',
+                                    data: 'Scenario3_Coverage',
+                                    type: 'vector',
+                                    isSelected: false                           
+                                },
+                                {
+                                    name: 'Temp Increase + Loss of Paramo + Population Growth Sensitivity',
+                                    data: 'Scenario4_Coverage',
+                                    type: 'vector',
+                                    isSelected: false                           
+                                },
+                                {
+                                    name: 'Temp Increase + Drought + Loss of Paramo + Population Growth Sensitivity',
+                                    data: 'Scenario5_Coverage',
+                                    type: 'vector',
+                                    isSelected: false                           
+                                }
                             ]
                         }
                     ]
@@ -222,8 +251,8 @@ angular.module('quitoClimateStudyApp')
             });
         },    
 
-        getQuestionByName: function(vulnerability, name){
-            return _.findWhere(_.findWhere(vulnerabilities, {name : vulnerability }).questions, {name : name });
+        getQuestionByName: function(vulnerability, questionName){
+            return _.findWhere(_.findWhere(vulnerabilities, {name : vulnerability }).questions, {name : questionName });
         },
 
         getPathOfVector: function(name) {

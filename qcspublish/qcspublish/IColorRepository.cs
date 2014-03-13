@@ -9,12 +9,32 @@ namespace qcspublish
 	public interface IColorRepository
 	{
 		/// <summary>
-		/// Returns the 0-255 RBG color values for a 6-character color hex code, e.g. 
+		/// Returns the 0-255 RBG color values for a 6-character color hex code matching the color mapped to the range including value for the particular input/output file combination..
 		/// </summary>
-		/// <param name="fileName"></param>
-		/// <param name="value"></param>
+		/// <param name="fileName">Input source file name.</param>
+		/// <param name="resultName">Output file name.</param>
+		/// <param name="value">Value to map to color.</param>
 		/// <returns></returns>
 		RGBColors ColorsOfValueInFile(string fileName, string resultName, double value);
+
+		/// <summary>
+		/// Returns the 0-255 RBG color values for a 6-character color hex code matching the category mapped to categoricalValue in the file.
+		/// </summary>
+		/// <param name="fileName">Input source file name.</param>
+		/// <param name="resultName">Output file name.</param>
+		/// <param name="categoricalValue">Value to map to color.</param>
+		/// <returns></returns>
+		RGBColors ColorsOfValueInFile(string fileName, string resultName, string categoricalValue);
+
+		/// <summary>
+		/// Returns if this is a categorical value.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns></returns>
+		Boolean IsCategoricalMap(string fileName, string resultName);
+
+		String SingleColorForFile(string fileName, string resultName);	
 
 		/// <summary>
 		/// Checks if file has mapping.

@@ -105,6 +105,9 @@
     <Reference Include="Npgsql">
       <HintPath>..\packages\Npgsql.2.0.14.3\lib\net45\Npgsql.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="ogr_csharp">
       <HintPath>..\packages\GDAL.1.9.2\lib\net40\ogr_csharp.dll</HintPath>
     </Reference>
@@ -130,6 +133,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorMapTests.cs" />
     <Compile Include="ValueColorMap.cs" />
     <Compile Include="ColorRepository.cs" />
     <Compile Include="GdalConfiguration.cs" />

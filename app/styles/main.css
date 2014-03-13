@@ -1,4 +1,8 @@
 /* Space out content a bit */
+html, body {
+   height: 100%;
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -30,6 +34,16 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+}
+
+/* full height for map */
+.appContent {
+  height: 100%;
+}
+
+.mainArea {
+  height: 90%;
+
 }
 
 /* Customize container */

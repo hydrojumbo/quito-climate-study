@@ -41,7 +41,7 @@ namespace qcspublish
 			Gdal.AllRegister();
 
 			// string srcDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);			
-			string srcDir = @"C:\dev\quito\For_Geoportal\For_Geoportal\";
+			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
 			string rasterout = @"rasterout\";
 			string vectorout = @"vectorout\";			
 			string tifResultDir = srcDir + rasterout;
@@ -63,16 +63,16 @@ namespace qcspublish
 			sw.Start();
 			
 			//compute - todo: why does running both raster and vector data sometimes result in memory exception?
-			// Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
-			// processedRasters = rasterResults.Item1;
+			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
+			processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
 			
 			//reporting
 			sw.Stop();
 			Console.WriteLine("*********");
-			// Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
-			// rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
+			Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
+			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
 			vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
@@ -235,7 +235,7 @@ namespace qcspublish
 
 							int numFields = dataReader.DbaseHeader.NumFields + 1;
 							string[] keys = new string[numFields];
-							int colorValueField = 0;
+							int colorValueField = -1;
 							for (int i = 0; i < numFields - 1; i++)
 							{
 								keys[i] = dataReader.DbaseHeader.Fields[i].Name;
@@ -256,9 +256,30 @@ namespace qcspublish
 								csvLine.Add(val.ToString());
 							}
 
-							//add additional attribute for color binding
-							csvLine.Add(colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor);
-							feature.Attributes.AddAttribute(appColorNamspace, colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor);
+							//add additional attribute for color binding							
+							string hexClr = colorRepo.SingleColorForFile(fi.Name, resultName); //only path where colorValueField, i.e. ColorMap.clrField can be unpopulated.
+
+							if (string.IsNullOrEmpty(hexClr) && colorValueField > -1)
+							{
+								if (colorRepo.IsCategoricalMap(fi.Name, resultName))
+								{
+									//categorical color map
+									hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetString(colorValueField)).HexColor;
+								}
+								else
+								{
+									//numerical range color map
+									hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor;
+								}
+							}
+
+							if (string.IsNullOrEmpty(hexClr)) // else if (string.IsNullOrEmpty(hexClr) && colorValueField < 0)
+							{
+								throw new NotSupportedException("Cannot color a file with no attributes to bind to and no single-color given");
+							}
+
+							csvLine.Add(hexClr);
+							feature.Attributes.AddAttribute(appColorNamspace, hexClr);
 
 							bldr.AppendLine(string.Join(",", csvLine));
 							featureCollection.Add(feature);

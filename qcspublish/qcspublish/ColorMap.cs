@@ -24,9 +24,14 @@ namespace qcspublish
 		public string clrFile { get; set; }
 
 		/// <summary>
-		/// Field of shapefile to bind color display to
+		/// Field of shapefile to bind color display to. If none, should assume no emphasis on any field in final display.
 		/// </summary>
-		public string clrField { get; set; }
+		public string clrField { get; set; }		
+
+		/// <summary>
+		/// If all cells should be the same color for this result, put it here.
+		/// </summary>
+		public string singleColorValue { get; set; }
 
 		/// <summary>
 		/// Rules about how to color various values.

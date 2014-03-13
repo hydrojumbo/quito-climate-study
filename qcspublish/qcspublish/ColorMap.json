@@ -48,6 +48,38 @@
 		]
 	},
 	{
+		"fileName": "tmed_an_2050.tif",
+		"resultName": "tmed_an_2050.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
 		"fileName": "hist_prec_tot.tif",
 		"resultName": "hist_prec_tot.tif",
 		"clrFile": "",
@@ -163,13 +195,9 @@
 		"fileName": "conduccion.shp",
 		"resultName": "lines_of_conduction.json",
 		"clrFile": "",
-		"clrField": "FID",
-		"colorMaps": [
-			{
-				"upperBoundary": 6,
-				"color": "#AB5500"
-			}
-		]
+		"clrField": "",
+		"singleColorValue": "#AB5500",
+		"colorMaps": [ ]
 	},
 	{
 		"fileName": "cuencas_final_weap_4.shp",
@@ -198,35 +226,7 @@
 				"color": "#C10780"
 			}
 		]
-	},
-	{
-		"fileName": "cuencas_final_weap_4.shp",
-		"resultName": "Paramo_Future.json",
-		"clrFile": "",
-		"clrField": "Pr_2050",
-		"colorMaps": [
-			{
-				"upperBoundary": 20,
-				"color": "#FFFF80"
-			},
-			{
-				"upperBoundary": 40,
-				"color": "#71EB2F"
-			},
-			{
-				"upperBoundary": 60,
-				"color": "#3DB868"
-			},
-			{
-				"upperBoundary": 80,
-				"color": "#216E9E"
-			},
-			{
-				"upperBoundary": 2000,
-				"color": "#C10780"
-			}
-		]
-	},
+	},	
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Historical.json",
@@ -284,10 +284,18 @@
 		]
 	},
 	{
-		"fileName": "DMQ_outline.shp",
-		"resultName": "DMQ_outline.json",
+		"fileName": "cuencas_final_weap_4.shp",
+		"resultName": "cuencas_final_weap_4.json",
 		"clrFile": "",
-		"clrField": "FID",
+		"clrField": "",
+		"singleColorValue": "#23ECFF",
+		"colorMaps": [ ]
+	},
+	{
+		"fileName": "DMQ_outline.shp",
+		"resultName": "DMQ_outline_wgs1984.json",
+		"clrFile": "",
+		"clrField": "Id",
 		"colorMaps": [
 			{
 				"upperBoundary": 1,
@@ -374,25 +382,212 @@
 		"clrField": "Pop_growth",
 		"colorMaps": [
 			{
-				"upperBoundary": 50.0,
+				"upperBoundary": 50,
 				"color": "#FFFF80"
 			},
 			{
-				"upperBoundary": 60.0,
+				"upperBoundary": 60,
 				"color": "#FAD155"
 			},
 			{
-				"upperBoundary": 70.0,
+				"upperBoundary": 70,
 				"color": "#F2A72E"
 			},
 			{
-				"upperBoundary": 80.0,
+				"upperBoundary": 80,
 				"color": "#AD5313"
 			},
 			{
-				"upperBoundary": 90.0,
+				"upperBoundary": 90,
 				"color": "#000000"
 			}
 		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Population_Sensitivity.json",
+		"clrFile": "",
+		"clrField": "Sensibilid",
+		"colorMaps": [
+			{
+				"upperBoundary": 6,
+				"categoricalValue": "Bajo",
+				"color": "#55FF00"
+			},
+			{
+				"categoricalValue": "Medio",
+				"color": "#FFFF00"
+			},
+			{
+				"categoricalValue": "Alto",
+				"color": "#FF2200"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Urban_Service_Areas.json",
+		"clrFile": "",
+		"clrField": "Sistem",
+		"colorMaps": [
+			{
+				
+				"categoricalValue": "BELLAVISTA",
+				"color": "#695396"
+			},
+			{
+				
+				"categoricalValue": "CHILIBULO",
+				"color": "#7A415E"
+			},
+			{				
+				"categoricalValue": "EL PLACER",
+				"color": "#FAC17A"
+			},
+			{			
+				"categoricalValue": "NOROCCIDENTE",
+				"color": "#7AF3F5"
+			},
+			{
+				
+				"categoricalValue": "PICHINCHA SUR",
+				"color": "#F5677E"
+			},
+			{
+				
+				"categoricalValue": "PUENGASI",
+				"color": "#F564EB"
+			},
+			{
+				
+				"categoricalValue": "RIENO DE QUITO",
+				"color": "#4A824A"
+			},
+			{
+				
+				"categoricalValue": "RUMIPAMBA",
+				"color": "#6457F7"
+			},	
+			{
+				
+				"categoricalValue": "SAN IGNACIO",
+				"color": "#A3BF45"
+			},
+			{
+				
+				"categoricalValue": "TOCTIUCO",
+				"color": "#3E778A"
+			},
+			{
+				
+				"categoricalValue": "TOROHUCO",
+				"color": "#85564A"
+			},
+			{
+				
+				"categoricalValue": "TROJE",
+				"color": "#A0B9FA"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Scenario2_Coverage.json",
+		"clrFile": "",
+		"clrField": "Sensibilid",
+		"colorMaps": [
+			{
+				
+				"categoricalValue": "Bajo",
+				"color": "#E9FFBE"
+			},
+			{
+				
+				"categoricalValue": "Medio",
+				"color": "#AAFF00"
+			},
+			{
+				
+				"categoricalValue": "Alto",
+				"color": "#70A800"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Scenario3_Coverage.json",
+		"clrFile": "",
+		"clrField": "Sensibilid",
+		"colorMaps": [
+			{
+				
+				"categoricalValue": "Bajo",
+				"color": "#FFEBBE"
+			},
+			{
+				
+				"categoricalValue": "Medio",
+				"color": "#FFA77F"
+			},
+			{
+				
+				"categoricalValue": "Alto",
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Scenario4_Coverage.json",
+		"clrFile": "",
+		"clrField": "Sensibilid",
+		"colorMaps": [
+			{
+				
+				"categoricalValue": "Bajo",
+				"color": "#FFFFBE"
+			},
+			{
+				
+				"categoricalValue": "Medio",
+				"color": "#FFFF00"
+			},
+			{
+				
+				"categoricalValue": "Alto",
+				"color": "#A8A800"
+			}
+		]
+	},
+	{
+		"fileName": "service_areas_final.shp",
+		"resultName": "Scenario5_Coverage.json",
+		"clrFile": "",
+		"clrField": "Sensibilid",
+		"colorMaps": [
+			{
+				
+				"categoricalValue": "Bajo",
+				"color": "#FFEBBE"
+			},
+			{
+				
+				"categoricalValue": "Medio",
+				"color": "#FFA77F"
+			},
+			{
+				
+				"categoricalValue": "Alto",
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "Parrishes.shp",
+		"resultName": "Parrishes.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "#E3F5C6",
+		"colorMaps": [ ]
 	}
 ]

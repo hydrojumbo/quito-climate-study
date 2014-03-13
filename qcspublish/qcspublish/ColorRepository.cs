@@ -46,12 +46,44 @@ namespace qcspublish
 			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().clrField;
 		}
 
+		/// <summary>
+		/// Provides numerical range matching.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <param name="value"></param>
+		/// <returns></returns>
 		public RGBColors ColorsOfValueInFile(string fileName, string resultName, double value)
 		{
 			ValidateFileName(fileName);
 
 			//will throw exception if value is bigger than greatest upper boundary
 			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color);			
+		}
+
+		public Boolean IsCategoricalMap(string fileName, string resultName)
+		{
+			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.All(a => a.categoricalValue != null);
+		}
+
+		public String SingleColorForFile(string fileName, string resultName)
+		{ 
+			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().singleColorValue;
+		}
+
+		/// <summary>
+		/// Provides categorical value matching
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <param name="categoricalValue"></param>
+		/// <returns></returns>
+		public RGBColors ColorsOfValueInFile(string fileName, string resultName, string categoricalValue)
+		{
+			ValidateFileName(fileName);
+
+			//will throw exception if value does not exist in the file; user will have to resume processing
+			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color);
 		}
 
 		private void ValidateFileName(string fileName)
