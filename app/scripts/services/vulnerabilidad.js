@@ -25,7 +25,7 @@ angular.module('quitoClimateStudyApp')
                                     name: 'Digital Elevation Map',
                                     data: 'dem',                                    
                                     type: 'raster',
-                                    isSelected: false
+                                    isSelected: true
                                 },
                                 {
                                     name: 'DMQ Outline',
@@ -37,19 +37,19 @@ angular.module('quitoClimateStudyApp')
                                     name: 'Lines of Conduction',
                                     data: 'lines_of_conduction',                                    
                                     type: 'vector',
-                                    isSelected: false
+                                    isSelected: true
                                 },
                                 {
                                     name: 'Catchment Watersheds ',
                                     data: 'cuencas_final_weap_4',
                                     type: 'vector',
-                                    isSelected: false                            
+                                    isSelected: true                            
                                 },
                                 {
                                     name: 'Urban Service Areas',
                                     data: 'Urban_Service_Areas',                                    
                                     type: 'vector',
-                                    isSelected: false
+                                    isSelected: true
                                 }
                             ]
                         }                        

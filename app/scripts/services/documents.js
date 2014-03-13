@@ -3,36 +3,40 @@
 angular.module('quitoClimateStudyApp')
   .service('Documents', function Documents() {
     // (list of documents)
-    var documentRoot = 'http://quitoestudiodeclima.blob.core.windows.net/documents/';    
+    var documentRoot = 'documents/';    
     var documents = [
         {
-            name: 'Example document',
-            file: 'example.txt'
+            name: 'Agenda Taller 20 Feb, 2014',
+            file: 'Agenda Taller 20_feb_2014.pdf'
         },
     	{
-    		name: 'Analisis de Percepción',
-    		file: 'Filename of PDF to serve'
+    		name: 'Informe Percepciones CC DMQ mar 13',
+    		file: 'Informe Percepciones CC DMQ mar_13.rar'
     	},
     	{
-    		name: 'Analisis integrado de amenazas cambio climático',
-    		file: 'Filename of PDF to serve'
+    		name: 'WP1 Análisis Climático DMQ',
+    		file: 'WP1-Análisis_Climático-DMQ.pdf'
     	},
     	{
-    		name: 'Estructura de metodologia',
-    		file: 'Filename of PDF to serve'
+    		name: 'WP2 3 MetodologíaVulnerabilidad DMQ.pdf',
+    		file: 'WP2-3-MetodologíaVulnerabilidad-DMQ.pdf'
     	},
     	{
-    		name: 'Vulnerabilidad actural y futura e indices',
-    		file: 'Filename of PDF to serve'
+    		name: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14.pdf',
+    		file: 'WP5-6-Vuln-CC-Agricultura-DMQ-17_feb_14.pdf.pdf'
     	},
     	{
-    		name: 'Lineas de adaptación',
-    		file: 'Filename of PDF to serve'
+    		name: 'WP5 6 Vuln. CC Agua DMQ 17_feb_14.pdf',
+    		file: 'WP5-6-Vuln.-CC-Agua-DMQ-17_feb_14.pdf'
     	},
     	{
-    		name: 'Lecciones aprendidas',
-    		file: 'Filename of PDF to serve'
+    		name: 'WP5 6 Vuln. CC Ecosistemas DMQ 17_feb_14.pdf',
+    		file: 'WP5-6-Vuln.-CC-Ecosistemas-DMQ-17_feb_14.pdf'
     	},
+        {
+            name: 'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14.pdf',
+            file: 'WP5-6-Vuln.-CC-Riesgos-DMQ-17_feb_14.pdf'
+        }
     ];
 
     return {

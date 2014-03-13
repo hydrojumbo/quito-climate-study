@@ -3,7 +3,8 @@
 angular.module('quitoClimateStudyApp', [
   'ngResource',
   'ngRoute',
-  'leaflet-directive'
+  'leaflet-directive',
+  'ui.bootstrap'
 ])
   .config(['$routeProvider', function ($routeProvider) {
     $routeProvider

@@ -1,0 +1,12 @@
+<p>{{title}}</p>
+<accordion-group is-open="isopen">
+    <accordion-heading>{{title}}<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i></accordion-heading>
+    <div data-ng-repeat="section in sectionCollection">
+		<strong>{{ section.section }}</strong>
+		<div class="checkbox" data-ng-repeat="layer in section.layers">
+			<label>
+				<input data-ng-model="layer.isSelected" data-ng-change="select(layer)" type="checkbox"> {{layer.name}}
+			</label>
+		</div>
+	</div>
+</accordion-group>

@@ -148,6 +148,7 @@ namespace qcspublish
 					foreach (string resultName in colorRepo.ResultFileName(fi.Name))
 					{
 						Console.WriteLine(string.Format("Processing {0} into {1}...", fi.Name, resultName));
+						StringBuilder bldr = new StringBuilder();
 
 						//read data from source raster
 						Dataset src = Gdal.Open(fi.FullName, Access.GA_ReadOnly);
