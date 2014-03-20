@@ -16,7 +16,7 @@
 		]
 	},
 	{
-		"fileName": "hist_tmed_an.tif",
+		"fileName": "hist_tmed_an",
 		"resultName": "hist_tmed_an.tif",
 		"clrFile": "",
 		"clrField": "",
@@ -48,7 +48,7 @@
 		]
 	},
 	{
-		"fileName": "tmed_an_2050.tif",
+		"fileName": "tmed_an_2050",
 		"resultName": "tmed_an_2050.tif",
 		"clrFile": "",
 		"clrField": "",
@@ -80,7 +80,7 @@
 		]
 	},
 	{
-		"fileName": "hist_prec_tot.tif",
+		"fileName": "hist_prec_tot",
 		"resultName": "hist_prec_tot.tif",
 		"clrFile": "",
 		"clrField": "",

@@ -15,11 +15,11 @@ angular.module('quitoClimateStudyApp')
     	},
     	{
     		name: 'WP1 Análisis Climático DMQ',
-    		file: 'WP1-Análisis_Climático-DMQ.pdf'
+    		file: 'WP1-Analisis_Climatico-DMQ.pdf'
     	},
     	{
-    		name: 'WP2 3 MetodologíaVulnerabilidad DMQ.pdf',
-    		file: 'WP2-3-MetodologíaVulnerabilidad-DMQ.pdf'
+    		name: 'WP2 3 Metodología Vulnerabilidad DMQ.pdf',
+    		file: 'WP2-3-Metodologia-Vulnerabilidad-DMQ.pdf'
     	},
     	{
     		name: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14.pdf',
