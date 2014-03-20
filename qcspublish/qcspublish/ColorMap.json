@@ -296,11 +296,7 @@
 		"resultName": "DMQ_outline_wgs1984.json",
 		"clrFile": "",
 		"clrField": "Id",
-		"colorMaps": [
-			{
-				"upperBoundary": 1,
-				"color": "#C9F2D0"
-			}			
+		"colorMaps": [						
 		]
 	},
 	{

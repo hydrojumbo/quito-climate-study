@@ -67,16 +67,16 @@ namespace qcspublish
 			processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, "hdr.adf", processedRasters);
 			processedRasters.AddRange(gridResults.Item1);
-			// Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
-			// processedVectors = vectorResults.Item1;
+			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
+			processedVectors = vectorResults.Item1;
 			
 			//reporting
 			sw.Stop();
 			Console.WriteLine("*********");
 			Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
 			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
-			// Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
-			// vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
+			Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
+			vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
 			Console.ReadKey();
 		}		
@@ -371,7 +371,11 @@ namespace qcspublish
 						colorValueField = i;
 					}
 				}
-				keys[numFields - 1] = appColorNamspace;
+				
+				if (colorRepo.MapColorsToThisResult(fi.Name, resultName))
+				{
+					keys[numFields - 1] = appColorNamspace;
+				}				
 
 				//add attributes from source attribute table
 				feature.Attributes = new AttributesTable();
@@ -383,30 +387,32 @@ namespace qcspublish
 					csvLine.Add(val.ToString());
 				}
 
-				//add additional attribute for color binding							
-				string hexClr = colorRepo.SingleColorForFile(fi.Name, resultName); //only path where colorValueField, i.e. ColorMap.clrField can be unpopulated.
-
-				if (string.IsNullOrEmpty(hexClr) && colorValueField > -1)
+				if (colorRepo.MapColorsToThisResult(fi.Name, resultName))
 				{
-					if (colorRepo.IsCategoricalMap(fi.Name, resultName))
-					{
-						//categorical color map
-						hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetString(colorValueField)).HexColor;
-					}
-					else
-					{
-						//numerical range color map
-						hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor;
-					}
-				}
+					//add additional attribute for color binding							
+					string hexClr = colorRepo.SingleColorForFile(fi.Name, resultName); //only path where colorValueField, i.e. ColorMap.clrField can be unpopulated.
 
-				if (string.IsNullOrEmpty(hexClr)) // else if (string.IsNullOrEmpty(hexClr) && colorValueField < 0)
-				{
-					throw new NotSupportedException("Cannot color a file with no attributes to bind to and no single-color given");
-				}
+					if (string.IsNullOrEmpty(hexClr) && colorValueField > -1)
+					{
+						if (colorRepo.IsCategoricalMap(fi.Name, resultName))
+						{
+							//categorical color map
+							hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetString(colorValueField)).HexColor;
+						}
+						else
+						{
+							//numerical range color map
+							hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor;
+						}
+					}
 
-				csvLine.Add(hexClr);
-				feature.Attributes.AddAttribute(appColorNamspace, hexClr);
+					if (string.IsNullOrEmpty(hexClr)) // else if (string.IsNullOrEmpty(hexClr) && colorValueField < 0)
+					{
+						throw new NotSupportedException("Cannot color a file with no attributes to bind to and no single-color given");
+					}
+					csvLine.Add(hexClr);
+					feature.Attributes.AddAttribute(appColorNamspace, hexClr);
+				}								
 
 				bldr.AppendLine(string.Join(",", csvLine));
 				featureCollection.Add(feature);

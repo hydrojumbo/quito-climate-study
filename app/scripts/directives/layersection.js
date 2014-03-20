@@ -4,7 +4,8 @@ angular.module('quitoClimateStudyApp')
   .directive('layerSection', function () {
     return {
       templateUrl: 'views/layersection.html',
-      restrict: 'E',
+      restrict: 'A',
+      replace: true,      
       scope:{
       	title: '=',
       	sectionCollection: '='

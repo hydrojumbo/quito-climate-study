@@ -51,5 +51,6 @@ namespace qcspublish
 		/// <returns></returns>
 		string ColorFieldForOutput(string fileName, string resultName);
 		IEnumerable<string> ResultFileName(string fileName);
+		Boolean MapColorsToThisResult(string fileName, string resultName);
 	}
 }

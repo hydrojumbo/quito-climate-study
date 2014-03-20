@@ -71,6 +71,11 @@ namespace qcspublish
 			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().singleColorValue;
 		}
 
+		public Boolean MapColorsToThisResult(string fileName, string resultName)
+		{
+			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Count() > 1;			
+		}
+
 		/// <summary>
 		/// Provides categorical value matching
 		/// </summary>
@@ -82,7 +87,7 @@ namespace qcspublish
 		{
 			ValidateFileName(fileName);
 
-			//will throw exception if value does not exist in the file; user will have to resume processing
+			//will throw exception if value does not exist in the file; user will have to resume processing			
 			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color);
 		}
 
