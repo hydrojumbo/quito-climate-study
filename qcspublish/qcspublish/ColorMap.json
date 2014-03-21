@@ -1,4 +1,1900 @@
 [
+    {
+        "fileName": "abr_4_tmin",
+        "resultName": "abr_4_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "aug_8_tmin",
+        "resultName": "aug_8_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "dec_12_tmin",
+        "resultName": "dec_12_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "feb_2_tmin",
+        "resultName": "feb_2_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jan_1_tmin",
+        "resultName": "jan_1_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jul_7_tmin",
+        "resultName": "jul_7_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jun_6_tmin",
+        "resultName": "jun_6_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "mar_3_tmin",
+        "resultName": "mar_3_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "may_5_tmin",
+        "resultName": "may_5_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "nov_11_tmin",
+        "resultName": "nov_11_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "oct_10_tmin",
+        "resultName": "oct_10_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "sep_9_tmin",
+        "resultName": "sep_9_tmin.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "abr_4_tmed",
+        "resultName": "abr_4_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "aug_8_tmed",
+        "resultName": "aug_8_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "dec_12_tmed",
+        "resultName": "dec_12_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "feb_2_tmed",
+        "resultName": "feb_2_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jan_1_tmed",
+        "resultName": "jan_1_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jul_7_tmed",
+        "resultName": "jul_7_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jun_6_tmed",
+        "resultName": "jun_6_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "mar_3_tmed",
+        "resultName": "mar_3_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "may_5_tmed",
+        "resultName": "may_5_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "nov_11_tmed",
+        "resultName": "nov_11_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "oct_10_tmed",
+        "resultName": "oct_10_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "sep_9_tmed",
+        "resultName": "sep_9_tmed.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "abr_4_tmax",
+        "resultName": "abr_4_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "aug_8_tmax",
+        "resultName": "aug_8_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "dec_12_tmax",
+        "resultName": "dec_12_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "feb_2_tmax",
+        "resultName": "feb_2_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jan_1_tmax",
+        "resultName": "jan_1_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jul_7_tmax",
+        "resultName": "jul_7_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "jun_6_tmax",
+        "resultName": "jun_6_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "mar_3_tmax",
+        "resultName": "mar_3_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "may_5_tmax",
+        "resultName": "may_5_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "nov_11_tmax",
+        "resultName": "nov_11_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "oct_10_tmax",
+        "resultName": "oct_10_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "sep_9_tmax",
+        "resultName": "sep_9_tmax.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 5,
+                "color": "#4575B5"
+            },
+            {
+                "upperBoundary": 10,
+                "color": "#8DA5BA"
+            },
+            {
+                "upperBoundary": 15,
+                "color": "#FFFF73"
+            },
+            {
+                "upperBoundary": 20,
+                "color": "#FFAA00"
+            },
+            {
+                "upperBoundary": 25,
+                "color": "#E64C00"
+            },
+            {
+                "upperBoundary": 999999,
+                "color": "#A80000"
+            }
+        ]
+    },
+  {
+    "fileName": "abr_4_pr",
+    "resultName": "abr_4_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "aug_8_pr",
+    "resultName": "aug_8_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "dec_12_pr",
+    "resultName": "dec_12_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "feb_2_pr",
+    "resultName": "feb_2_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "jan_1_pr",
+    "resultName": "jan_1_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "jul_7_pr",
+    "resultName": "jul_7_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "jun_6_pr",
+    "resultName": "jun_6_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "mar_3_pr",
+    "resultName": "mar_3_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "may_5_pr",
+    "resultName": "may_5_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "nov_11_pr",
+    "resultName": "nov_11_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "oct_10_pr",
+    "resultName": "oct_10_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "sep_9_pr",
+    "resultName": "sep_9_pr.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  }, 
+  {
+    "fileName": "abr_pr_2050",
+    "resultName": "abr_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "aug_pr_2050",
+    "resultName": "aug_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "dic_pr_2050",
+    "resultName": "dic_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "ene_pr_2050",
+    "resultName": "ene_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "feb_pr_2050",
+    "resultName": "feb_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "jul_pr_2050",
+    "resultName": "jul_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "jun_pr_2050",
+    "resultName": "jun_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "mar_pr_2050",
+    "resultName": "mar_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "may_pr_2050",
+    "resultName": "may_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "nov_pr_2050",
+    "resultName": "nov_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "oct_pr_2050",
+    "resultName": "oct_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
+  {
+    "fileName": "sep_pr_2050",
+    "resultName": "sep_pr_2050.tif",
+    "colorMaps": [
+      {
+        "upperBoundary": 500.0,
+        "color": "#FFFF80"
+      },
+      {
+        "upperBoundary": 1000.0,
+        "color": "#A1F24B"
+      },
+      {
+        "upperBoundary": 1500.0,
+        "color": "#38E009"
+      },
+      {
+        "upperBoundary": 2000.0,
+        "color": "#3DB868"
+      },
+      {
+        "upperBoundary": 2500.0,
+        "color": "#1A93AB"
+      },
+      {
+        "upperBoundary": 3000.0,
+        "color": "#204B91"
+      },
+      {
+        "upperBoundary": 9999999.0,
+        "color": "#0C1078"
+      }
+    ]
+  },
 	{
 		"fileName": "tmed_dif_alto.tif",
 		"resultName": "tmed_dif_alto.tif",
@@ -80,8 +1976,208 @@
 		]
 	},
 	{
+		"fileName": "hist_tmin_an",
+		"resultName": "hist_tmin_an.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "tmin_an_2050",
+		"resultName": "tmin_an_2050.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "hist_tmax_an",
+		"resultName": "hist_tmax_an.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
+		"fileName": "tmax_an_2050",
+		"resultName": "tmax_an_2050.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 5,
+				"color": "#4575B5"
+			},
+			{
+				"upperBoundary": 10,
+				"color": "#8DA5BA"
+			},
+			{
+				"upperBoundary": 15,
+				"color": "#FFFF73"
+			},
+			{
+				"upperBoundary": 20,
+				"color": "#FFAA00"
+			},
+			{
+				"upperBoundary": 25,
+				"color": "#E64C00"
+			},
+			{
+				"upperBoundary": 99999,
+				"color": "#A80000"
+			}
+		]
+	},
+	{
 		"fileName": "hist_prec_tot",
 		"resultName": "hist_prec_tot.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 500,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 1000,
+				"color": "#A1F24B"
+			},
+			{
+				"upperBoundary": 1500,
+				"color": "#38E009"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 2500,
+				"color": "#1A93AB"
+			},
+			{
+				"upperBoundary": 3000,
+				"color": "#204B91"
+			},
+			{
+				"upperBoundary": 9999999,
+				"color": "#0C1078"
+			}
+		]
+	},
+	{
+		"fileName": "pre_tot_2050",
+		"resultName": "pre_tot_2050.tif",
+		"clrFile": "",
+		"clrField": "",
+		"colorMaps": [
+			{
+				"upperBoundary": 500,
+				"color": "#FFFF80"
+			},
+			{
+				"upperBoundary": 1000,
+				"color": "#A1F24B"
+			},
+			{
+				"upperBoundary": 1500,
+				"color": "#38E009"
+			},
+			{
+				"upperBoundary": 2000,
+				"color": "#3DB868"
+			},
+			{
+				"upperBoundary": 2500,
+				"color": "#1A93AB"
+			},
+			{
+				"upperBoundary": 3000,
+				"color": "#204B91"
+			},
+			{
+				"upperBoundary": 9999999,
+				"color": "#0C1078"
+			}
+		]
+	},
+	{
+		"fileName": "precip_hist",
+		"resultName": "precip_hist.tif",
 		"clrFile": "",
 		"clrField": "",
 		"colorMaps": [
@@ -585,5 +2681,53 @@
 		"clrField": "",
 		"singleColorValue": "#E3F5C6",
 		"colorMaps": [ ]
-	}
+	},
+	{
+		"fileName": "POBLADOS_DMQ_GEO.shp",
+		"resultName": "Poblados.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "",
+		"colorMaps": [ ]
+	},
+	{
+		"fileName": "RED_VIAL_GENERAL_GEO.shp",
+		"resultName": "Red_Vial.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "",
+		"colorMaps": [ ]
+	},
+	{
+		"fileName": "RED_HIDRICA_DOBLE_GEO.shp",
+		"resultName": "Rios.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "",
+		"colorMaps": [ ]
+	},
+	{
+		"fileName": "SA_estaciones_Agustin.shp",
+		"resultName": "SA_estaciones_Agustin.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "FF0000",
+		"colorMaps": [ ]
+	},	
+	{
+		"fileName": "INAMHI_estaciones_temp.shp",
+		"resultName": "INAMHI_estaciones_temp.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "FF0000",
+		"colorMaps": [ ]
+	},	
+	{
+		"fileName": "INAMHI_estaciones_precip.shp",
+		"resultName": "INAMHI_estaciones_precip.json",
+		"clrFile": "",
+		"clrField": "",
+		"singleColorValue": "FF0000",
+		"colorMaps": [ ]
+	},	
 ]

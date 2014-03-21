@@ -46,6 +46,10 @@ body {
 
 }
 
+.menuOption{
+  margin-right: 4px;
+}
+
 /* Customize container */
 @media (min-width: 768px) {
   .container {

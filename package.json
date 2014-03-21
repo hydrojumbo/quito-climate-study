@@ -1,7 +1,9 @@
 {
   "name": "quitoclimatestudy",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "ng-slider": "~0.1.0"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",

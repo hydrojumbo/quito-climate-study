@@ -47,7 +47,7 @@ namespace qcspublish
 		}
 
 		/// <summary>
-		/// Provides numerical range matching.
+		/// Provides numerical range matching. Matches single color value if it exists.
 		/// </summary>
 		/// <param name="fileName"></param>
 		/// <param name="resultName"></param>
@@ -56,9 +56,13 @@ namespace qcspublish
 		public RGBColors ColorsOfValueInFile(string fileName, string resultName, double value)
 		{
 			ValidateFileName(fileName);
-
-			//will throw exception if value is bigger than greatest upper boundary
-			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color);			
+			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
+			if (!string.IsNullOrEmpty(map.singleColorValue))
+			{
+				return new RGBColors(map.singleColorValue);
+			}
+			//will throw exception if value is bigger than greatest upper boundary or no colormaps and no singlecolor value exist; call MapColorsToThisResult first
+			return new RGBColors(map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color);			
 		}
 
 		public Boolean IsCategoricalMap(string fileName, string resultName)
@@ -71,9 +75,16 @@ namespace qcspublish
 			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().singleColorValue;
 		}
 
+		/// <summary>
+		/// If false, this shape should be represented by a black outline and opaque center.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns></returns>
 		public Boolean MapColorsToThisResult(string fileName, string resultName)
 		{
-			return jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Count() > 1;			
+			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
+			return map.colorMaps.Count() > 1 && string.IsNullOrEmpty(map.singleColorValue);
 		}
 
 		/// <summary>

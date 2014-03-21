@@ -1,0 +1,37 @@
+{
+  "name": "ng-slider",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "homepage": "https://github.com/darul75/ng-slider",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darul75/ng-slider.git"
+  },
+  "keywords": [
+    "angular",
+    "slider",
+    "control",
+    "ui"
+  ],
+  "main": "./src/ng-slider.js",
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-sanitize": "1.2.x",
+    "jquery": "latest"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.2.x"
+  },
+  "_release": "4dfea6ca56",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4dfea6ca56f9e698dd9f0ceab03d49d90f72daba"
+  },
+  "_source": "git://github.com/darul75/ng-slider.git",
+  "_target": "*",
+  "_originalSource": "ng-slider",
+  "_direct": true
+}
