@@ -6,9 +6,9 @@ angular.module('quitoClimateStudyApp')
     var vulnerabilities = [
     	{
     		name: 'Agua',
-    		description: 'Please add text describing the sector for the Description del sector',
+    		description: 'Please add text describing this vulnerability.',
     		furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-    		analysisNarrative: 'Please add text for the Narrativa sobre el análisis para el sector Exposure, Sensitivity, Adaptative Capacity',
+    		analysisNarrative: 'Please add a brief analysis narrative.',
 
             questions:
             [
@@ -233,14 +233,14 @@ angular.module('quitoClimateStudyApp')
     	},
         {
             name: 'Clima',
-            description: 'Please add text describing the sector for the Description del sector',
+            description: 'Please add text describing this vulnerability.',
             furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-            analysisNarrative: 'Please add text for the Narrativa sobre el análisis para el sector Exposure, Sensitivity, Adaptative Capacity',
+            analysisNarrative: 'Please add a brief analysis narrative.',
 
             questions:
             [
                 {
-                    name: 'Sector Clima - Datos Historicos y Futuros (2050)',
+                    name: 'Datos Historicos y Futuros (2050)',
                     description: 'Explicación sobre cómo genera los escenarios utilizando las diferentes opciones del menú de la izquierda.',
                     categories: [
                         {        
@@ -1012,7 +1012,51 @@ angular.module('quitoClimateStudyApp')
                     ]                    
                 }
             ]               
-        }  
+        },
+        {
+            name: 'Agricultura',
+            description: 'Please add text describing this vulnerability.',
+            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
+            analysisNarrative: 'Please add a brief analysis narrative.',
+            questions:[
+                {
+                    name: 'Paramo',
+                    description: 'Please add description of Paramo',
+                    categories: []
+                }
+            ]
+        }, 
+        {
+            name: 'Incendios',
+            description: 'Please add text describing this vulnerability.',
+            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
+            analysisNarrative: 'Please add a brief analysis narrative.',
+            questions:[
+                {
+                    name: 'Forestales',
+                    description: 'Please add description of Forestales',
+                    categories: []
+                }
+            ]
+        },
+        {
+            name: 'Ecosystems',
+            description: 'Please add text describing this vulnerability.',
+            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
+            analysisNarrative: 'Please add a brief analysis narrative.',
+            questions:[
+                {
+                    name: 'Current, No C.C.',
+                    description: 'Please add description of Current, No C.C.',
+                    categories: []
+                },
+                {
+                    name: 'Future, C.C.',
+                    description: 'Please add description of Future, C.C.',
+                    categories: []
+                }
+            ]
+        }
     ];
 
     return {

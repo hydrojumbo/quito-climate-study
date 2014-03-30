@@ -32,7 +32,7 @@ angular.module('quitoClimateStudyApp')
     });
 
     $scope.getTitle = function() {
-    	var title = 'quito climate study';
+    	var title = 'Estudio de Cambio Climático Quito';
     	if (!_.isUndefined(currentLocation.vuln)) {
     		title = title + ' / ' + currentLocation.vuln;
     	}

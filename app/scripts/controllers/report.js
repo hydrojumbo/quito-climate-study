@@ -4,6 +4,7 @@ angular.module('quitoClimateStudyApp')
   .controller('ReportCtrl', ['$scope', '$rootScope', '$routeParams', 'Vulnerabilidad', 'Introduction', 'Amenazas', 'Documents', 'Titleservice',
   	function ($scope, $rootScope, $routeParams, Vulnerabilidad, Introduction, Amenazas, Documents, Titleservice) {  		  		
 
+      $scope.setPercentHeight = true;
       $scope.vulnerabilities = Vulnerabilidad.getVulnerabilityNames();
   		$scope.amenazaNames = Amenazas.getAmanazaNames();
   		$scope.documents = Documents.getDocumentList();  		  	

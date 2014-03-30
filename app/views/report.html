@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row mainArea">
 	<div class="col-md-3">  	
 		<h4>Ambitos de Estudio para el análisis de vulnerabilidad</h4>
 		<!--<p><strong>Vulnerabilidad</strong></p>-->
@@ -13,12 +13,18 @@
 		<img src="images/fotoportada.jpg"></img>
 	</div>
 	<div class="col-md-9" data-ng-show="hasCurrentVulnerability()">
+			<h4>{{ currentVulnerability.name }}</h4>
+			<p>{{ currentVulnerability.description }}</p>		
+			<p>{{ currentVulnerability.analysisNarrative }}</p>	
+			<p>Para obtener más información, <a data-ng-href="{{ currentVulnerability.furtherInfoReport }}">descargue el informe.</a></p>
+			</br>
 			<h4>Las Preguntas</h4>
 			<div data-ng-repeat="q in currentQuestions">
 				<p>
 					<strong><a data-ng-click="chooseQuestion(q.name)" href="#Vulnerability/{{q.vulnerability}}&{{q.name}}">{{q.name}}: </a></strong>
 					{{q.description}}
 				</p>
+
 			</div>
 			<h4></h4>
 		

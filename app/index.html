@@ -40,7 +40,7 @@
     </div>
     
     <!-- Top-level routing applied here -->
-    <div class="container-fluid mainArea" data-ng-view></div>
+    <div class="container-fluid" data-ng-class="{mainArea: setPercentHeight}" data-ng-view></div>
     
     <div class="footer">
       <img height="40" src="images/cdkn-logo.png" alt="CDKN Logo">
@@ -97,6 +97,7 @@
     <script src="scripts/directives/layerSection.js"></script>
     <script src="scripts/controllers/header.js"></script>
     <script src="scripts/services/titleService.js"></script>
+    <script src="scripts/controllers/longflowController.js"></script>
     <!-- endbuild -->
    </body>
 </html>
