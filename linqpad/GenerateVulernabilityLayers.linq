@@ -65,12 +65,15 @@ void Main()
 			// dest.CreateSubdirectory(file.Name.Replace(".tif", ""));
 			layers.Add(new UserQuery.Layer() {
 			 data = file.Name.Replace(".tif", ""), isSelected = false, 
-			 name = "Historica (1960-1990) " + tInfo.ToTitleCase(string.Join(" ", file.Name.Replace(".tif", "").Split('_').Take(2))), 
+			 // name = "Futuro (2050) " + tInfo.ToTitleCase(string.Join(" ", file.Name.Replace(".tif", "").Split('_').Take(2))), 
+			 name = "Historica (1960 - 1990) " + tInfo.ToTitleCase(string.Join(" ", file.Name.Replace(".tif", "").Split('_').Take(2))), 
 			 opacity = 1, type = "raster"
 			});
 		// }
-	}	
-	JsonConvert.SerializeObject(layers.Where(r => r.data.ToUpper().EndsWith("TMIN")).OrderBy(a => Convert.ToInt32(a.data.Split('_')[1])), Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}).Dump();
+	}		
+	
+	layers.Where(r => r.data.ToUpper().EndsWith("_PR_2050") && r.data.Contains("2050") && !r.data.ToUpper().EndsWith("AN") && !r.data.ToUpper().Contains("_DIF_")).Dump();
+	JsonConvert.SerializeObject(layers.Where(r => r.data.ToUpper().EndsWith("_PR_2050") && r.data.Contains("2050") && !r.data.ToUpper().EndsWith("AN") && !r.data.ToUpper().Contains("_DIF_"))/*.OrderBy(a => Convert.ToInt32(a.data.Split('_')[1]))*/, Newtonsoft.Json.Formatting.Indented, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore}).Dump();
 }
 
 // Define other methods and classes here

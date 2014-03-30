@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('quitoClimateStudyApp')
-  .controller('ReportCtrl', ['$scope', '$routeParams', 'Vulnerabilidad', 'Introduction', 'Amenazas', 'Documents', 
-  	function ($scope, $routeParams, Vulnerabilidad, Introduction, Amenazas, Documents) {  		  		
+  .controller('ReportCtrl', ['$scope', '$rootScope', '$routeParams', 'Vulnerabilidad', 'Introduction', 'Amenazas', 'Documents', 'Titleservice',
+  	function ($scope, $rootScope, $routeParams, Vulnerabilidad, Introduction, Amenazas, Documents, Titleservice) {  		  		
 
       $scope.vulnerabilities = Vulnerabilidad.getVulnerabilityNames();
   		$scope.amenazaNames = Amenazas.getAmanazaNames();
@@ -17,20 +17,15 @@ angular.module('quitoClimateStudyApp')
         return (angular.isUndefined($scope.currentVulnerability) || $scope.currentVulnerability === null);
       };
 
-  		$scope.changeFocus = function(itemType, item) {  			  		
-  			if (itemType === 'vulnerability') {
-				  $scope.currentVulnerability = Vulnerabilidad.getIntroOfVulnerabilityByName(item);
-	  			console.log($scope.currentVulnerability);		
-          $scope.currentQuestions = Vulnerabilidad.getQuestionsOfVulnerability(item);                  
-  			}  			
-  		};
-
-      $scope.select = function(layer) {
-        console.log(layer);
+      $scope.chooseQuestion =function(question) {
+        Titleservice.setAppLocation(question, 'question');
       };
 
-  		$scope.changeView = function(item) {
-  			console.log(item);
-  			$scope.currentView = item;
+  		$scope.changeFocus = function(itemType, item) {  			  		
+  			if (itemType === 'vulnerability') {
+				  $scope.currentVulnerability = Vulnerabilidad.getIntroOfVulnerabilityByName(item);	  			
+          $scope.currentQuestions = Vulnerabilidad.getQuestionsOfVulnerability(item);
+          Titleservice.setAppLocation($scope.currentVulnerability.name, 'vulnerability');
+  			}  			
   		};
 	}]);

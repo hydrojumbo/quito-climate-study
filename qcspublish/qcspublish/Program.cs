@@ -45,7 +45,7 @@ namespace qcspublish
 			string rasterout = @"rasterout\";
 			string vectorout = @"vectorout\";			
 			string tifResultDir = srcDir + rasterout;
-			string shpResultDir = srcDir + vectorout;			
+			string shpResultDir = srcDir + vectorout;
 			
 			if (args.Length == 1)
 			{
@@ -62,19 +62,19 @@ namespace qcspublish
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
 			
-			//compute - todo: why does running both raster and vector data sometimes result in memory exception?
-			/*Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
+			//compute files to publish to web
+			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
 			processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, "hdr.adf", processedRasters);
-			processedRasters.AddRange(gridResults.Item1);*/
+			processedRasters.AddRange(gridResults.Item1);
 			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
 			
 			//reporting
 			sw.Stop();
 			Console.WriteLine("*********");
-			/*Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
-			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));*/
+			Console.WriteLine("Unknown raster color maps in colormap.json, these files were not processed:");			
+			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
 			vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);

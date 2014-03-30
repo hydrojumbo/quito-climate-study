@@ -29,14 +29,14 @@
     <!-- Add your site or application content here -->
     <div class="header" data-ng-controller="HeaderCtrl">
       <ul class="nav nav-pills">
-        <li data-ng-class="{active: isActive('/')}"><a href="#/index.html/">Inicio</a></li>
-        <li data-ng-class="{active: isActive('/Somos')}"><a href="#/Somos">Los participantes</a></li>
-        <li data-ng-class="{active: isActive('/Metodologia')}"><a href="#/Metodologia">Metodología</a></li>
-        <li data-ng-class="{active: isActive('/Principales')}"><a href="#/Principales">Principales logros</a></li>
-        <li data-ng-class="{active: isActive('/Medidas')}"><a href="#/Medidas">Medidas de adaptación</a></li>
+        <li data-ng-class="{active: isActive('/')}"><a data-ng-click="resetTitle()" href="#/index.html/">Inicio</a></li>
+        <li data-ng-class="{active: isActive('/Somos')}"><a data-ng-click="resetTitle()" href="#/Somos">Los participantes</a></li>
+        <li data-ng-class="{active: isActive('/Metodologia')}"><a data-ng-click="resetTitle()" href="#/Metodologia">Metodología</a></li>
+        <li data-ng-class="{active: isActive('/Principales')}"><a data-ng-click="resetTitle()" href="#/Principales">Principales logros</a></li>
+        <li data-ng-class="{active: isActive('/Medidas')}"><a data-ng-click="resetTitle()" href="#/Medidas">Medidas de adaptación</a></li>
         <!--<li><a href="#Vulnerability/agua&season">Test Vulnerability</a></li>-->
       </ul>
-      <h3 class="text-muted">quito climate study</h3>
+      <h3 class="text-muted">{{ getTitle() }}</h3>
     </div>
     
     <!-- Top-level routing applied here -->
@@ -84,8 +84,7 @@
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>        
+    <script src="scripts/app.js"></script>        
     <script src="scripts/services/documents.js"></script>
     <script src="scripts/services/vulnerabilidad.js"></script>
     <script src="scripts/services/amenazas.js"></script>        
@@ -97,6 +96,7 @@
     <script src="scripts/controllers/vulnerability.js"></script>
     <script src="scripts/directives/layerSection.js"></script>
     <script src="scripts/controllers/header.js"></script>
+    <script src="scripts/services/titleService.js"></script>
     <!-- endbuild -->
    </body>
 </html>

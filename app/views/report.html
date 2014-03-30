@@ -6,14 +6,21 @@
 		<!--<p><strong>Amenazas (lista)</strong></p>  		
 		<div data-ng-repeat="am in amenazaNames"><a>{{am}}</a></div>-->
 		<h4>Documentos/Publicaciones</h4>  		  		
-		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}">{{doc.name}}</a></div>	       
+		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}">{{doc.name}}</a></div>	
+		</br>
 	</div>
 	<div class="col-md-9" data-ng-show="IsDefaultView()">
 		<img src="images/fotoportada.jpg"></img>
 	</div>
 	<div class="col-md-9" data-ng-show="hasCurrentVulnerability()">
-		<div class="row">
-			<h4 data-ng-repeat="q in currentQuestions"><a href="#Vulnerability/{{q.vulnerability}}&{{q.name}}">{{q.name}}</a></h4>
-		</div>
+			<h4>Las Preguntas</h4>
+			<div data-ng-repeat="q in currentQuestions">
+				<p>
+					<strong><a data-ng-click="chooseQuestion(q.name)" href="#Vulnerability/{{q.vulnerability}}&{{q.name}}">{{q.name}}: </a></strong>
+					{{q.description}}
+				</p>
+			</div>
+			<h4></h4>
+		
 	</div>
 </div>
