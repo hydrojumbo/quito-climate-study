@@ -37,13 +37,14 @@ namespace azureUploader
 		/// </summary>
 		/// <param name="localDirectory"></param>
 		/// <param name="remoteContainerPath"></param>
+		/// <param name="skipDirectories">Directories to skip</param>
 		/// <returns></returns>
-		public async Task Upload(string localDirectory, string remoteContainerPath)
+		public async Task Upload(string localDirectory, string remoteContainerPath, IEnumerable<string> skipDirectories)
 		{
 			CloudBlobClient client = csa.CreateCloudBlobClient();
 			ConfigureCorsAndLoggingOnStorageAccount(client);
 			client.RetryPolicy = new Microsoft.WindowsAzure.Storage.RetryPolicies.ExponentialRetry();
-			await UploadFilesOfDirectory(localDirectory, remoteContainerPath, client);
+			await UploadFilesOfDirectory(localDirectory, remoteContainerPath, client, skipDirectories);
 			return;
 		}
 
@@ -54,7 +55,7 @@ namespace azureUploader
 		/// <param name="remoteContainerPath"></param>
 		/// <param name="client"></param>
 		/// <returns></returns>
-		private async Task UploadFilesOfDirectory(string localDirectory, string remoteContainerPath, CloudBlobClient client)
+		private async Task UploadFilesOfDirectory(string localDirectory, string remoteContainerPath, CloudBlobClient client, IEnumerable<string> skipDirectories)
 		{
 			Console.WriteLine("");
 			Console.WriteLine("Uploading files from " + localDirectory + "...");
@@ -96,8 +97,11 @@ namespace azureUploader
 			
 			foreach (DirectoryInfo child in local.GetDirectories())
 			{
-				string nextContainer = remoteContainerPath.Contains("$root") ? child.Name : remoteContainerPath + "/" + child.Name;
-				await UploadFilesOfDirectory(child.FullName,  nextContainer, client);
+				//if (!skipDirectories.Contains(child.Name))
+				//{
+					string nextContainer = remoteContainerPath.Contains("$root") ? child.Name : remoteContainerPath + "/" + child.Name;
+					await UploadFilesOfDirectory(child.FullName, nextContainer, client, skipDirectories);
+				//}				
 			}					
 			return;
 		}

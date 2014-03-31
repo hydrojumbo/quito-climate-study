@@ -39,8 +39,8 @@
 			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
 #endif
 			Stopwatch sw = new Stopwatch();
-			sw.Start();			
-			Task t = UploadFiles(accountName, actkey, localDir);
+			sw.Start();
+			Task t = UploadFiles(accountName, actkey, localDir, new List<string>() { "raster", "vector" });
 
 			t.ContinueWith((str) =>
 			{
@@ -52,10 +52,10 @@
 			Console.WriteLine(string.Format("Upload completed in {0} seconds", sw.Elapsed.TotalSeconds));
 		}
 
-		public async static Task UploadFiles(string accountName, string actkey, string localDir)
+		public async static Task UploadFiles(string accountName, string actkey, string localDir, IEnumerable<string> skipDirectories)
 		{
 			Uploader uploader = new Uploader(accountName, actkey);
-			await uploader.Upload(localDir, "$root");
+			await uploader.Upload(localDir, "$root", skipDirectories);
 		}
 	}
 }
