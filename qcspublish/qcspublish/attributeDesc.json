@@ -1,0 +1,275 @@
+﻿[
+	{
+		"fileName": "POLIT_BIOGEO_COBER_VEGET_diss_cult_3",
+		"attributes": [
+			{
+				"name": "Cultivos_1",
+				"definition": "Un estimación de los tipos de cultivos presente"
+			},
+			{
+				"name": "Seasn_Sens",
+				"definition": "Nivel de sensibilidad de los ciclos de crecimiento de este grupo de cultivos"
+			}	
+		]
+	},
+	{
+		"fileName": "regiones_clima3",
+		"attributes": [
+			{
+				"name": "CLIMA",
+				"definition": "Clasificación bioclimatica del región (fuente - IPCC)"
+			},
+			{
+				"name": "Area_km2",
+				"definition": "Área total de cada región"
+			},
+			{
+				"name": "Area_Cult",
+				"definition": "Área cultivado"
+			},
+			{
+				"name": "Pct_Cult",
+				"definition": "Porcentaje de área total cultivado"
+			},
+			{
+				"name": "Season_Sens",
+				"definition": "Nivel de sensibilidad de los ciclos de crecimiento de este grupo de cultivos"
+			},
+			{
+				"name": "Hist_T",
+				"definition": "Promedia Temperatura °C Anual Historica (1960 - 1990)"
+			},
+			{
+				"name": "Future_T",
+				"definition": "Promedia Temperatura °C Anual Futura frente muy alta carbón (2050)"
+			},
+			{
+				"name": "Delat_T",
+				"definition": "Cambio del Promedio Temperatura °C Anual Futura frente muy alta carbón (2050)"
+			},
+			{
+				"name": "Avg_Precip",
+				"definition": "Promedia Precipitacón (mm) Anual Historica (1960 - 1990)"
+			}
+		]
+	},
+	{
+		"fileName": "Sensibilidad_Ag_Frontier",
+		"attributes": [
+			{
+				"name": "Area_km2",
+				"definition": "Área total de cada región"
+			},
+			{
+				"name": "Hist_Pct_C",
+				"definition": "Porcentaje de área cultivado actual de cada región"
+			},
+			{
+				"name": "Fut_Pct_Cu",
+				"definition": "Porcentaje de área cultivado previsto (2050) de cada región"
+			},
+			{
+				"name": "Hist_Area",
+				"definition": "Área (km2) cultivado actual de cada región "
+			},
+			{
+				"name": "Fut_Area_C",
+				"definition": "Área (km2) cultivado previsto (2050) de cada región"
+			},
+			{
+				"name": "Pct_Cult_D",
+				"definition": "Aumento en porcentaje de área cultivado previsto (2050)"
+			},
+			{
+				"name": "Pct_Increase",
+				"definition": "Rangos de aumento en porcentaje de área cultivado previsto (2050)"
+			},
+			{
+				"name": "Area_incr",
+				"definition": "Aumento en área (km2) de área cultivado"
+			},
+			{
+				"name": "Sensitivit",
+				"definition": "Sensibilidad de cada región frente aumento en frontera agrícola"
+			},
+			{
+				"name": "Vulnerabil",
+				"definition": "Vulnerabilidad de cada región frente aumento en frontera agrícola"
+			},
+			{
+				"name": "Elev_meter",
+				"definition": "Rango de elevaciónes (m) de cada región"
+			},
+			{
+				"name": "Area_Incre",
+				"definition": "Rangos de aumento en área (km2) de área cultivado"
+			}
+		]
+	},
+	{
+		"fileName": "INMAHI_estaciones_precip",
+		"attributes": [
+			{
+				"name": "Rango_Dato",
+				"definition": "Rango de años del registro"
+			},
+			{
+				"name": "Anos_Falta",
+				"definition": "Numero de años sin datos dentro el rango"
+			}	
+		]
+	},
+	{
+		"fileName": "INAMHI_estaciones_temp",
+		"attributes": [
+			{
+				"name": "Rango_Dato",
+				"definition": "Rango de años del registro"
+			},
+			{
+				"name": "Anos_Falta",
+				"definition": "Numero de años sin datos dentro el rango"
+			}		
+		]
+	},
+	{
+		"fileName": "SA_estaciones_Agustin",
+		"attributes": [
+			{
+				"name": "Lat",
+				"definition": "Latitud"
+			},
+			{
+				"name": "Lon",
+				"definition": "Longitud"
+			},
+			{
+				"name": "Rango_Dato",
+				"definition": "Rango de años del registro"
+			},
+			{
+				"name": "Anos_Falta",
+				"definition": "Numero de años sin datos dentro el rango"
+			}		
+		]
+	},
+	{
+		"fileName": "Cuenca_paramoloss",
+		"attributes": [
+			{
+				"name": "cod_sub",
+				"definition": "Código de la cuenca en el modelo WEAP"
+			},
+			{
+				"name": "nombres",
+				"definition": "nombre de la cuenca"
+			},
+			{
+				"name": "area_km2",
+				"definition": "área superficie (km2) de la cuenca"
+			},
+			{
+				"name": "alti_m",
+				"definition": "promedio altitud de la cuenca (m)"
+			},
+			{
+				"name": "temp_C",
+				"definition": "promedio temperatura anual de la cuenca (°C)"
+			},
+			{
+				"name": "Pr_2007",
+				"definition": "Porcentaje (%) de la cuenca clasificado como páramo en 2007"
+			},
+			{
+				"name": "Pr_2050",
+				"definition": "Porcentaje (%) de la cuenca clasificado como páramo previsto en 2050"
+			},
+			{
+				"name": "Param_loss",
+				"definition": "Porcentaje (%) del páramo perdido en el cuenca entre 2007 - 2050"
+			}	
+		]
+	},
+	{
+		"fileName": "cuenas_final_weap_4",
+		"attributes": [
+			{
+				"name": "cod_sub",
+				"definition": "Código de la cuenca en el modelo WEAP"
+			},
+			{
+				"name": "area_km2",
+				"definition": "área superficie (km2) de la cuenca"
+			},
+			{
+				"name": "alti_m",
+				"definition": "promedio altitud de la cuenca (m)"
+			},
+			{
+				"name": "temp_C",
+				"definition": "promedio temperatura anual de la cuenca (°C)"
+			},
+			{
+				"name": "Pr_2007",
+				"definition": "Porcentaje (%) de la cuenca clasificado como páramo en 2007"
+			},
+			{
+				"name": "Pr_2050",
+				"definition": "Porcentaje (%) de la cuenca clasificado como páramo previsto en 2050"
+			},
+			{
+				"name": "Pr_diff",
+				"definition": "Porcentaje (%) del páramo perdido en el cuenca entre 2007 - 2050"
+			},
+			{
+				"name": "Precip",
+				"definition": "Promedio precipitación anual (mm) en la cuenca"
+			},
+			{
+				"name": "Precip_dry",
+				"definition": "Promedio precipitación anual (mm) en la cuenca en el escenario de sequía"
+			}			
+		]
+	},
+	{
+		"fileName": "service_area_final",
+		"attributes": [
+			{
+				"name": "Sistem",
+				"definition": "nombre de la sistema del agua potable"
+			},
+			{
+				"name": "area_ha",
+				"definition": "área de la sistema en hectáreas"
+			},
+			{
+				"name": "2010_Pop",
+				"definition": "Habitantes actual dentro la sistema (2010 censo)"
+			},
+			{
+				"name": "2020_Pop",
+				"definition": "Habitantes actual dentro la sistema (2020 proyección)"
+			},
+			{
+				"name": "2030_Pop",
+				"definition": "Habitantes actual dentro la sistema (2030 proyección)"
+			},
+			{
+				"name": "2040_Pop",
+				"definition": "Habitantes actual dentro la sistema (2040 proyección)"
+			},
+			{
+				"name": "2050_Pop",
+				"definition": "Habitantes actual dentro la sistema (2050 proyección)"
+			},
+			{
+				"name": "Pop_growth",
+				"definition": "Porcentaje (%) crecimiento del población entre 2010 - 2050"
+			},
+			{
+				"name": "Sensibilid",
+				"definition": "Sensibilidad relativa de cada sistema frente crecimiento de población"
+			}
+		]
+	}
+]

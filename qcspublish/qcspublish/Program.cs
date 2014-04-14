@@ -13,6 +13,7 @@ using NetTopologySuite.IO;
 using System.Collections;
 using NetTopologySuite.Geometries;
 using System.Diagnostics;
+using Newtonsoft.Json;
 
 namespace qcspublish
 {
@@ -25,10 +26,13 @@ namespace qcspublish
 		/// <param name="lpValue"></param>
 		/// <returns></returns>
 		[DllImport("kernel32.dll", CharSet=CharSet.Auto, SetLastError=true)]
-		public static extern bool SetEnvironmentVariable(string lpName, string lpValue);
+		public static extern bool SetEnvironmentVariable(string lpName, string lpValue);		
 
-		public static string appNamespace = "quito-";
+		/// <summary>
+		/// Unique attribute column name used to encode the color applied in the attribute table and geojson metadata output of vector inputs.
+		/// </summary>
 		public static string appColorNamspace = "quito-color";
+		
 		static void Main(string[] args)
 		{
 			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
@@ -39,13 +43,23 @@ namespace qcspublish
 
 			//register gdal extensions
 			Gdal.AllRegister();
-
-			// string srcDir = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);			
+			
 			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
-			string rasterout = @"rasterout\";
-			string vectorout = @"vectorout\";			
-			string tifResultDir = srcDir + rasterout;
-			string shpResultDir = srcDir + vectorout;
+			string resultDir = srcDir;
+			string copyToOut = @"CopyToApp\";
+			string rasterout = @"raster\";
+			string vectorout = @"vector\";
+			string legendout = @"legend\";
+
+			string tifResultDir = resultDir + copyToOut + rasterout;
+			string shpResultDir = resultDir + copyToOut + vectorout;
+			DirectoryInfo copyTo = new DirectoryInfo(srcDir + copyToOut);
+			if (!copyTo.Exists)
+			{
+				copyTo.Create();
+			}
+
+			DirectoryInfo legResultDir = new DirectoryInfo(resultDir + copyToOut + legendout);
 			
 			if (args.Length == 1)
 			{
@@ -53,6 +67,7 @@ namespace qcspublish
 			}			
 						
 			IColorRepository colorRepo = new ColorRepository();
+			LegendRepository legend = new LegendRepository();
 
 			//see: http://sharpmap.codeplex.com/discussions/421752			
 			GeoAPI.GeometryServiceProvider.Instance = new NetTopologySuite.NtsGeometryServices();
@@ -63,12 +78,19 @@ namespace qcspublish
 			sw.Start();
 			
 			//compute files to publish to web
-			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, ".tif", processedRasters);
+			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, ".tif", processedRasters);
 			processedRasters = rasterResults.Item1;
-			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, "hdr.adf", processedRasters);
+			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, "hdr.adf", processedRasters);
 			processedRasters.AddRange(gridResults.Item1);
-			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, ".shp", processedVectors);
+			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, legend, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
+			
+			//output legend file
+			if (!legResultDir.Exists)
+			{
+				legResultDir.Create();
+			}
+			File.WriteAllText(legResultDir.FullName + "legend.json", JsonConvert.SerializeObject(legend));			
 			
 			//reporting
 			sw.Stop();
@@ -77,19 +99,23 @@ namespace qcspublish
 			rasterResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
 			Console.WriteLine("Unknown vector color maps in colormap.json, these files were not processed:");
 			vectorResults.Item2.ForEach(a => Console.WriteLine("=> " + a));
-			Console.WriteLine("Finished processing {0} datasets in {1} seconds.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
+			Console.WriteLine("Finished processing {0} datasets in {1} seconds. Press any key to close.", processedRasters.Count() + processedVectors.Count(), sw.Elapsed.TotalSeconds);
 			Console.ReadKey();
 		}		
 
 		/// <summary>
 		/// Applies required transformations to input GIS datasets for web publishing of study sources.
 		/// </summary>
-		/// <param name="args"></param>
+		/// <param name="args">Ag</param>
 		/// <param name="srcDir"></param>
-		/// <param name="resultDir"></param>
-		/// <param name="srcDrv"></param>
+		/// <param name="resultDirectory"></param>
 		/// <param name="colorRepo"></param>
-		private static Tuple<List<string>, List<string>> ProcessDatasets(string[] args, string srcDir, string resultDirectory, IColorRepository colorRepo, string fileSearchPattern, List<string> processedDatasets)
+		/// <param name="legendRepo"></param>
+		/// <param name="fileSearchPattern">Locates files to process in a directory by matching * + this against filenames.</param>
+		/// <param name="processedDatasets"></param>
+		/// <returns></returns>
+		private static Tuple<List<string>, List<string>> ProcessDatasets(string[] args, string srcDir, string resultDirectory, 
+			IColorRepository colorRepo, LegendRepository legendRepo, string fileSearchPattern, List<string> processedDatasets)
 		{			
 			if (!fileSearchPattern.Equals(".tif") && !fileSearchPattern.Equals(".shp") && !fileSearchPattern.Contains(".adf"))
 			{
@@ -109,19 +135,19 @@ namespace qcspublish
 				
 				if (fileSearchPattern == ".tif")
 				{
-					results = ProcessRasterFiles(args, colorRepo, fileSearchPattern, di, resultDir, processedDatasets);
+					results = ProcessRasterFiles(args, colorRepo, legendRepo, fileSearchPattern, di, resultDir, processedDatasets);
 					processedDatasets = results.Item1;
 					skipped.AddRange(results.Item2);
 				}
 				else if (fileSearchPattern == ".shp")
 				{
-					results = ProcessVectorFiles(args, colorRepo, fileSearchPattern, di, resultDir, processedDatasets);
+					results = ProcessVectorFiles(args, colorRepo, legendRepo, fileSearchPattern, di, resultDir, processedDatasets);
 					processedDatasets = results.Item1;
 					skipped.AddRange(results.Item2);
 				}
 				else
 				{
-					results = ProcessGridFiles(args, colorRepo, fileSearchPattern, di, resultDir, processedDatasets);
+					results = ProcessGridFiles(args, colorRepo, legendRepo, fileSearchPattern, di, resultDir, processedDatasets);
 					processedDatasets = results.Item1;
 					skipped.AddRange(results.Item2);
 				}
@@ -130,7 +156,7 @@ namespace qcspublish
 			//recurse through subdirectories
 			foreach (DirectoryInfo subDi in di.GetDirectories())
 			{
-				results = ProcessDatasets(args, subDi.FullName, resultDirectory, colorRepo, fileSearchPattern, processedDatasets);
+				results = ProcessDatasets(args, subDi.FullName, resultDirectory, colorRepo, legendRepo, fileSearchPattern, processedDatasets);
 				processedDatasets = results.Item1;
 				skipped.AddRange(results.Item2);
 			}
@@ -146,7 +172,7 @@ namespace qcspublish
 		/// <param name="extension"></param>
 		/// <param name="di"></param>
 		/// <param name="resultDir"></param>
-		private static Tuple<List<string>, List<string>> ProcessRasterFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessRasterFiles(string[] args, IColorRepository colorRepo, LegendRepository legend, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
 		{			
 			OSGeo.GDAL.Driver srcDrv = Gdal.GetDriverByName("GTiff");
 			List<string> skipped = new List<string>();
@@ -159,6 +185,7 @@ namespace qcspublish
 						if (!processedDatasets.Contains(resultName))
 						{
 							ProcessRasterFile(args, colorRepo, resultDir, srcDrv, fi, resultName);
+							legend.Add(resultName.Replace(".tif", "").Replace(".json", ""), colorRepo.FileLegend(fi.Name, resultName));
 							processedDatasets.Add(resultName);
 						}						
 					}
@@ -171,7 +198,7 @@ namespace qcspublish
 			return new Tuple<List<string>, List<string>>(processedDatasets, skipped);
 		}
 
-		private static Tuple<List<string>, List<string>> ProcessGridFiles(string[] args, IColorRepository colorRepo, string gridHdrName, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessGridFiles(string[] args, IColorRepository colorRepo, LegendRepository legend, string gridHdrName, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
 		{
 			OSGeo.GDAL.Driver srcDrv = Gdal.GetDriverByName("GTiff");
 			List<string> skipped = new List<string>();
@@ -184,6 +211,7 @@ namespace qcspublish
 						if (!processedDatasets.Contains(resultName))
 						{
 							ProcessRasterGrid(args, colorRepo, resultDir, srcDrv, fi, resultName);
+							legend.Add(resultName.Replace(".tif", "").Replace(".json", ""), colorRepo.FileLegend(fi.Directory.Name, resultName));
 							processedDatasets.Add(resultName);
 						}
 					}
@@ -321,7 +349,7 @@ namespace qcspublish
 		/// <param name="di"></param>
 		/// <param name="resultDir"></param>
 		/// <remarks>See http://nettopologysuite.googlecode.com/svn/branches/v2.0/NetTopologySuite.Samples.Console/SimpleTests/Attributes/AttributesTest.cs </remarks>
-		private static Tuple<List<string>, List<string>> ProcessVectorFiles(string[] args, IColorRepository colorRepo, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
+		private static Tuple<List<string>, List<string>> ProcessVectorFiles(string[] args, IColorRepository colorRepo, LegendRepository legend, string extension, DirectoryInfo di, DirectoryInfo resultDir, List<string> processedDatasets)
 		{
 			List<string> skipped = new List<string>();
 			foreach (FileInfo fi in FilesInDirectoryWithExtension(extension, di))
@@ -333,6 +361,7 @@ namespace qcspublish
 						if (!processedDatasets.Contains(resultName))
 						{
 							ProcessVectorFile(colorRepo, resultDir, fi, resultName);
+							legend.Add(resultName, colorRepo.FileLegend(fi.Name, resultName));
 							processedDatasets.Add(resultName);
 						}						
 					}

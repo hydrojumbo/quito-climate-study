@@ -275,21 +275,21 @@ angular.module('quitoClimateStudyApp')
                                         },         
                                         {
                                             name: 'Poblados',
-                                            data: 'POBLADOS_DMQ_GEO',
+                                            data: 'Poblados',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
                                         }, 
                                         {
                                             name: 'Red Vial',
-                                            data: 'RED_VIAL_GENERAL_GEO',
+                                            data: 'Red_Vial',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Rios',
-                                            data: 'RED_HIDRICA_DOBLE_GEO',
+                                            data: 'Rios',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
@@ -429,172 +429,172 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            "name": "Historica (1960-1990) Jan 1",
-                                            "data": "jan_1_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Jan 1",
+                                            data: "jan_1_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
+                                        },
+                                        {
+                                            name: "Historica (1960-1990) Feb 2",
+                                            data: "feb_2_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Feb 2",
-                                            "data": "feb_2_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Mar 3",
+                                            data: "mar_3_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Mar 3",
-                                            "data": "mar_3_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Abr 4",
+                                            data: "abr_4_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Abr 4",
-                                            "data": "abr_4_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) May 5",
+                                            data: "may_5_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) May 5",
-                                            "data": "may_5_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Jun 6",
+                                            data: "jun_6_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Jun 6",
-                                            "data": "jun_6_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Jul 7",
+                                            data: "jul_7_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Jul 7",
-                                            "data": "jul_7_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Aug 8",
+                                            data: "aug_8_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Aug 8",
-                                            "data": "aug_8_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Sep 9",
+                                            data: "sep_9_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Sep 9",
-                                            "data": "sep_9_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Oct 10",
+                                            data: "oct_10_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Oct 10",
-                                            "data": "oct_10_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Nov 11",
+                                            data: "nov_11_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Nov 11",
-                                            "data": "nov_11_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960-1990) Dec 12",
+                                            data: "dec_12_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960-1990) Dec 12",
-                                            "data": "dec_12_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Jan 1",
+                                            data: "jan_1_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Jan 1",
-                                            "data": "jan_1_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Feb 2",
+                                            data: "feb_2_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Feb 2",
-                                            "data": "feb_2_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Mar 3",
+                                            data: "mar_3_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Mar 3",
-                                            "data": "mar_3_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Abr 4",
+                                            data: "abr_4_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Abr 4",
-                                            "data": "abr_4_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) May 5",
+                                            data: "may_5_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) May 5",
-                                            "data": "may_5_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Jun 6",
+                                            data: "jun_6_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Jun 6",
-                                            "data": "jun_6_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Jul 7",
+                                            data: "jul_7_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Jul 7",
-                                            "data": "jul_7_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Aug 8",
+                                            data: "aug_8_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Aug 8",
-                                            "data": "aug_8_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Sep 9",
+                                            data: "sep_9_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Sep 9",
-                                            "data": "sep_9_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Oct 10",
+                                            data: "oct_10_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Oct 10",
-                                            "data": "oct_10_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Nov 11",
+                                            data: "nov_11_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Futuro (2050) Nov 11",
-                                            "data": "nov_11_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
-                                          },
-                                          {
-                                            "name": "Futuro (2050) Dec 12",
-                                            "data": "dec_12_tmin",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Futuro (2050) Dec 12",
+                                            data: "dec_12_tmin",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           }
                                     ]
                                 },
@@ -603,88 +603,88 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                       {
-                                        "name": "Historica (1960 - 1990) Jan 1",
-                                        "data": "jan_1_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jan 1",
+                                        data: "jan_1_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Feb 2",
-                                        "data": "feb_2_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Feb 2",
+                                        data: "feb_2_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Mar 3",
-                                        "data": "mar_3_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Mar 3",
+                                        data: "mar_3_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Abr 4",
-                                        "data": "abr_4_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Abr 4",
+                                        data: "abr_4_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) May 5",
-                                        "data": "may_5_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) May 5",
+                                        data: "may_5_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Jun 6",
-                                        "data": "jun_6_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jun 6",
+                                        data: "jun_6_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Jul 7",
-                                        "data": "jul_7_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jul 7",
+                                        data: "jul_7_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Aug 8",
-                                        "data": "aug_8_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Aug 8",
+                                        data: "aug_8_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Sep 9",
-                                        "data": "sep_9_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Sep 9",
+                                        data: "sep_9_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Oct 10",
-                                        "data": "oct_10_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Oct 10",
+                                        data: "oct_10_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Nov 11",
-                                        "data": "nov_11_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Nov 11",
+                                        data: "nov_11_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Dec 12",
-                                        "data": "dec_12_tmed",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Dec 12",
+                                        data: "dec_12_tmed",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       }
                                     ]
                                 },
@@ -693,88 +693,88 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                       {
-                                        "name": "Historica (1960 - 1990) Jan 1",
-                                        "data": "jan_1_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jan 1",
+                                        data: "jan_1_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Feb 2",
-                                        "data": "feb_2_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Feb 2",
+                                        data: "feb_2_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Mar 3",
-                                        "data": "mar_3_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Mar 3",
+                                        data: "mar_3_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Abr 4",
-                                        "data": "abr_4_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Abr 4",
+                                        data: "abr_4_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) May 5",
-                                        "data": "may_5_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) May 5",
+                                        data: "may_5_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Jun 6",
-                                        "data": "jun_6_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jun 6",
+                                        data: "jun_6_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Jul 7",
-                                        "data": "jul_7_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Jul 7",
+                                        data: "jul_7_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Aug 8",
-                                        "data": "aug_8_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Aug 8",
+                                        data: "aug_8_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Sep 9",
-                                        "data": "sep_9_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Sep 9",
+                                        data: "sep_9_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Oct 10",
-                                        "data": "oct_10_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Oct 10",
+                                        data: "oct_10_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Nov 11",
-                                        "data": "nov_11_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Nov 11",
+                                        data: "nov_11_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       },
                                       {
-                                        "name": "Historica (1960 - 1990) Dec 12",
-                                        "data": "dec_12_tmax",
-                                        "type": "raster",
-                                        "isSelected": false,
-                                        "opacity": 1.0
+                                        name: "Historica (1960 - 1990) Dec 12",
+                                        data: "dec_12_tmax",
+                                        type: "raster",
+                                        isSelected: false,
+                                        opacity: 1.0
                                       }
                                     ]
                                 }
@@ -837,172 +837,172 @@ angular.module('quitoClimateStudyApp')
                                     layers:
                                     [
                                           {
-                                            "name": "Historica (1960 - 1990) Jan",
-                                            "data": "jan_1_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Jan",
+                                            data: "jan_1_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Feb",
-                                            "data": "feb_2_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Feb",
+                                            data: "feb_2_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Mar",
-                                            "data": "mar_3_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Mar",
+                                            data: "mar_3_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Abr",
-                                            "data": "abr_4_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Abr",
+                                            data: "abr_4_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) May",
-                                            "data": "may_5_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) May",
+                                            data: "may_5_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Jun",
-                                            "data": "jun_6_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Jun",
+                                            data: "jun_6_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Jul",
-                                            "data": "jul_7_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Jul",
+                                            data: "jul_7_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Aug",
-                                            "data": "aug_8_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Aug",
+                                            data: "aug_8_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Sep",
-                                            "data": "sep_9_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Sep",
+                                            data: "sep_9_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Oct",
-                                            "data": "oct_10_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Oct",
+                                            data: "oct_10_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Nov",
-                                            "data": "nov_11_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Nov",
+                                            data: "nov_11_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Dec",
-                                            "data": "dec_12_pr",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Dec",
+                                            data: "dec_12_pr",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Ene",
-                                            "data": "ene_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Ene",
+                                            data: "ene_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },                                        
                                           {
-                                            "name": "Historica (1960 - 1990) Feb",
-                                            "data": "feb_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Feb",
+                                            data: "feb_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Mar",
-                                            "data": "mar_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Mar",
+                                            data: "mar_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Abr",
-                                            "data": "abr_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Abr",
+                                            data: "abr_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) May",
-                                            "data": "may_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) May",
+                                            data: "may_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Jun",
-                                            "data": "jun_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Jun",
+                                            data: "jun_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Jul",
-                                            "data": "jul_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Jul",
+                                            data: "jul_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Aug",
-                                            "data": "aug_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Aug",
+                                            data: "aug_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Sep",
-                                            "data": "sep_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Sep",
+                                            data: "sep_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Oct",
-                                            "data": "oct_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Oct",
+                                            data: "oct_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Nov",
-                                            "data": "nov_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Nov",
+                                            data: "nov_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           },
                                           {
-                                            "name": "Historica (1960 - 1990) Dic",
-                                            "data": "dic_pr_2050",
-                                            "type": "raster",
-                                            "isSelected": false,
-                                            "opacity": 1.0
+                                            name: "Historica (1960 - 1990) Dic",
+                                            data: "dic_pr_2050",
+                                            type: "raster",
+                                            isSelected: false,
+                                            opacity: 1.0
                                           }  
   
                                     ]
@@ -1020,9 +1020,85 @@ angular.module('quitoClimateStudyApp')
             analysisNarrative: 'Please add a brief analysis narrative.',
             questions:[
                 {
-                    name: 'Paramo',
-                    description: 'Please add description of Paramo',
-                    categories: []
+                    name: 'Reduccion en Ciclo de Crecimiento',
+                    description: 'Please add description of Reduccion en Ciclo de Crecimiento',
+                    categories: [
+                        {        
+                            id: 'base',                    
+                            title: 'Base Map',
+                            isOpen: true,
+                            sections: [
+                                {
+                                    section: '',
+                                    layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
+                                    [
+                                        {
+                                            name: 'Digital Elevation Map',
+                                            data: 'dem',                                    
+                                            type: 'raster',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'DMQ Outline',
+                                            data: 'DMQ_outline_wgs1984',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cultivos',
+                                            data: 'Cultivos_1',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },         
+                                        {
+                                            name: 'Regiones Climaticas',
+                                            data: 'regiones_climaticas',
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                },
+                                {
+                                    id: 'exposures',              
+                                    title: 'Exposures',
+                                    isOpen: false,
+                                    sections: [                                
+                                        {
+                                            section: 'Temperatura Promedio',
+                                            layers: 
+                                            [
+                                                {
+                                                    name: 'Historic (1960 - 1990)',
+                                                    data: 'hist_tmed_an',                                    
+                                                    type: 'raster',
+                                                    isSelected: false,
+                                                    opacity: 1
+                                                },
+                                                {
+                                                    name: 'Future (2050)',
+                                                    data: 'tmed_an_2050',
+                                                    type: 'raster',
+                                                    isSelected: false,
+                                                    opacity: 1                          
+                                                },
+                                                {
+                                                    name: 'Change (+ °C)',
+                                                    data: 'tmed_dif_alto',                                    
+                                                    type: 'raster',
+                                                    isSelected: false,
+                                                    opacity: 1
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]                    
                 }
             ]
         }, 

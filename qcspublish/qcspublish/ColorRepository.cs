@@ -84,7 +84,7 @@ namespace qcspublish
 		public Boolean MapColorsToThisResult(string fileName, string resultName)
 		{
 			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
-			return map.colorMaps.Count() > 1 && string.IsNullOrEmpty(map.singleColorValue);
+			return map.colorMaps.Count() > 1 || string.IsNullOrEmpty(map.singleColorValue);
 		}
 
 		/// <summary>
@@ -116,6 +116,68 @@ namespace qcspublish
 			return jsondata.Where(r => r.fileName.Equals(fileName)).Select(a => a.resultName);
 		}
 
+		public IEnumerable<LegendItem> FileLegend(string fileName, string resultName)
+		{
+			//no spec for this resource; don't build legend
+			if (!jsondata.Any(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)))
+			{
+				return new List<LegendItem>();
+			}
 
+			//incompliant spec for this resource; don't build legend
+			IEnumerable<ColorMap> colors = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName));
+			if (colors.Count() < 1)
+			{								
+				return new List<LegendItem>();
+			}
+
+			//only 1 filename-resultname pair supported by application
+			ColorMap colormap = colors.First();
+
+			//singleColorValue
+			if (!string.IsNullOrEmpty(colormap.singleColorValue))
+			{
+				return new List<LegendItem>() { 
+					new LegendItem() {
+						IsDiscrete = true, DiscreteCategory = "", HexColor = colormap.singleColorValue
+					}
+				};
+			}
+
+			//raster already 3-band rgb
+			if (!string.IsNullOrEmpty(colormap.legendFile))
+			{
+				return new List<LegendItem>() { 
+					new LegendItem() {
+						IsDiscrete = false, LegendFile = colormap.legendFile
+					}
+				};
+			}
+
+			List<LegendItem> legend = new List<LegendItem>();
+			
+			//discrete map
+			if (colormap.colorMaps.All(a => !string.IsNullOrEmpty(a.categoricalValue)))
+			{				
+				foreach (var clr in colormap.colorMaps)
+				{
+					legend.Add(new LegendItem() { 
+						IsDiscrete = true, DiscreteCategory = clr.categoricalValue, HexColor = clr.color 
+					});
+				}
+				return legend;
+			}			
+
+			//continuous map			
+			double lowerbound = 0;
+			foreach (var clr in colormap.colorMaps)
+			{
+				legend.Add(new LegendItem() { 
+					 IsDiscrete = false, LowerBound = lowerbound, UpperBound = clr.upperBoundary, HexColor = clr.color
+				});				
+				lowerbound = clr.upperBoundary;
+			}
+			return legend;
+		}
 	}
 }

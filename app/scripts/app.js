@@ -25,19 +25,23 @@ angular.module('quitoClimateStudyApp', [
       })
       
       .when('/Somos', {        
-        templateUrl: 'views/somos.html',        
+        templateUrl: 'views/somos.html',
+        controller: 'LongflowcontrollerCtrl'   
       })
       
       .when('/Metodologia', {        
         templateUrl: 'views/metodologia.html',        
+        controller: 'LongflowcontrollerCtrl'
       })
      
       .when('/Principales', {        
         templateUrl: 'views/principales.html',        
+        controller: 'LongflowcontrollerCtrl'
       })
      
       .when('/Medidas', {        
         templateUrl: 'views/medidas.html',        
+        controller: 'LongflowcontrollerCtrl'
       })
      
       .otherwise({

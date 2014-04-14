@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace qcspublish
 {
+	/// <summary>
+	/// Interface of repository used to map colors to values within source files for particular layers.
+	/// </summary>
 	public interface IColorRepository
 	{
 		/// <summary>
@@ -52,5 +55,13 @@ namespace qcspublish
 		string ColorFieldForOutput(string fileName, string resultName);
 		IEnumerable<string> ResultFileName(string fileName);
 		Boolean MapColorsToThisResult(string fileName, string resultName);
+
+		/// <summary>
+		/// Get the Legend of this file.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns></returns>
+		IEnumerable<LegendItem> FileLegend(string fileName, string resultName);
 	}
 }

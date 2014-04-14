@@ -1,5 +1,11 @@
 [
     {
+        "fileName": "dem",
+        "resultName": "dem.tif",
+        "legendFile": "",
+        "colorMaps": []
+    },
+    {
         "fileName": "abr_4_tmin",
         "resultName": "abr_4_tmin.tif",
         "colorMaps": [
@@ -1898,7 +1904,7 @@
 	{
 		"fileName": "tmed_dif_alto.tif",
 		"resultName": "tmed_dif_alto.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -1914,7 +1920,7 @@
 	{
 		"fileName": "hist_tmed_an",
 		"resultName": "hist_tmed_an.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -1946,7 +1952,7 @@
 	{
 		"fileName": "tmed_an_2050",
 		"resultName": "tmed_an_2050.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -1978,7 +1984,7 @@
 	{
 		"fileName": "hist_tmin_an",
 		"resultName": "hist_tmin_an.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2010,7 +2016,7 @@
 	{
 		"fileName": "tmin_an_2050",
 		"resultName": "tmin_an_2050.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2042,7 +2048,7 @@
 	{
 		"fileName": "hist_tmax_an",
 		"resultName": "hist_tmax_an.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2074,7 +2080,7 @@
 	{
 		"fileName": "tmax_an_2050",
 		"resultName": "tmax_an_2050.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2106,7 +2112,7 @@
 	{
 		"fileName": "hist_prec_tot",
 		"resultName": "hist_prec_tot.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2142,7 +2148,7 @@
 	{
 		"fileName": "pre_tot_2050",
 		"resultName": "pre_tot_2050.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2178,7 +2184,7 @@
 	{
 		"fileName": "precip_hist",
 		"resultName": "precip_hist.tif",
-		"clrFile": "",
+		
 		"clrField": "",
 		"colorMaps": [
 			{
@@ -2214,7 +2220,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "annual_precip_drought.json",
-		"clrFile": "",
+		
 		"clrField": "Precip_dry",
 		"colorMaps": [
 			{
@@ -2246,7 +2252,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "annual_precip_historic.json",
-		"clrFile": "",
+		
 		"clrField": "Precip",
 		"colorMaps": [
 			{
@@ -2278,7 +2284,7 @@
 	{
 		"fileName": "zonas_all.shp",
 		"resultName": "demand_coverage_2000.json",
-		"clrFile": "",
+		
 		"clrField": "Id",
 		"colorMaps": [
 			{
@@ -2290,7 +2296,7 @@
 	{
 		"fileName": "conduccion.shp",
 		"resultName": "lines_of_conduction.json",
-		"clrFile": "",
+		
 		"clrField": "",
 		"singleColorValue": "#AB5500",
 		"colorMaps": [ ]
@@ -2298,7 +2304,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Future.json",
-		"clrFile": "",
+		
 		"clrField": "Pr_2050",
 		"colorMaps": [
 			{
@@ -2326,7 +2332,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Historical.json",
-		"clrFile": "",
+		
 		"clrField": "Pr_2007",
 		"colorMaps": [
 			{
@@ -2354,7 +2360,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "Paramo_Loss.json",
-		"clrFile": "",
+		
 		"clrField": "Pr_diff",
 		"colorMaps": [
 			{
@@ -2382,7 +2388,7 @@
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "cuencas_final_weap_4.json",
-		"clrFile": "",
+		
 		"clrField": "",
 		"singleColorValue": "#23ECFF",
 		"colorMaps": [ ]
@@ -2390,15 +2396,15 @@
 	{
 		"fileName": "DMQ_outline.shp",
 		"resultName": "DMQ_outline_wgs1984.json",
-		"clrFile": "",
-		"clrField": "Id",
-		"colorMaps": [						
-		]
+		
+		"clrField": "",
+		"singleColorValue": "#000000",
+		"colorMaps": [ ]
 	},
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Population_2010.json",
-		"clrFile": "",
+		
 		"clrField": "2010_Pop",
 		"colorMaps": [
 			{
@@ -2434,7 +2440,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Population_2050.json",
-		"clrFile": "",
+		
 		"clrField": "2050_Pop",
 		"colorMaps": [
 			{
@@ -2470,7 +2476,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Population_Growth_2010_2050.json",
-		"clrFile": "",
+		
 		"clrField": "Pop_growth",
 		"colorMaps": [
 			{
@@ -2498,7 +2504,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Population_Sensitivity.json",
-		"clrFile": "",
+		
 		"clrField": "Sensibilid",
 		"colorMaps": [
 			{
@@ -2519,7 +2525,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Urban_Service_Areas.json",
-		"clrFile": "",
+		
 		"clrField": "Sistem",
 		"colorMaps": [
 			{
@@ -2585,7 +2591,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Scenario2_Coverage.json",
-		"clrFile": "",
+		
 		"clrField": "Sensibilid",
 		"colorMaps": [
 			{
@@ -2608,7 +2614,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Scenario3_Coverage.json",
-		"clrFile": "",
+		
 		"clrField": "Sensibilid",
 		"colorMaps": [
 			{
@@ -2631,7 +2637,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Scenario4_Coverage.json",
-		"clrFile": "",
+		
 		"clrField": "Sensibilid",
 		"colorMaps": [
 			{
@@ -2654,7 +2660,7 @@
 	{
 		"fileName": "service_areas_final.shp",
 		"resultName": "Scenario5_Coverage.json",
-		"clrFile": "",
+		
 		"clrField": "Sensibilid",
 		"colorMaps": [
 			{
@@ -2676,8 +2682,7 @@
 	},
 	{
 		"fileName": "Parrishes.shp",
-		"resultName": "Parrishes.json",
-		"clrFile": "",
+		"resultName": "Parrishes.json",		
 		"clrField": "",
 		"singleColorValue": "#E3F5C6",
 		"colorMaps": [ ]
@@ -2685,49 +2690,251 @@
 	{
 		"fileName": "POBLADOS_DMQ_GEO.shp",
 		"resultName": "Poblados.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "",
+		"singleColorValue": "#FF0000",
 		"colorMaps": [ ]
 	},
 	{
 		"fileName": "RED_VIAL_GENERAL_GEO.shp",
 		"resultName": "Red_Vial.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "",
+		"singleColorValue": "#FFFF00",
 		"colorMaps": [ ]
 	},
 	{
 		"fileName": "RED_HIDRICA_DOBLE_GEO.shp",
 		"resultName": "Rios.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "",
+		"singleColorValue": "#000000",
 		"colorMaps": [ ]
 	},
 	{
 		"fileName": "SA_estaciones_Agustin.shp",
 		"resultName": "SA_estaciones_Agustin.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "FF0000",
+		"singleColorValue": "#FF0000",
 		"colorMaps": [ ]
 	},	
 	{
 		"fileName": "INAMHI_estaciones_temp.shp",
 		"resultName": "INAMHI_estaciones_temp.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "FF0000",
+		"singleColorValue": "#000000",
 		"colorMaps": [ ]
 	},	
 	{
 		"fileName": "INAMHI_estaciones_precip.shp",
 		"resultName": "INAMHI_estaciones_precip.json",
-		"clrFile": "",
+		
 		"clrField": "",
-		"singleColorValue": "FF0000",
+		"singleColorValue": "#FF0000",
 		"colorMaps": [ ]
-	},	
+	},
+    {
+        "fileName": "regiones_clima3.shp",
+        "resultName": "regiones_climaticas.json",        
+        "clrField": "CLIMA",
+        "colorMaps": [
+            {
+                
+                "categoricalValue": "Bajo",
+                "color": "#00A9E6"
+            },
+            {
+                
+                "categoricalValue": "Montano muy húmedo",
+                "color": "#004DA8"
+            },
+            {
+                
+                "categoricalValue": "Montano muy seco",
+                "color": "#FFFFBE"
+            },
+            {
+                
+                "categoricalValue": "Montano seco",
+                "color": "#FFD37F"
+            },
+            {
+                
+                "categoricalValue": "Montano semi húmedo",
+                "color": "#00E6A9"
+            },
+            {
+                
+                "categoricalValue": "Montano semi seco",
+                "color": "#A3FF73"
+            },
+            {
+                
+                "categoricalValue": "Páramo húmedo",
+                "color": "#DF73FF"
+            },
+            {
+                
+                "categoricalValue": "Páramo muy húmedo",
+                "color": "#A900E6"
+            },
+            {
+                
+                "categoricalValue": "Páramo seco",
+                "color": "#E8BEFF"
+            },
+            {
+                
+                "categoricalValue": "Tropical",
+                "color": "#FFBEBE"
+            },
+            {
+                
+                "categoricalValue": "Tropical muy húmedo",
+                "color": "#FF7F7F"
+            }
+        ]
+    },
+    {
+        "fileName": "POLIT_BIOGEO_COBER_VEGET_diss_cult_3.shp",
+        "resultName": "Growth_Season_Sensitivity.json",        
+        "clrField": "Season_Sens",
+        "colorMaps": [
+            {
+                
+                "categoricalValue": "Bajo",
+                "color": "#FFEBBE"
+            },
+            {
+                
+                "categoricalValue": "Medio",
+                "color": "#FFA77F"
+            },
+            {
+                
+                "categoricalValue": "Alto",
+                "color": "#A80000"
+            }
+        ]
+    },
+    {
+        "fileName": "regiones_clima3.shp",
+        "resultName": "Growth_Season_Vulnerability.json",        
+        "clrField": "Season_Sens",
+        "colorMaps": [
+            {
+                
+                "categoricalValue": "",
+                "color": "#9C9C9C"
+            },
+            {
+                
+                "categoricalValue": "Medio",
+                "color": "#FFA77F"
+            },
+            {
+                
+                "categoricalValue": "Medio-Alto",
+                "color": "#FFAA00"
+            },
+            {
+                
+                "categoricalValue": "Alto",
+                "color": "#006464"
+            }
+        ]
+    },
+    {
+        "fileName": "Sensibilidad_Ag_Frontier.shp",
+        "resultName": "Paramo_Elevation_Bands.json",        
+        "clrField": "Elev_meter",
+        "colorMaps": [
+            {
+                "upperBoundary": 3600,
+                "color": "#FFFFFF"
+            },
+            {
+                "upperBoundary": 3800,
+                "color": "#728944"
+            },
+            {
+                "upperBoundary": 4000,
+                "color": "#F2EEA2"
+            },
+            {
+                "upperBoundary": 4200,
+                "color": "#F2CF85"
+            },
+            {
+                "upperBoundary": 4400,
+                "color": "#C28C7C"
+            },
+            {
+                "upperBoundary": 4800,
+                "color": "#FFF2FF"
+            }
+        ]
+    },
+    {
+        "fileName": "Sensibilidad_Ag_Frontier.shp",
+        "resultName": "Paramo_Sensitivity.json",        
+        "clrField": "Sensitivit",
+        "colorMaps": [
+            {
+                
+                "categoricalValue": "0 - 5%",
+                "color": "#38A800"
+            },
+            {
+                
+                "categoricalValue": "10 - 15%",
+                "color": "#79C900"
+            },
+            {
+                
+                "categoricalValue": "15 - 20%",
+                "color": "#FFCC00"
+            },
+            {
+                
+                "categoricalValue": "20 - 25%",
+                "color": "#FF6600"
+            },
+            {
+                
+                "categoricalValue": "25 - 30%",
+                "color": "#FF0000"
+            }
+        ]
+    },
+    {
+        "fileName": "Sensibilidad_Ag_Frontier.shp",
+        "resultName": "Paramo_Vulnerability.json",        
+        "clrField": "Vulnerabil",
+        "colorMaps": [
+            {
+                
+                "categoricalValue": "Bajo",
+                "color": "#38A800"
+            },
+            {
+                
+                "categoricalValue": "Medio",
+                "color": "#B0E000"
+            },
+            {
+                
+                "categoricalValue": "Medio-Alto",
+                "color": "#FFAA00"
+            },
+            {
+                
+                "categoricalValue": "Alto",
+                "color": "#FF0000"
+            }
+        ]
+    }
+
 ]

@@ -26,7 +26,12 @@ namespace qcspublish
 		/// <summary>
 		/// Field of shapefile to bind color display to. If none, should assume no emphasis on any field in final display.
 		/// </summary>
-		public string clrField { get; set; }		
+		public string clrField { get; set; }
+
+		/// <summary>
+		/// If this is a raster dataset without any color maps, include an image to display as the legend.
+		/// </summary>
+		public string legendFile { get; set; }
 
 		/// <summary>
 		/// If all cells should be the same color for this result, put it here.
