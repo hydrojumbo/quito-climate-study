@@ -47,7 +47,10 @@ Qcspublish works by locating all GIS files with ".shp", ".tif", and ".adf" exten
 To run qcspublish:
 
 Follow the [setup instructions](#setting-up-a-computer-to-build-the-web-site) above.
-1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it (For example: cd c:/dev/quito-climate-study/).
+1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it. 
+	
+	For example: cd c:/dev/quito-climate-study/.
+
 2. Run qcspublish, specifying the following arguments (required):
 
 	1. Source directory: all GIS files within this directory will be processed.
