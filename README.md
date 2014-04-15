@@ -38,6 +38,8 @@ There are several steps involved in publishing the web site. At a high level, th
 3. [Build the distribution version of the web site](#build-the-distribution-version-of-the-web-site)
 4. [Upload the distribution version of the web site to the cloud](#upload-the-distribution-version-of-the-web-site-to-the-cloud)
 
+NOTE: To avoid duplicating effort, you can download zip files of already-processed [raster](https://quitoestudiodeclima.blob.core.windows.net/processedgis/raster.zip) and [vector](https://quitoestudiodeclima.blob.core.windows.net/processedgis/vector.zip) data. To use these, download them and unzip them into the quito-climate-study\app directory.
+
 ####Create web representations of the GIS vector and raster data files
 The quito-climate-study web site uses standard [GeoJSON](http://geojson.org/) to represent vector datasets, and [OpenStreetMap-compliant geographic tiles](http://wiki.openstreetmap.org/wiki/Tiles#Graphical_Map_Tiles) to represent raster datasets online. The qcspublish command line application transforms the GIS data files used by the study's authors into these types of resources, and generates .csv files of attribute tables to facilitate download. 
 
@@ -46,8 +48,9 @@ Qcspublish works by locating all GIS files with ".shp", ".tif", and ".adf" exten
 
 To run qcspublish:
 
-Follow the [setup instructions](#setting-up-a-computer-to-build-the-web-site) above.
-1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it. 
+Follow the [setup instructions](#setting-up-a-computer-to-build-the-web-site) above. NOTE: Steps 3 and 4 only apply if you have added new raster files to the site. 
+
+1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it. 	
 	
 	For example: cd c:/dev/quito-climate-study/.
 
@@ -58,7 +61,6 @@ Follow the [setup instructions](#setting-up-a-computer-to-build-the-web-site) ab
 
 	For example: qcspublish C:\dev\quito\For_Geoportal_WGS\ C:\dev\quito\quito-climate-study\app\
 
-NOTE: Steps 3 and 4 only apply if you have added new raster files to the site. 
 3. After running qcspublish, open the quito-climate-study/app/raster/rgb/ directory. You should see a list of files. For each of these files, there is a subdirectory with the same name in the quito-climate-study/app/raster/ directory.
 4. Open MapTiler. MapTiler Start Edition allows you to process one file at a time. For each of the raster files in the quito-climate-study/app/raster/rgb folder:
 
@@ -68,8 +70,6 @@ NOTE: Steps 3 and 4 only apply if you have added new raster files to the site.
 	4. Choose Render ![MapTiler Step 3](https://raw.github.com/hydrojumbo/quito-climate-study/master/doc/img/MapTilerSetZoom_3.png)
 	5. A in the "Select output directory" dialogue box that pops up, find the folder in the quito-climate-study/app/raster/ directory that matches the file name of the raster file you are processing, and choose Select Folder. ![MapTiler Step 4](https://raw.github.com/hydrojumbo/quito-climate-study/master/doc/img/MapTilerSelectImageFolder_4.png)
 	6. MapTiler will generate the tiles you need and put them in the folder you selected. To process additional files, select back in MapTiler and unload the application.
-
-To avoid duplicating effort, a zip file containing a complete raster directory is available.
 
 #####What qcspublish does with raster data
 Note: all raster datasets supported by this tool are 1-band rasters with 32-bit floating point values. If the dataset you want to include is already a 3-band RGB file, you do not need to process it with qcspublish (example: dem.tif), however, you do need to include an entry for it in ColorMap.json with a reference to an image in the quito-climate-study/app/images/legend/ directory to display as that file's legend.
@@ -127,6 +127,9 @@ To run azureUploader:
 
 	For example: 'azureUploader quitoestudiodeclima HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA== c:/dev/quito-climate-study/dist'
 3. The console application will list each file it uploads. When it is complete, you should be able to browse to http://<your-storage-account-name>.blob.core.windows.net/index.html to see the site.
+
+###Adding new rasters to the system
+1. Edit ColorMap.json in the qcspublish directory (wherever it was installed)
 
 ###Attribution
 The GIS build process of this system is based on the efforts of several open source projects and communities:
