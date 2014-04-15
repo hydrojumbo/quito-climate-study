@@ -32,10 +32,11 @@ This build process was created and tested on a 64-bit Windows 7 PC. There is a k
 
 ###Publishing the web site 
 There are several steps involved in publishing the web site. At a high level, these are:
-1. [Create web representations of the GIS vector and raster data files](#Create-web-representations-of-the-GIS-vector-and-raster-data-files)
-2. [Build the web site and preview it in your browser by hosting it locally](#Build-the-web-site-and-preview-it-in-your-browser-by-hosting-it-locally)
-3. [Build the distribution version of the web site](#Build-the-distribution-version-of-the-web-site)
-4. [Upload the distribution version of the web site to the cloud](#Upload-the-distribution-version-of-the-web-site-to-the-cloud)
+
+1. [Create web representations of the GIS vector and raster data files](#create-web-representations-of-the-gis-vector-and-raster-data-files)
+2. [Build the web site and preview it in your browser by hosting it locally](#build-the-web-site-and-preview-it-in-your-browser-by-hosting-it-locally)
+3. [Build the distribution version of the web site](#build-the-distribution-version-of-the-web-site)
+4. [Upload the distribution version of the web site to the cloud](#upload-the-distribution-version-of-the-web-site-to-the-cloud)
 
 ####Create web representations of the GIS vector and raster data files
 The quito-climate-study web site uses standard [GeoJSON](http://geojson.org/) to represent vector datasets, and [OpenStreetMap-compliant geographic tiles](http://wiki.openstreetmap.org/wiki/Tiles#Graphical_Map_Tiles) to represent raster datasets online. The qcspublish command line application transforms the GIS data files used by the study's authors into these types of resources, and generates .csv files of attribute tables to facilitate download. 
@@ -44,9 +45,11 @@ The quito-climate-study web site uses standard [GeoJSON](http://geojson.org/) to
 Qcspublish works by locating all GIS files with ".shp", ".tif", and ".adf" extensions within a directory and all of its sub-directories, and processing them based on rules specified in the ColorMap.json file included in the directory with qcspublish. By editing the ColorMap.json file, you can teach qcspublish how to process new layers for the site.
 
 To run qcspublish:
-Follow the [setup instructions](Setting-up-a-computer-to-build-the-web-site) above.
-1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it (e.g. cd c:/dev/quito-climate-study/.
+
+Follow the [setup instructions](#setting-up-a-computer-to-build-the-web-site) above.
+1. Open a command terminal (Start => type 'cmd' => Press Enter) and change directory to the directory with qcspublish.exe in it (For example: cd c:/dev/quito-climate-study/).
 2. Run qcspublish, specifying the following arguments (required):
+
 	1. Source directory: all GIS files within this directory will be processed.
 	2. App directory: this should be the path to the /app directory inside of the /quito-climate-study directory of the web application.
 
@@ -87,7 +90,7 @@ This site supports the use of GeoJson data sources to display vector datasets. S
 ####Build the web site and preview it in your browser by hosting it locally
 To preview the site, quito-climate-study relies on the grunt task runner to compile the javascript and host the files on a web server on your localhost (typically 127.0.0.1:9000). This toolchain provides automation of the publication process, and a convenient editing experience in which any changes to HTML, CSS, or Javascript source files causes the browser to refresh the page and reflect the changes.
 
-Before building the site, make sure you have fully-built /app/raster/, /app/vector/, and /app/legend/ directories by [running qcspublish](#Running-qcspublish) or extracting the pre-processed files for raster, vector, and legend.
+Before building the site, make sure you have fully-built /app/raster/, /app/vector/, and /app/legend/ directories by [running qcspublish](#running-qcspublish) or extracting the pre-processed files for raster, vector, and legend.
 
 Once you have the GIS resource representations in place:
 
@@ -97,7 +100,7 @@ Once you have the GIS resource representations in place:
 ####Build the distribution version of the web site
 The distribution version of the site is the version that you upload to a public-facing web server or host on a cloud storage service like Azure Blob Storage or Amazon S3. The distribution version of the site is functionally identical to the web site in the /app/ directory of the project, with additional optimizations applied.
 
-Before building the site, make sure you have fully-built /app/raster/, /app/vector/, and /app/legend/ directories by [running qcspublish](#Running-qcspublish) or extracting the pre-processed files for raster, vector, and legend into the quito-climate-study/app directory.
+Before building the site, make sure you have fully-built /app/raster/, /app/vector/, and /app/legend/ directories by [running qcspublish](#running-qcspublish) or extracting the pre-processed files for raster, vector, and legend into the quito-climate-study/app directory.
 
 1. Open a console (Start Menu => type 'cmd' => Press Enter) and navigate to the quito-climate-study directory, (e.g. 'cd c:/dev/quito-climate-study').
 2. Type 'grunt build' => Press Enter. The console will show results of the build process, and new directory /dist/ will be created inside the quito-climate-study application.
@@ -105,13 +108,14 @@ Before building the site, make sure you have fully-built /app/raster/, /app/vect
 ####Upload the distribution version of the web site to the cloud
 The azureUploader console application manages the upload of the /dist/ directory to a Windows Azure storage account. On the way, it also applies HTTP metadata headers that optimize resource usage on the site (e.g. cause the browser to cache resources instead of requesting them each time a user wants to view them), and make them compliant with [internet media type](http://en.wikipedia.org/wiki/MIME_type#List_of_common_media_types) standards to maximize browser compatibility with the web site.
 
-If you want to publish the site on another web host, you should copy the quito-climate-study/dist/ directory after you have [built the web site](#Build-the-distribution-version-of-the-web-site). You will need to make sure to configure [internet media type](http://en.wikipedia.org/wiki/MIME_type#List_of_common_media_types) for each of the mime types. See [the UploadFile method of the Uploader class in azureUploader](/blob/master/azureUploader/azureUploader/Uploader.cs) for the list of HTTP metadata to apply to each of the mime types needed to publish quito-climate-study.
+If you want to publish the site on another web host, you should copy the quito-climate-study/dist/ directory after you have [built the web site](#build-the-distribution-version-of-the-web-site). You will need to make sure to configure [internet media type](http://en.wikipedia.org/wiki/MIME_type#List_of_common_media_types) for each of the mime types. See [the UploadFile method of the Uploader class in azureUploader](/blob/master/azureUploader/azureUploader/Uploader.cs) for the list of HTTP metadata to apply to each of the mime types needed to publish quito-climate-study.
 
-Before running the azureUploader console application, you make sure you have fully-built /app/raster, /app/vector/, and /app/legend/ directories by [running qcspublish](#Running-qcspublish), or extracting the pre-processed files for raster, vector, and legend. You must also have [built the distribution version of the site](#Build-the-distribution-version-of-the-web-site).
+Before running the azureUploader console application, you make sure you have fully-built /app/raster, /app/vector/, and /app/legend/ directories by [running qcspublish](#running-qcspublish), or extracting the pre-processed files for raster, vector, and legend. You must also have [built the distribution version of the site](#build-the-distribution-version-of-the-web-site).
 
 You will also need a Windows Azure storage account name and access key to publish the site. After getting an Azure subscription and [provisioning a storage account](http://azure.microsoft.com/en-us/documentation/articles/storage-create-storage-accoun#create), you can find these credentials by following the [steps shown in this video](https://www.youtube.com/watch?v=KMjeSDa_2AE).
 
 To run azureUploader:
+
 1. Open a console (Start Menu => type 'cmd' => Press Enter) and navigate to the quito-climate-study directory, (e.g. 'cd c:/dev/quito-climate-study').
 2. Type azureUploader and specify the following required parameter inputs:
 	1. Azure storage account name. 

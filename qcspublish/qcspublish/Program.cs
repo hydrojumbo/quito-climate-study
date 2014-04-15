@@ -39,10 +39,10 @@ namespace qcspublish
 		static void Main(string[] args)
 		{
 			//validate input
-			/*if (args.Length != 2)
+			if (args.Length != 2)
 			{
 				throw new Exception("Required arguments are: path/to/parent-directory-of-gis-data path/to/app-folder-of-quito-climate-study-project");
-			}*/
+			}
 
 			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
 			string GDAL_HOME = @";c:\Program Files (x86)\FWTools2.4.7\bin";		
@@ -53,8 +53,8 @@ namespace qcspublish
 			//register gdal extensions
 			Gdal.AllRegister();
 
-			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
-			string resultDir = @"C:\dev\quito\buildtest"; //args[1];
+			string srcDir = args[0].Trim(); // @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
+			string resultDir = args[1].Trim(); //  @"C:\dev\quito\buildtest"; //args[1];			
 			if (!srcDir.EndsWith("\\"))
 			{
 				srcDir += "\\";
