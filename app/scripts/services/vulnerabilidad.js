@@ -1061,44 +1061,194 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         }
                                     ]
-                                },
+                                }                                
+                            ]
+                        },
+                        {
+                            id: 'exposures',              
+                            title: 'Exposures',
+                            isOpen: false,
+                            sections: [                                
                                 {
-                                    id: 'exposures',              
-                                    title: 'Exposures',
-                                    isOpen: false,
-                                    sections: [                                
+                                    section: 'Temperatura Promedio',
+                                    layers: 
+                                    [
                                         {
-                                            section: 'Temperatura Promedio',
-                                            layers: 
-                                            [
-                                                {
-                                                    name: 'Historic (1960 - 1990)',
-                                                    data: 'hist_tmed_an',                                    
-                                                    type: 'raster',
-                                                    isSelected: false,
-                                                    opacity: 1
-                                                },
-                                                {
-                                                    name: 'Future (2050)',
-                                                    data: 'tmed_an_2050',
-                                                    type: 'raster',
-                                                    isSelected: false,
-                                                    opacity: 1                          
-                                                },
-                                                {
-                                                    name: 'Change (+ °C)',
-                                                    data: 'tmed_dif_alto',                                    
-                                                    type: 'raster',
-                                                    isSelected: false,
-                                                    opacity: 1
-                                                }
-                                            ]
+                                            name: 'Historic (1960 - 1990)',
+                                            data: 'hist_tmed_an',                                    
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Future (2050)',
+                                            data: 'tmed_an_2050',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1                          
+                                        },
+                                        {
+                                            name: 'Change (+ °C)',
+                                            data: 'tmed_dif_alto',                                    
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            id: 'sensitivity',
+                            title: 'Sensitivity',
+                            isOpen: false,
+                            sections:[
+                                {
+                                    section: '',
+                                    layers:[
+                                        {
+                                            name: 'Sensibilidad de los Ciclos de Crecimiento por Cultivos',
+                                            data: 'Growth_Season_Sensitivity',                                    
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            id: 'vulnerability',
+                            title: 'Vulnerabilidad (2050)',
+                            isOpen: false,
+                            sections:[
+                                {
+                                    section: '',
+                                    layers:[
+                                        {
+                                            name: 'Vulnerabilidad de Regiones Climaticas ',
+                                            data: 'Growth_Season_Vulnerability',                                    
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
                                         }
                                     ]
                                 }
                             ]
                         }
                     ]                    
+                },
+                {
+                    name: 'Reduccion de Paramo frente la Frontera Agricultura',
+                    description: 'Please add description of Reduccion en Ciclo de Crecimiento',
+                    categories: [
+                        {        
+                            id: 'base',                    
+                            title: 'Base Map',
+                            isOpen: true,
+                            sections: [
+                                {
+                                    section: '',
+                                    layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
+                                    [
+                                        {
+                                            name: 'Digital Elevation Map',
+                                            data: 'dem',                                    
+                                            type: 'raster',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'DMQ Outline',
+                                            data: 'DMQ_outline_wgs1984',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Regiones de Paramo',
+                                            data: 'Paramo_Elevation_Bands',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }                                
+                            ]
+                        },
+                        {
+                            id: 'exposures',              
+                            title: 'Exposures',
+                            isOpen: false,
+                            sections: [                                
+                                {
+                                    section: 'Temperatura Promedio',
+                                    layers: 
+                                    [
+                                        {
+                                            name: 'Historic (1960 - 1990)',
+                                            data: 'hist_tmed_an',                                    
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Future (2050)',
+                                            data: 'tmed_an_2050',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1                          
+                                        },
+                                        {
+                                            name: 'Change (+ °C)',
+                                            data: 'tmed_dif_alto',                                    
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            id: 'sensitivity',
+                            title: 'Sensitivity',
+                            isOpen: false,
+                            sections:[
+                                {
+                                    section: '',
+                                    layers:[
+                                        {
+                                            name: 'Aumento en Areas Cultivadas Potencial',
+                                            data: 'Paramo_Sensitivity',                                    
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            id: 'vulnerability',
+                            title: 'Vulnerabilidad (2050)',
+                            isOpen: false,
+                            sections:[
+                                {
+                                    section: '',
+                                    layers:[
+                                        {
+                                            name: 'Vulnerabilidad de Regiones Climaticas ',
+                                            data: 'Growth_Season_Vulnerability',                                    
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]      
                 }
             ]
         }, 

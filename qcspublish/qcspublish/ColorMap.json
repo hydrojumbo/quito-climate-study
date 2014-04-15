@@ -2,7 +2,7 @@
     {
         "fileName": "dem",
         "resultName": "dem.tif",
-        "legendFile": "",
+        "legendFile": "dem.jpg",
         "colorMaps": []
     },
     {
@@ -2395,8 +2395,7 @@
 	},
 	{
 		"fileName": "DMQ_outline.shp",
-		"resultName": "DMQ_outline_wgs1984.json",
-		
+		"resultName": "DMQ_outline_wgs1984.json",		
 		"clrField": "",
 		"singleColorValue": "#000000",
 		"colorMaps": [ ]
@@ -2689,8 +2688,7 @@
 	},
 	{
 		"fileName": "POBLADOS_DMQ_GEO.shp",
-		"resultName": "Poblados.json",
-		
+		"resultName": "Poblados.json",		
 		"clrField": "",
 		"singleColorValue": "#FF0000",
 		"colorMaps": [ ]
@@ -2750,6 +2748,11 @@
                 "categoricalValue": "Montano muy húmedo",
                 "color": "#004DA8"
             },
+			{
+                
+                "categoricalValue": "Montano húmedo",
+                "color": "#004DA8"
+            },
             {
                 
                 "categoricalValue": "Montano muy seco",
@@ -2800,8 +2803,12 @@
     {
         "fileName": "POLIT_BIOGEO_COBER_VEGET_diss_cult_3.shp",
         "resultName": "Growth_Season_Sensitivity.json",        
-        "clrField": "Season_Sens",
+        "clrField": "Seasn_Sens",
         "colorMaps": [
+			{				                
+                "categoricalValue": "((default))",
+                "color": "#9C9C9C"
+            },
             {
                 
                 "categoricalValue": "Bajo",
@@ -2822,11 +2829,10 @@
     {
         "fileName": "regiones_clima3.shp",
         "resultName": "Growth_Season_Vulnerability.json",        
-        "clrField": "Season_Sens",
+        "clrField": "Seasn_Sens",
         "colorMaps": [
-            {
-                
-                "categoricalValue": "",
+            {				                
+                "categoricalValue": "((default))",
                 "color": "#9C9C9C"
             },
             {
@@ -2852,27 +2858,23 @@
         "clrField": "Elev_meter",
         "colorMaps": [
             {
-                "upperBoundary": 3600,
-                "color": "#FFFFFF"
-            },
-            {
-                "upperBoundary": 3800,
+                "categoricalValue": "3600 - 3800",
                 "color": "#728944"
             },
             {
-                "upperBoundary": 4000,
+                "categoricalValue": "3800 - 4000",
                 "color": "#F2EEA2"
             },
             {
-                "upperBoundary": 4200,
+                "categoricalValue": "4000 - 4200",
                 "color": "#F2CF85"
             },
             {
-                "upperBoundary": 4400,
+                "categoricalValue": "4200 - 4400",
                 "color": "#C28C7C"
             },
             {
-                "upperBoundary": 4800,
+                "categoricalValue": "4400 - 4800",
                 "color": "#FFF2FF"
             }
         ]
@@ -2880,7 +2882,7 @@
     {
         "fileName": "Sensibilidad_Ag_Frontier.shp",
         "resultName": "Paramo_Sensitivity.json",        
-        "clrField": "Sensitivit",
+        "clrField": "Pct_Increa",
         "colorMaps": [
             {
                 

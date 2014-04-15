@@ -21,6 +21,14 @@ namespace qcspublish
 		RGBColors ColorsOfValueInFile(string fileName, string resultName, double value);
 
 		/// <summary>
+		/// Indicates whether this color should be an outline or a filled shape.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns>True if the color should be used as an outline, not a fill.</returns>
+		Boolean IsOutlinedNotFilled(string fileName, string resultName);
+
+		/// <summary>
 		/// Returns the 0-255 RBG color values for a 6-character color hex code matching the category mapped to categoricalValue in the file.
 		/// </summary>
 		/// <param name="fileName">Input source file name.</param>

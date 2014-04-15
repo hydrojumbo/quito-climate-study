@@ -29,12 +29,21 @@ namespace qcspublish
 		public static extern bool SetEnvironmentVariable(string lpName, string lpValue);		
 
 		/// <summary>
-		/// Unique attribute column name used to encode the color applied in the attribute table and geojson metadata output of vector inputs.
+		/// Unique attribute column name used to encode the fill color applied in the attribute table and geojson metadata output of vector inputs.
 		/// </summary>
 		public static string appColorNamspace = "quito-color";
-		
+		/// <summary>
+		/// Different color property for outline.
+		/// </summary>
+		public static string appOutlineNamespace = "quito-color-outline";
 		static void Main(string[] args)
 		{
+			//validate input
+			/*if (args.Length != 2)
+			{
+				throw new Exception("Required arguments are: path/to/parent-directory-of-gis-data path/to/app-folder-of-quito-climate-study-project");
+			}*/
+
 			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
 			string GDAL_HOME = @";c:\Program Files (x86)\FWTools2.4.7\bin";		
 			string path = Environment.GetEnvironmentVariable("PATH");
@@ -43,10 +52,18 @@ namespace qcspublish
 
 			//register gdal extensions
 			Gdal.AllRegister();
-			
-			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
-			string resultDir = srcDir;
-			string copyToOut = @"CopyToApp\";
+
+			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
+			string resultDir = @"C:\dev\quito\buildtest"; //args[1];
+			if (!srcDir.EndsWith("\\"))
+			{
+				srcDir += "\\";
+			}
+			if (!resultDir.EndsWith("\\"))
+			{
+				resultDir += "\\";
+			}
+			string copyToOut = @"";
 			string rasterout = @"raster\";
 			string vectorout = @"vector\";
 			string legendout = @"legend\";
@@ -81,7 +98,8 @@ namespace qcspublish
 			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, ".tif", processedRasters);
 			processedRasters = rasterResults.Item1;
 			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, "hdr.adf", processedRasters);
-			processedRasters.AddRange(gridResults.Item1);
+			 processedRasters.AddRange(gridResults.Item1);
+						
 			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, legend, ".shp", processedVectors);
 			processedVectors = vectorResults.Item1;
 			
@@ -135,7 +153,7 @@ namespace qcspublish
 				
 				if (fileSearchPattern == ".tif")
 				{
-					results = ProcessRasterFiles(args, colorRepo, legendRepo, fileSearchPattern, di, resultDir, processedDatasets);
+					results = ProcessRasterFiles(args, colorRepo, legendRepo, fileSearchPattern, di, resultDir, processedDatasets);					
 					processedDatasets = results.Item1;
 					skipped.AddRange(results.Item2);
 				}
@@ -185,7 +203,13 @@ namespace qcspublish
 						if (!processedDatasets.Contains(resultName))
 						{
 							ProcessRasterFile(args, colorRepo, resultDir, srcDrv, fi, resultName);
-							legend.Add(resultName.Replace(".tif", "").Replace(".json", ""), colorRepo.FileLegend(fi.Name, resultName));
+							string plainName = resultName.Replace(".tif", "").Replace(".json", "");
+							DirectoryInfo dirOut = new DirectoryInfo(resultDir + plainName);
+							if (!dirOut.Exists)
+							{
+								dirOut.Create();
+							}
+							legend.Add(plainName, colorRepo.FileLegend(fi.Name, resultName));
 							processedDatasets.Add(resultName);
 						}						
 					}
@@ -211,7 +235,13 @@ namespace qcspublish
 						if (!processedDatasets.Contains(resultName))
 						{
 							ProcessRasterGrid(args, colorRepo, resultDir, srcDrv, fi, resultName);
-							legend.Add(resultName.Replace(".tif", "").Replace(".json", ""), colorRepo.FileLegend(fi.Directory.Name, resultName));
+							string plainName = resultName.Replace(".tif", "").Replace(".json", "");
+							DirectoryInfo dirOut = new DirectoryInfo(resultDir + plainName);
+							if (!dirOut.Exists)
+							{
+								dirOut.Create();
+							}
+							legend.Add(plainName, colorRepo.FileLegend(fi.Directory.Name, resultName));
 							processedDatasets.Add(resultName);
 						}
 					}
@@ -374,9 +404,20 @@ namespace qcspublish
 			return new Tuple<List<string>, List<string>>(processedDatasets, skipped);
 		}
 
+		/// <summary>
+		/// Returns MarkerType property for legend.
+		/// </summary>
+		/// <param name="colorRepo"></param>
+		/// <param name="resultDir"></param>
+		/// <param name="fi"></param>
+		/// <param name="resultName"></param>
+		/// <returns></returns>
 		private static void ProcessVectorFile(IColorRepository colorRepo, DirectoryInfo resultDir, FileInfo fi, string resultName)
 		{
-			Console.WriteLine(string.Format("Processing {0} into {1}...", fi.Name, resultName));
+			string localFileName = fi.Name;
+			string localResultName = resultName;			
+
+			Console.WriteLine(string.Format("Processing {0} into {1}...", localFileName, localResultName));
 			StringBuilder bldr = new StringBuilder();
 
 			NetTopologySuite.IO.ShapefileDataReader dataReader = new NetTopologySuite.IO.ShapefileDataReader(fi.FullName, new GeometryFactory());
@@ -395,16 +436,11 @@ namespace qcspublish
 				for (int i = 0; i < numFields - 1; i++)
 				{
 					keys[i] = dataReader.DbaseHeader.Fields[i].Name;
-					if (keys[i].Equals(colorRepo.ColorFieldForOutput(fi.Name, resultName)))
+					if (keys[i].Equals(colorRepo.ColorFieldForOutput(localFileName, localResultName)))
 					{
 						colorValueField = i;
 					}
-				}
-				
-				if (colorRepo.MapColorsToThisResult(fi.Name, resultName))
-				{
-					keys[numFields - 1] = appColorNamspace;
-				}				
+				}												
 
 				//add attributes from source attribute table
 				feature.Attributes = new AttributesTable();
@@ -416,31 +452,35 @@ namespace qcspublish
 					csvLine.Add(val.ToString());
 				}
 
-				if (colorRepo.MapColorsToThisResult(fi.Name, resultName))
+				if (colorRepo.MapColorsToThisResult(localFileName, localResultName))
 				{
+					//mark outline colors in a different attribute than fill colors					 
+					string colorNs = colorRepo.IsOutlinedNotFilled(localFileName, localResultName) ? appOutlineNamespace : appColorNamspace;
+					keys[numFields - 1] = colorNs;
+
 					//add additional attribute for color binding							
-					string hexClr = colorRepo.SingleColorForFile(fi.Name, resultName); //only path where colorValueField, i.e. ColorMap.clrField can be unpopulated.
+					string hexClr = colorRepo.SingleColorForFile(localFileName, localResultName); //only path where colorValueField, i.e. ColorMap.clrField can be unpopulated.
 
 					if (string.IsNullOrEmpty(hexClr) && colorValueField > -1)
 					{
-						if (colorRepo.IsCategoricalMap(fi.Name, resultName))
+						if (colorRepo.IsCategoricalMap(localFileName, resultName))
 						{
 							//categorical color map
-							hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetString(colorValueField)).HexColor;
+							 hexClr = colorRepo.ColorsOfValueInFile(localFileName, localResultName, dataReader.GetString(colorValueField)).HexColor;
 						}
 						else
 						{
 							//numerical range color map
-							hexClr = colorRepo.ColorsOfValueInFile(fi.Name, resultName, dataReader.GetDouble(colorValueField)).HexColor;
+							hexClr = colorRepo.ColorsOfValueInFile(localFileName, localResultName, dataReader.GetDouble(colorValueField)).HexColor;
 						}
 					}
 
 					if (string.IsNullOrEmpty(hexClr)) // else if (string.IsNullOrEmpty(hexClr) && colorValueField < 0)
 					{
-						throw new NotSupportedException("Cannot color a file with no attributes to bind to and no single-color given");
+						throw new NotSupportedException("Cannot color a file with no attributes to bind to and no single-color given.");
 					}
 					csvLine.Add(hexClr);
-					feature.Attributes.AddAttribute(appColorNamspace, hexClr);
+					feature.Attributes.AddAttribute(colorNs, hexClr);
 				}								
 
 				bldr.AppendLine(string.Join(",", csvLine));
@@ -449,8 +489,8 @@ namespace qcspublish
 			GeoJsonWriter wtr = new GeoJsonWriter();
 			string layerJson = wtr.Write(featureCollection);
 
-			File.WriteAllText(resultDir.FullName + resultName, layerJson);
-			File.WriteAllText(resultDir.FullName + resultName.Replace(".json", ".csv"), bldr.ToString());
+			File.WriteAllText(resultDir.FullName + localResultName, layerJson);
+			File.WriteAllText(resultDir.FullName + localResultName.Replace(".json", ".csv"), bldr.ToString());
 		}
 
 		private static FileInfo[] FilesInDirectoryWithExtension(string extension, DirectoryInfo di)

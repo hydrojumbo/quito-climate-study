@@ -59,10 +59,10 @@ namespace qcspublish
 			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
 			if (!string.IsNullOrEmpty(map.singleColorValue))
 			{
-				return new RGBColors(map.singleColorValue);
+				return new RGBColors(map.singleColorValue, true);
 			}
 			//will throw exception if value is bigger than greatest upper boundary or no colormaps and no singlecolor value exist; call MapColorsToThisResult first
-			return new RGBColors(map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color);			
+			return new RGBColors(map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color, false);			
 		}
 
 		public Boolean IsCategoricalMap(string fileName, string resultName)
@@ -76,15 +76,27 @@ namespace qcspublish
 		}
 
 		/// <summary>
-		/// If false, this shape should be represented by a black outline and opaque center.
+		/// If false, this shape should be represented by defaults for its geometry type in the UI.
 		/// </summary>
 		/// <param name="fileName"></param>
 		/// <param name="resultName"></param>
 		/// <returns></returns>
 		public Boolean MapColorsToThisResult(string fileName, string resultName)
+		{			
+			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
+			return map.colorMaps.Count() > 1 || !string.IsNullOrEmpty(map.singleColorValue);
+		}
+
+		/// <summary>
+		/// Indicates whether this color should be an outline or a filled shape.
+		/// </summary>
+		/// <param name="fileName"></param>
+		/// <param name="resultName"></param>
+		/// <returns>True if the color should be used as an outline, not a fill.</returns>
+		public Boolean IsOutlinedNotFilled(string fileName, string resultName)
 		{
 			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
-			return map.colorMaps.Count() > 1 || string.IsNullOrEmpty(map.singleColorValue);
+			return !string.IsNullOrEmpty(map.singleColorValue);
 		}
 
 		/// <summary>
@@ -99,7 +111,16 @@ namespace qcspublish
 			ValidateFileName(fileName);
 
 			//will throw exception if value does not exist in the file; user will have to resume processing			
-			return new RGBColors(jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First().colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color);
+			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
+			if (map.colorMaps.Where(r => categoricalValue.Equals(r.categoricalValue)).Count() > 0)
+			{
+				return new RGBColors(map.colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color, false);
+			}
+			else if (string.IsNullOrEmpty(categoricalValue) && map.colorMaps.Where(r => r.categoricalValue.Equals("((default))")).Count() > 0)
+			{
+				return new RGBColors(map.colorMaps.Where(a => a.categoricalValue.Equals("((default))")).First().color, false);
+			}
+			throw new Exception(string.Format("Color for categorical value '{0}' does not exist for fileName: '{1}' => resultName: '{2}' entry in ColorMap.json.", categoricalValue, fileName, resultName));
 		}
 
 		private void ValidateFileName(string fileName)

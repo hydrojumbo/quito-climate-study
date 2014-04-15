@@ -92,6 +92,10 @@ body {
 }
 
 /* legend controls */
+.legendContainer{  
+  overflow: auto;
+  max-height: 500px;
+}
 .legend {
     line-height: 18px;
     color: #555;

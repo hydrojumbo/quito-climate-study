@@ -27,6 +27,11 @@ namespace qcspublish
 		public Boolean IsDiscrete { get; set; }
 
 		/// <summary>
+		/// If 'point', color applies to leaflet point marker fill. If 'boundary', color applies to boundary of the shapes. If 'region', color applies to interior of shapes.
+		/// </summary>
+		public string MarkerType { get; set; }
+
+		/// <summary>
 		/// If included, this image file should be used as the legend. The image file should be plaed in the quito-climate-study/app/images/legend directory.
 		/// </summary>
 		public string LegendFile { get; set; }

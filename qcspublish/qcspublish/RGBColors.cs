@@ -16,14 +16,17 @@ namespace qcspublish
 		private int green;
 		private int blue;
 		private string hexColor;
+		
 
 		public int Red { get { return red; } }
 		public int Green { get { return green; } }
 		public int Blue { get { return blue; } }
 		public string HexColor { get { return hexColor; } }
+		public Boolean IsOutline { get; set; }
 
-		public RGBColors(string hexColor)
+		public RGBColors(string hexColor, Boolean isOutline)
 		{
+			IsOutline = isOutline;
 			Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
 			this.red = color.R;
 			this.green = color.G;
