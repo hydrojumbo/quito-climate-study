@@ -35,7 +35,7 @@
 			string localDir = args[2];
 #else
 			string accountName = "quitoestudiodeclima";
-			string actkey = "4Tv4PaJ75Dp7VGc8TYS0VX7ckiM4UWmCZySRQBDgYGL6BZCs3B+3C9juvzBIn9Xp1xGypVCUikiIIoGqcsJWmg==";
+			string actkey = "HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA==";
 			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
 #endif
 			Stopwatch sw = new Stopwatch();

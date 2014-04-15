@@ -202,7 +202,11 @@ namespace qcspublish
 					{
 						if (!processedDatasets.Contains(resultName))
 						{
-							ProcessRasterFile(args, colorRepo, resultDir, srcDrv, fi, resultName);
+							if (colorRepo.FileLegend(fi.Name, resultName).Any(a => string.IsNullOrEmpty(a.LegendFile)))
+							{
+								ProcessRasterFile(args, colorRepo, resultDir, srcDrv, fi, resultName);
+							}
+							
 							string plainName = resultName.Replace(".tif", "").Replace(".json", "");
 							DirectoryInfo dirOut = new DirectoryInfo(resultDir + plainName);
 							if (!dirOut.Exists)

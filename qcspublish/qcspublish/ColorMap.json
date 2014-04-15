@@ -1,6 +1,6 @@
 [
     {
-        "fileName": "dem",
+        "fileName": "dem.tif",
         "resultName": "dem.tif",
         "legendFile": "dem.jpg",
         "colorMaps": []
