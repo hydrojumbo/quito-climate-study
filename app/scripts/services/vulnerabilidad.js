@@ -4,17 +4,17 @@ angular.module('quitoClimateStudyApp')
   .service('Vulnerabilidad', ['$http', function Vulnerabilidad($http) {
     // vulnerabilities
     var vulnerabilities = [
-    	{
-    		name: 'Agua',
-    		description: 'Please add text describing this vulnerability.',
-    		furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-    		analysisNarrative: 'Please add a brief analysis narrative.',
+        {
+            name: 'Sector Agua',
+            description: 'La vulnerabilidad del sector agua en el DMQ radica principalmente en que las fuentes de agua para el abastecimiento de la población (urbana y rural) se encuentran fuera del territorio del DMQ. Cabe resaltar, que este estudio comprende el análisis de vulnerabilidad en función del abastecimiento de agua potable en las áreas de servicio atendidas por la Empresa Metropolitana de Alcantarillado y Agua Potable de Quito (EMAAP-Q). Además, considera dos tipos de unidades de análisis: (I) las cuencas hidrográficas aportantes de agua “cruda” y (II) las zonas de servicio agua potable. ',
+            furtherInfoReport: 'WP5 6 Vuln. CC Agua DMQ 17_feb_14',
+            analysisNarrative: 'El análisis busca responder a una pregunta específica mencionada a continuación. En relación a los factores de exposición y sensibilidad, en primer lugar se definen dos componentes para exposición: (I) la variación climática en las cuencas aportantes en función de la temperatura y  la precipitación, y (II) el área en las cuencas aportantes que es ocupada por el páramo. En segundo lugar, para estimar el nivel de sensibilidad se analiza (I) la cobertura del suministro de agua potable en relación al consumo per cápita y  (II) el número de habitantes en las zonas de servicio del DMQ. Finalmente, para determinar la vulnerabilidad en el caso particular del sector agua, se utiliza el modelo WEAP (Water Evaluation And Planning System) (Sieber and Purkey 2011) . Con los componentes mencionados anteriormente, se evaluaron cinco escenarios de vulnerabilidad que podrían afectar el servicio de abastecimiento de agua potable del EPMAAP-Q al año 2050.',
 
             questions:
             [
                 {
-                    name: 'Potable Urbano',
-                    description: 'Explicación sobre cómo genera los escenarios utilizando las diferentes opciones del menú de la izquierda.',
+                    name: 'Pregunta 1 dentro de un contexto de servicion de agua potable en el sector urbano',
+                    description: '¿Qué tan vulnerable es el sistema de abastecimiento de agua potable en el DMQ  en función de la oferta y demanda de agua  actual y futura?',
                     categories: [
                         {        
                             id: 'base',                    
@@ -26,35 +26,35 @@ angular.module('quitoClimateStudyApp')
                                     layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
                                     [
                                         {
-                                            name: 'Digital Elevation Map',
+                                            name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'DMQ Outline',
+                                            name: 'Delimitación del DMQ',
                                             data: 'DMQ_outline_wgs1984',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Lines of Conduction',
+                                            name: 'Líneas de condución',
                                             data: 'lines_of_conduction',                                    
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Catchment Watersheds ',
+                                            name: 'Cuencas ',
                                             data: 'cuencas_final_weap_4',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1                            
                                         },
                                         {
-                                            name: 'Urban Service Areas',
+                                            name: 'Áreas de Servicio Urbano',
                                             data: 'Urban_Service_Areas',                                    
                                             type: 'vector',
                                             isSelected: true,
@@ -74,21 +74,21 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (1960 - 1990)',
+                                            name: 'Historico (1960 - 1990)',
                                             data: 'hist_tmed_an',                                    
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Future (2050)',
+                                            name: 'Futuro (2050)',
                                             data: 'tmed_an_2050',
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1                          
                                         },
                                         {
-                                            name: 'Change (+ °C)',
+                                            name: 'Cambio (+ °C)',
                                             data: 'tmed_dif_alto',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -101,14 +101,14 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (1971 - 2007)',
+                                            name: 'Historico (1971 - 2007)',
                                             data: 'annual_precip_historic',                                    
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Drought',
+                                            name: 'Sequía',
                                             data: 'annual_precip_drought',
                                             type: 'vector',
                                             isSelected: false,
@@ -117,25 +117,25 @@ angular.module('quitoClimateStudyApp')
                                     ]
                                 },
                                 {
-                                    section: 'Paramo Land Use (Cuencas de Captacion)',
+                                    section: 'Uso de Area de Paramo (Cuencas de Captacion)',
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (2007)',
+                                            name: 'Historico (2007)',
                                             data: 'Paramo_Historical',                                    
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Future (2050)',
+                                            name: 'Futuro (2050)',
                                             data: 'Paramo_Future',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Percent Loss (2050)',
+                                            name: 'Porcentaje de Perdida (2050)',
                                             data: 'Paramo_Loss',
                                             type: 'vector',
                                             isSelected: false,
@@ -155,28 +155,28 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (2010 Census)',
+                                            name: 'Historico (2010 Census)',
                                             data: 'Population_2010',                                    
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Future (2050)',
+                                            name: 'Futuro (2050)',
                                             data: 'Population_2050',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Percent Growth (2010 - 2050)',
+                                            name: 'Porcentaje de Crecimiento (2010 - 2050)',
                                             data: 'Population_Growth_2010_2050',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Levels of Sensitivity (Bajo, Medio, Alto)',
+                                            name: 'Niveles de Sensitividad (Bajo, Medio, Alto)',
                                             data: 'Population_Sensitivity',
                                             type: 'vector',
                                             isSelected: false,
@@ -196,28 +196,28 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Temp Increase + Population Growth Sensitivity ',
+                                            name: 'Aumento de Temperatura + Sensibiliad al Aumento de Población ',
                                             data: 'Scenario2_Coverage',                                    
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Temp Increase + Drought + Population Growth Sensitivity',
+                                            name: 'Aumento de temperatura + Sequía + Sensibilidad al Aumento de Población',
                                             data: 'Scenario3_Coverage',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Temp Increase + Loss of Paramo + Population Growth Sensitivity',
+                                            name: 'Aumento de Temperatura + Perdida de Area de Páramo + Sensibilidad al Aumento de Población',
                                             data: 'Scenario4_Coverage',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Temp Increase + Drought + Loss of Paramo + Population Growth Sensitivity',
+                                            name: 'Aumento de Temperatura + Sequía + Perdida de Area de Paramo + Sensibilidad al Aumento de Población',
                                             data: 'Scenario5_Coverage',
                                             type: 'vector',
                                             isSelected: false,
@@ -229,10 +229,10 @@ angular.module('quitoClimateStudyApp')
                         }
                     ]                    
                 }
-            ]    		    
-    	},
+            ]               
+        },
         {
-            name: 'Clima',
+            name: 'Análisis Climático',
             description: 'Please add text describing this vulnerability.',
             furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
             analysisNarrative: 'Please add a brief analysis narrative.',
@@ -1015,13 +1015,13 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Agricultura',
-            description: 'Please add text describing this vulnerability.',
-            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-            analysisNarrative: 'Please add a brief analysis narrative.',
+            description: 'Si bien cierto que la seguridad alimentaria de la población del DMQ no depende de la producción del sector agrícola del Distrito, los diferentes tipos de cultivos existentes y su relación con la elevación sobre el nivel del mar, pone en evidencia la  vulnerabilidad del sector frente a la variación climática en las diferentes zonas del DMQ (templada, sub-templada, y subtropical). Este estudio abarca el análisis de vulnerabilidad de los cultivos tradicionales producidos en la zona del Distrito.',
+            furtherInfoReport: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14',
+            analysisNarrative: 'Con respecto a los factores de exposición y sensibilidad. En primer lugar para determinar el nivel de exposición al incremento de temperatura, se estimó la acumulación de Unidades de Calor (UC) , a fin de establecer cómo los períodos de crecimiento del cultivo pueden ser afectados.  En segundo lugar, para determinar el nivel de sensibilidad de los cultivos a cambios de temperaturas, se cuantificaron las UC proyectadas al año 2050 para el escenario climático más adverso, es decir, con base en la ruta de mayores emisiones de carbono (RCP 8.5) . En particular se evalúan dos componentes de sensibilidad: I) sensibilidad en función del crecimiento y producción, a partir de la determinación del factor de  reducción de crecimiento por temperatura (RCT),  y (II) sensibilidad del ciclo de crecimiento de cultivos; análisis que se fundamenta en el cálculo y acumulación de las UC requeridas para alcanzar la madurez fisiológica de los cultivos. Finalmente, para determinar la vulnerabilidad de los páramos frente al incremento de temperatura, se analizaron las regiones con páramos en el DMQ y con elevación superior a los 3400 msnm. Examinaremos brevemente los principales resultados. En primera instancia se espera que el incremento de temperaturas tenga un efecto positivo en el desarrollo de los cultivos. Esto debido a que las temperaturas medias pronosticadas a futuro, serán similares a las temperaturas óptimas de desarrollo de los cultivos. Ahora bien, debido al incremento de temperaturas habrá una acumulación más rápida de las UC, con ello, los ciclos de crecimiento de los cultivos en el DMQ se pueden ver acortados en tiempo y duración. A su vez, se observa que la superficie en las bandas de elevación desde los 3600 a 4200 msnm, son susceptibles al incremento del área cultivada debido a los aumentos de temperatura. Así por ejemplo, podría ocurrir una migración de áreas de cultivo de papa a altitudes mayores, razón por la cual, las áreas de los páramos se verán amenazadas por la expansión de la frontera agrícola. Es imposible predecir con exactitud cuánto se expandirá la frontera agrícola, pero posiblemente, los páramos enfrentarán una amenaza significativa debido al avance de los cultivos, principalmente el cultivo de la papa y al crecimiento de la mancha urbana entre otros factores. Considerando los resultados obtenidos, se recomienda la implementación del modelo de crecimiento de plantas (PGM -  Plant Growth Method) de WEAP (Water Evaluation And Planning System), para determinar con mayor detalle y precisión la vulnerabilidad del  sector agrícola ante el cambio climático. El modelo PGM de WEAP estima el efecto potencial del cambio climático y el incremento en las concentraciones atmosféricas de CO2 en los rendimientos de cultivos agrícolas y sus requerimientos hídricos bajo condiciones futuras cambiantes.',
             questions:[
                 {
-                    name: 'Reduccion en Ciclo de Crecimiento',
-                    description: 'Please add description of Reduccion en Ciclo de Crecimiento',
+                    name: 'Reduccion en el Ciclo de Crecimiento',
+                    description: '¿Cuál es la sensibilidad de los cultivos y cómo pueden verse afectados en la duración de los ciclos de crecimiento por cambios en temperatura?',
                     categories: [
                         {        
                             id: 'base',                    
@@ -1140,7 +1140,7 @@ angular.module('quitoClimateStudyApp')
                 },
                 {
                     name: 'Reduccion de Paramo frente la Frontera Agricultura',
-                    description: 'Please add description of Reduccion en Ciclo de Crecimiento',
+                    description: '¿Cómo la variabilidad climática afectará la exposición de los cultivos a cambios en temperatura y su efecto en el crecimiento; así como los cambios de la frontera agrícola y, por consiguiente, la exposición de los páramos a cambios en dicha frontera?',
                     categories: [
                         {        
                             id: 'base',                    
@@ -1254,31 +1254,31 @@ angular.module('quitoClimateStudyApp')
         }, 
         {
             name: 'Incendios',
-            description: 'Please add text describing this vulnerability.',
-            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-            analysisNarrative: 'Please add a brief analysis narrative.',
+            description: 'El Distrito Metropolitano de Quito es uno de los municipios más afectados en el Ecuador por los incendios forestales. Cada verano la problemática se agudiza poniendo de manifiesto la situación de vulnerabilidad del Distrito. Existen 15 años de evidencia de una elevada intensidad y cantidad de incendios, particularmente durante el periodo 2001 al  2009. Así mismo, el año 2012 estuvo marcado por temperaturas extremas y fuertes sequías; factores que incrementaron la intensidad y frecuencia de los  incendios, causando daños en áreas protegidas de gran biodiversidad, en espacios de propiedad pública y privada de diferentes usos y, en general, efectos en el  bienestar de la población. Por lo tanto, la  Secretaria de Seguridad y Gobernabilidad y su Dirección de Riesgos y la Secretaria del Ambiente han venido implementado acciones de prevención, así como de mejoramiento en los planes de emergencia de incendios. Sin embargo, las formas de gestión son aún limitadas. Para complementar este esfuerzo, el estudio de vulnerabilidad apunta a desarrollar una herramienta para mejorar el conocimiento del comportamiento de los incendios en el DMQ frente a factores relacionados con actividades antrópicas y variables climáticas. ',
+            furtherInfoReport: 'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14',
+            analysisNarrative: 'Para el análisis frente amenazas antrópicas se definen dos indicadores de sensibilidad: (I) un indicador espacial de inicio de fuego (ISMF)  (II) un indicador histórico de inicio de fuego (IHMF) . El cruce de estos indicadores determinan los niveles de presión antrópica sobre las áreas de incendios forestales. Por otro lado, se establece un indicador de sensibilidad climática (ISC) compuesto por (I) un indicador de régimen pluviométrico (IRP), (II) un indicador de régimen térmico (IRT). Finalmente, las zonas expuestas son las áreas en “riesgo o peligro”. El cruce de resultados de presión de inicio de fuego y del Indicador de sensibilidad climática determina las zonas donde, además de presión antropogénica, existen tendencias elevadas de propagación. El análisis del riesgo presente indica que el  78% del territorio del DMQ está en riesgo de incendio forestal alto ó moderado (35% y 43%) respectivamente. Las zonas más vulnerables son las parroquias ubicadas al nororiente del Municipio, en particular, Ilalo, Calacalí, Puellaro,  Perucho, Llano Chico, Calderón, Nayón y ciertas zonas muy puntuales de Calacali,  Nono y Lloa. Esto debido a una fuerte presión antropogénica, así como factores de iniciación y propagación de incendios. A su vez, son regiones en desarrollo, con alta densidad de población y varios proyectos estratégicos en proceso de implementación; factores que incrementan su condición de vulnerabilidad. Cabe resaltar que en un escenario a partir del incremento en los índices de sensibilidad climática al 2050, la tendencia de los riesgos de incendio forestal aumenta considerablemente en Quito y sus zonas aledañas. Se recomienda para futuros estudios complementar el análisis de factores antropogénicos considerando variables como: proyecciones de población, movilidad en función de las vías, y asentamientos humanos dispersos. Así como, mejorar la información geográfica de aquellas áreas donde se aplica la práctica de quemas voluntarias en agricultura. Además, mejorar la calidad y cantidad de información  histórica de incendios con indicadores de intensidad, superficie y tipología. Finalmente, se recomienda el uso de  esta herramienta para identificar en otros sectores relevantes como ecosistemas, las zonas de riesgo de incendios forestales.',
             questions:[
                 {
-                    name: 'Forestales',
-                    description: 'Please add description of Forestales',
+                    name: 'Incendios Forestales',
+                    description: '¿Cuál es el efecto de la variabilidad climática en el aumento de los incendios?  ',
                     categories: []
                 }
             ]
         },
         {
-            name: 'Ecosystems',
-            description: 'Please add text describing this vulnerability.',
-            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
-            analysisNarrative: 'Please add a brief analysis narrative.',
+            name: 'Ecosistemas',
+            description: 'El estudio sectorial de vulnerabilidad en el sector ecosistemas constituye la primera evaluación del grado de exposición y sensibilidad del DMQ frente a diferentes amenazas antrópicas y climáticas. Si bien es cierto que los ecosistemas nativos del DMQ representan el 60% de su territorio, el crecimiento acelerado de la mancha urbana entre otros factores, está ejerciendo una fuerte presión sobre los ecosistemas nativos, la cobertura vegetal y el uso del suelo. Cinco categorías de ecosistemas de interés del Municipio del DMQ son evaluados: (1) arbustales secos y relictos de bosque, (2) vegetación paramuna, (3) bosques húmedos y plantaciones forestales, (4) arbustos húmedos, y (5) vegetación en regeneración. ',
+            furtherInfoReport: 'WP5 6 Vuln. CC Ecosistemas DMQ 17_feb_14',
+            analysisNarrative: 'El siguiente punto trata los factores de exposición y sensibilidad. Para empezar, los factores de exposición en este sector se definen en función de las amenazas climáticas y no climáticas. Por otro lado para las amenazas climáticas, la sensibilidad es evaluada en dos diferentes aspectos: (1) la capacidad de recuperación del ecosistema en el área directamente destruida o degradada por una amenaza, y (2) la capacidad de resiliencia y/o resistencia del ecosistema en el área indirectamente afectada por ella.  Adicionalmente, para evaluar la vulnerabilidad “actual” frente amenazas no-climáticas se cruzó el mapa de exposición de cada una de estas amenazas con el mapa de cobertura vegetal del año 2009. A su vez, el índice de vulnerabilidad frente a la amenaza climática fue desarrollado mediante la integración espacial de un indicador de exposición y cinco indicadores de sensibilidad que se calcularon para cada fragmento de ecosistema.  A continuación se describen los principales resultados: El ecosistema de arbustales secos y relictos de bosque seco se reconoce como el más vulnerable frente a las amenazas antrópicas. Es decir el 17% de su área total es considerada con altos niveles de vulnerabilidad. La vegetación paramuna (88%) de su área y los bosques húmedos (80%) de su área,  presenta niveles de vulnerabilidad bajos frente a factores antrópicos. La mayor parte del DMQ cubierta por arbustales secos y relictos de bosque seco (70%) y bosques húmedos/plantaciones forestales (68%) tiene una vulnerabilidad climática relativamente baja. Se evidencia que frente al incremento de temperatura bajo un escenario pesimista de emisiones de carbono, el ecosistema de páramo presenta niveles medios y altos de vulnerabilidad; 47% de su área total y  53% de su área total, respectivamente. Finalmente, se recomienda mejorar la calidad y cantidad de la información disponible. De tal manera que sea posible profundizar en estudios específicos sobre la biología/ecología de las especies y su respuesta frente a diferentes amenazas antrópicas y climáticas. Lo anterior, con el propósito de evaluar de manera más objetiva la vulnerabilidad de los ecosistemas en el DMQ.',
             questions:[
                 {
-                    name: 'Current, No C.C.',
-                    description: 'Please add description of Current, No C.C.',
+                    name: 'Amenaza No Climáticas',
+                    description: '¿Cuál es la vulnerabilidad actual de los ecosistemas de interés frente a las amenazas no climáticas de origen antrópico?',
                     categories: []
                 },
                 {
-                    name: 'Future, C.C.',
-                    description: 'Please add description of Future, C.C.',
+                    name: 'Amenaza Climática',
+                    description: '¿Cuál es la vulnerabilidad futura de los ecosistemas de interés frente a la amenaza climática de incremento gradual de temperatura promedio anual?',
                     categories: []
                 }
             ]
