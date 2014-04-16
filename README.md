@@ -10,7 +10,8 @@ The quito-climate-study repository contains four independent applications that t
 1. An in-browser ["Single Page Application"](http://en.wikipedia.org/wiki/Single-page_application) based on the [AngularJS](http://angularjs.org/) Javascript framework.
 2. "qcspublish" - A command-line GIS build process application for transforming a directory of vector Shapefile (.shp), and raster [GeoTiff](http://www.remotesensing.org/geotiff/spec/geotiffhome.html) (.tif) and ESRI Grid datasets into a collection of resources needed for the web application.
 3. A [Grunt](http://gruntjs.com/) build configuration for building the AngularJS application from templates.
-4. "azureUploader" - A command-line application for publishing a built site to an Azure blob storage account.
+4. A [Bower](http://bower.io/) installation list to pull necessary dependencies to your site.
+5. "azureUploader" - A command-line application for publishing a built site to an Azure blob storage account.
 
 ####Limitations
 The site as it is currently built is designed to be hosted directly on Windows Azure Blob storage. This approach has several drawbacks - notably: 
@@ -18,7 +19,7 @@ The site as it is currently built is designed to be hosted directly on Windows A
 2. The requirement that the home page url have '/index.html' instead of just the root domain (no default http route).
 
 ####Requirements
-This build process was created and tested on a 64-bit Windows 7 PC. There is a known issue with qcspublish not finding a reference to the GDAL dependency on 32-bit Windows 7 PCs, that could be resolved by modifying the GDAL_HOME variable in qcspublish/Program.cs with an input argument. The build process requires [several tools](#Setting-up-a-computer-to-build-the-web-site) to be installed on your machine. Additionally, [MapTiler Start edition](http://www.maptiler.org/) (single-user license costs $28 as of 2/15/2014) is used to manually turn the results of the GIS build process for raster datasets into tiles for view on the web. Publishing this site with these tools requires a [subscription on Windows Azure](http://azure.microsoft.com/en-us/pricing/free-trial/), and an [Azure Storage Account](http://azure.microsoft.com/en-us/services/storage/). 
+This build process was created and tested on a 64-bit Windows 7 PC. There is a known issue with qcspublish not finding a reference to the GDAL dependency on 32-bit Windows 7 PCs, that could be resolved by modifying the GDAL_HOME variable in qcspublish/Program.cs with an input argument. The build process requires [several tools](#setting-up-a-computer-to-build-the-web-site) to be installed on your machine. Additionally, [MapTiler Start edition](http://www.maptiler.org/) (single-user license costs $28 as of 2/15/2014) is used to manually turn the results of the GIS build process for raster datasets into tiles for view on the web. Publishing this site with these tools requires a [subscription on Windows Azure](http://azure.microsoft.com/en-us/pricing/free-trial/), and an [Azure Storage Account](http://azure.microsoft.com/en-us/services/storage/). 
 
 ####Setting up a computer to build the web site
 1. Install [FWTools 2.4.7 Windows 32bit](http://fwtools.maptools.org/).
@@ -27,8 +28,10 @@ This build process was created and tested on a 64-bit Windows 7 PC. There is a k
 4. Open a command prompt (Windows 7: Start Menu => Type "cmd" => Press Enter).
 5. Install yeoman by typing: "npm install -g yo" => Press Enter. Read [Yeoman getting started](http://yeoman.io/gettingstarted.html) for more information.
 6. Install ruby by downloading and running [the installer](http://rubyinstaller.org/). Make sure to put ruby executables in your PATH when prompted by the installer.
-7. Clone this repository with Git (e.g. in Git Bash, type "git clone https://github.com/hydrojumbo/quito-climate-study.git" or [Download the zip file](https://github.com/hydrojumbo/quito-climate-study/archive/master.zip) and unzip it on your computer. In case you have never used Git before, recommended "clients" (programs that let you use Git) include: Git Bash, Git Gui, Tower on Mac, and Github for Windows. Git is only necessary if you want to add layers to the site and have those changes included with the source.
-8. While this is not necessary, [Azure Storage Explorer](http://azurestorageexplorer.codeplex.com/) is a convenient way to browse the files of the site after they have been uploaded.
+7. Install [Git](http://git-scm.com/downloads) if you do not have it on your computer.
+8. Make sure you have a web-compatible text editor like [Sublime Text](http://www.sublimetext.com/) or [NotePad++](http://notepad-plus-plus.org/) to view and edit the Javascript, HTML, and CSS files in this project.
+9. [Download the zip file](https://github.com/hydrojumbo/quito-climate-study/archive/master.zip) and unzip it on your computer or clone this repository with Git (e.g. in Git Bash, type "git clone https://github.com/hydrojumbo/quito-climate-study.git". You only need to clone the repository if you want to contribute changes you make so that everyone can have them.
+10. While this is not necessary, [Azure Storage Explorer](http://azurestorageexplorer.codeplex.com/) is a convenient way to browse the files of the site after they have been uploaded.
 
 ###Publishing the web site 
 There are several steps involved in publishing the web site. At a high level, these are:
@@ -125,7 +128,7 @@ To run azureUploader:
 	2. Azure storage account key.
 	3. Path to quito-climate-study/dist directory.
 
-	For example: 'azureUploader quitoestudiodeclima HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA== c:/dev/quito-climate-study/dist'
+	For example (key is not real): 'azureUploader quitoestudiodeclima HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA== c:/dev/quito-climate-study/dist'
 3. The console application will list each file it uploads. When it is complete, you should be able to browse to http://<your-storage-account-name>.blob.core.windows.net/index.html to see the site.
 
 ###Adding new rasters to the system

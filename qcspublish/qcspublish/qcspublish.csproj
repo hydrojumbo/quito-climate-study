@@ -26,7 +26,7 @@
     <MapFileExtensions>true</MapFileExtensions>
     <SupportUrl>https://github.com/hydrojumbo/quito-climate-study</SupportUrl>
     <ProductName>qcspublish</ProductName>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
