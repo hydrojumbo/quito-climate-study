@@ -34,9 +34,12 @@
 			string actkey = args[1];
 			string localDir = args[2];
 #else
-			string accountName = "quitoestudiodeclima";
+			/*string accountName = "quitoestudiodeclima";
 			string actkey = "HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA==";
-			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
+			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";*/
+			string accountName = args[0];
+			string actkey = args[1];
+			string localDir = args[2];
 #endif
 			Stopwatch sw = new Stopwatch();
 			sw.Start();

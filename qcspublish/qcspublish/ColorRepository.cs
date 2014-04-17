@@ -59,10 +59,13 @@ namespace qcspublish
 			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
 			if (!string.IsNullOrEmpty(map.singleColorValue))
 			{
-				return new RGBColors(map.singleColorValue, true);
+				return new RGBColors(map.singleColorValue, "", true);
 			}
 			//will throw exception if value is bigger than greatest upper boundary or no colormaps and no singlecolor value exist; call MapColorsToThisResult first
-			return new RGBColors(map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color, false);			
+			return new RGBColors(
+				map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().color,
+				map.colorMaps.Where(a => value <= a.upperBoundary).OrderBy(aa => aa.upperBoundary).First().rgb, 
+				false);			
 		}
 
 		public Boolean IsCategoricalMap(string fileName, string resultName)
@@ -114,11 +117,17 @@ namespace qcspublish
 			ColorMap map = jsondata.Where(r => r.fileName.Equals(fileName) && r.resultName.Equals(resultName)).First();
 			if (map.colorMaps.Where(r => categoricalValue.Equals(r.categoricalValue)).Count() > 0)
 			{
-				return new RGBColors(map.colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color, false);
+				return new RGBColors(
+					map.colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().color, 
+					map.colorMaps.Where(a => categoricalValue.Equals(a.categoricalValue)).First().rgb, 
+					false);
 			}
 			else if (string.IsNullOrEmpty(categoricalValue) && map.colorMaps.Where(r => r.categoricalValue.Equals("((default))")).Count() > 0)
 			{
-				return new RGBColors(map.colorMaps.Where(a => a.categoricalValue.Equals("((default))")).First().color, false);
+				return new RGBColors(
+					map.colorMaps.Where(a => a.categoricalValue.Equals("((default))")).First().color,
+					map.colorMaps.Where(a => a.categoricalValue.Equals("((default))")).First().rgb, 
+					false);
 			}
 			throw new Exception(string.Format("Color for categorical value '{0}' does not exist for fileName: '{1}' => resultName: '{2}' entry in ColorMap.json.", categoricalValue, fileName, resultName));
 		}

@@ -173,9 +173,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="attributeDesc.json" />
-    <None Include="ColorMap.json">
+    <Resource Include="ColorMap.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
     <None Include="packages.config" />
     <None Include="qcspublish_TemporaryKey.pfx" />
   </ItemGroup>

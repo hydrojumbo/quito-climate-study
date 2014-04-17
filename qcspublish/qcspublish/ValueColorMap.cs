@@ -26,6 +26,11 @@ namespace qcspublish
 		/// </summary>
 		public string color { get; set; }
 
+		/// <summary>
+		/// Specify the color as an rgb string (r,g,b) (replace r with red value, 0-255, etc).
+		/// </summary>
+		public string rgb { get; set; }
+
 		public ValueColorMap()
 		{ }
 	}

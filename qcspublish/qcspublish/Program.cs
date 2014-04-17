@@ -39,10 +39,16 @@ namespace qcspublish
 		static void Main(string[] args)
 		{
 			//validate input
-			if (args.Length != 2)
+			/*if (args.Length != 2)
 			{
+				Console.WriteLine(string.Join(",", args));
 				throw new Exception("Required arguments are: path/to/parent-directory-of-gis-data path/to/app-folder-of-quito-climate-study-project");
-			}
+			}*/
+			Console.WriteLine("\n");
+			Console.WriteLine("Source:");
+			Console.WriteLine(args[0]);
+			Console.WriteLine("Destination:");
+			Console.WriteLine(args[1]);
 
 			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
 			string GDAL_HOME = @";c:\Program Files (x86)\FWTools2.4.7\bin";		
@@ -94,14 +100,48 @@ namespace qcspublish
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
 			
+			Tuple<List<string>, List<string>> rasterResults = new Tuple<List<string>,List<string>>(new List<string>(), new List<string>());
+			Tuple<List<string>, List<string>> gridResults = new Tuple<List<string>,List<string>>(new List<string>(), new List<string>());
+			Tuple<List<string>, List<string>> vectorResults = new Tuple<List<string>,List<string>>(new List<string>(), new List<string>());
 			//compute files to publish to web
-			Tuple<List<string>, List<string>> rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, ".tif", processedRasters);
-			processedRasters = rasterResults.Item1;
-			Tuple<List<string>, List<string>> gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, "hdr.adf", processedRasters);
-			 processedRasters.AddRange(gridResults.Item1);
-						
-			Tuple<List<string>, List<string>> vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, legend, ".shp", processedVectors);
-			processedVectors = vectorResults.Item1;
+			try
+			{
+				Console.WriteLine("Processing raster files...");
+				rasterResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, ".tif", processedRasters);
+				processedRasters = rasterResults.Item1;
+			}
+			catch (Exception rastEx)
+			{
+				Console.WriteLine("Exception processing raster files ");
+				Console.WriteLine(rastEx.Message);
+				Console.WriteLine(rastEx.InnerException.ToString());
+			}
+			
+			try
+			{
+				Console.WriteLine("Processing grid files...");
+				gridResults = ProcessDatasets(args, srcDir, tifResultDir, colorRepo, legend, "hdr.adf", processedRasters);
+				processedRasters.AddRange(gridResults.Item1);
+			}
+			catch (Exception gridEx)
+			{
+				Console.WriteLine("Exception processing grid files ");
+				Console.WriteLine(gridEx.Message);
+				Console.WriteLine(gridEx.InnerException.ToString());
+			}
+			
+			try
+			{
+				Console.WriteLine("Processing vector files...");
+				vectorResults = ProcessDatasets(args, srcDir, shpResultDir, colorRepo, legend, ".shp", processedVectors);
+				processedVectors = vectorResults.Item1;	
+			}
+			catch (Exception vex)
+			{
+				Console.WriteLine("Exception processing vector files ");
+				Console.WriteLine(vex.Message);
+				Console.WriteLine(vex.InnerException.ToString());
+			}			
 			
 			//output legend file
 			if (!legResultDir.Exists)

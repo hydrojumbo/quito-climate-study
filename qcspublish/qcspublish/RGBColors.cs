@@ -24,13 +24,24 @@ namespace qcspublish
 		public string HexColor { get { return hexColor; } }
 		public Boolean IsOutline { get; set; }
 
-		public RGBColors(string hexColor, Boolean isOutline)
+		public RGBColors(string hexColor, string rgb, Boolean isOutline)
 		{
 			IsOutline = isOutline;
-			Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
-			this.red = color.R;
-			this.green = color.G;
-			this.blue = color.B;
+			if (!string.IsNullOrEmpty(hexColor))
+			{
+				Color color = System.Drawing.ColorTranslator.FromHtml(hexColor);
+				this.red = color.R;
+				this.green = color.G;
+				this.blue = color.B;
+			}
+			else if (!string.IsNullOrEmpty(rgb))
+			{
+				string clr = rgb.Replace("(", "").Replace(")", "");
+				string[] clrs = clr.Split(',');
+				this.red = Convert.ToInt32(clrs[0]);
+				this.green = Convert.ToInt32(clrs[1]);
+				this.blue = Convert.ToInt32(clrs[2]);
+			}						
 			this.hexColor = hexColor;
 		}
 	}

@@ -13,7 +13,7 @@ angular.module('quitoClimateStudyApp')
             questions:
             [
                 {
-                    name: 'Pregunta 1 dentro de un contexto de servicion de agua potable en el sector urbano',
+                    name: 'Pregunta 1: dentro de un contexto de servicion de agua potable en el sector urbano',
                     description: '¿Qué tan vulnerable es el sistema de abastecimiento de agua potable en el DMQ  en función de la oferta y demanda de agua  actual y futura?',
                     categories: [
                         {        
@@ -74,7 +74,7 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historico (1960 - 1990)',
+                                            name: 'Histórico (1960 - 1990)',
                                             data: 'hist_tmed_an',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -97,11 +97,11 @@ angular.module('quitoClimateStudyApp')
                                     ]
                                 },
                                 {
-                                    section: 'Precipitacion (Cuencas de Captacion)',
+                                    section: 'Precipitación (Cuencas de Captacion)',
                                     layers: 
                                     [
                                         {
-                                            name: 'Historico (1971 - 2007)',
+                                            name: 'Histórico (1971 - 2007)',
                                             data: 'annual_precip_historic',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -117,11 +117,11 @@ angular.module('quitoClimateStudyApp')
                                     ]
                                 },
                                 {
-                                    section: 'Uso de Area de Paramo (Cuencas de Captacion)',
+                                    section: 'Uso de Área de Páramo (Cuencas de Captacion)',
                                     layers: 
                                     [
                                         {
-                                            name: 'Historico (2007)',
+                                            name: 'Histórico (2007)',
                                             data: 'Paramo_Historical',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -135,7 +135,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Porcentaje de Perdida (2050)',
+                                            name: 'Porcentaje de Pérdida (2050)',
                                             data: 'Paramo_Loss',
                                             type: 'vector',
                                             isSelected: false,
@@ -147,7 +147,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {                 
                             id: 'sensitivity',   
-                            title: 'Sensitivity Analysis',
+                            title: 'Análisis de Sensibilidad',
                             isOpen: false,
                             sections: [
                                 {
@@ -155,7 +155,7 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historico (2010 Census)',
+                                            name: 'Histórico (2010 Census)',
                                             data: 'Population_2010',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -176,7 +176,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Niveles de Sensitividad (Bajo, Medio, Alto)',
+                                            name: 'Niveles de Sensibilidad (Bajo, Medio, Alto)',
                                             data: 'Population_Sensitivity',
                                             type: 'vector',
                                             isSelected: false,
@@ -217,7 +217,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1                           
                                         },
                                         {
-                                            name: 'Aumento de Temperatura + Sequía + Perdida de Area de Paramo + Sensibilidad al Aumento de Población',
+                                            name: 'Aumento de Temperatura + Sequía + Pérdida de Área de Páramo + Sensibilidad al Aumento de Población',
                                             data: 'Scenario5_Coverage',
                                             type: 'vector',
                                             isSelected: false,
@@ -240,7 +240,7 @@ angular.module('quitoClimateStudyApp')
             questions:
             [
                 {
-                    name: 'Datos Historicos y Futuros (2050)',
+                    name: 'Datos Históricos y Futuros (2050)',
                     description: 'Explicación sobre cómo genera los escenarios utilizando las diferentes opciones del menú de la izquierda.',
                     categories: [
                         {        
@@ -253,14 +253,14 @@ angular.module('quitoClimateStudyApp')
                                     layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
                                     [
                                         {
-                                            name: 'Digital Elevation Map',
+                                            name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'DMQ Outline',
+                                            name: 'Delimitación DMQ',
                                             data: 'DMQ_outline_wgs1984',
                                             type: 'vector',
                                             isSelected: true,
@@ -288,7 +288,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Rios',
+                                            name: 'Ríos',
                                             data: 'Rios',
                                             type: 'vector',
                                             isSelected: true,
@@ -300,7 +300,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {              
                             id: 'estacionesHistoricasInamhi',              
-                            title: 'Estaciones Historicas (fuente: INAMHI)',
+                            title: 'Estaciones Históricas (fuente: INAMHI)',
                             isOpen: false,
                             sections: [                                
                                 {
@@ -315,7 +315,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Precipitacion (11 estaciones)',
+                                            name: 'Precipitación (11 estaciones)',
                                             data: 'INAMHI_estaciones_precip',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -335,7 +335,7 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Temperatura y Precipitacion',
+                                            name: 'Temperatura y Precipitación',
                                             data: 'SA_estaciones_Agustin',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -351,11 +351,11 @@ angular.module('quitoClimateStudyApp')
                             isOpen: false,
                             sections: [                                
                                 {
-                                    section: 'Temperatura Minima',
+                                    section: 'Temperatura Mínima',
                                     layers: 
                                     [
                                         {
-                                            name: 'Historica (1960 - 1990)',
+                                            name: 'Histórica (1960 - 1990)',
                                             data: 'hist_tmin_an',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -375,7 +375,7 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historica (1960 - 1990)',
+                                            name: 'Histórica (1960 - 1990)',
                                             data: 'hist_tmed_an',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -398,11 +398,11 @@ angular.module('quitoClimateStudyApp')
                                     ]
                                 },
                                 {
-                                    section: 'Temperatura Maxima',
+                                    section: 'Temperatura Máxima',
                                     layers: 
                                     [
                                         {
-                                            name: 'Historica (1960 - 1990)',
+                                            name: 'Histórica (1960 - 1990)',
                                             data: 'hist_tmax_an',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -429,56 +429,56 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: "Historica (1960-1990) Jan 1",
+                                            name: "Histórica (1960-1990) Jan 1",
                                             data: "jan_1_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                         },
                                         {
-                                            name: "Historica (1960-1990) Feb 2",
+                                            name: "Histórica (1960-1990) Feb 2",
                                             data: "feb_2_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Mar 3",
+                                            name: "Histórica (1960-1990) Mar 3",
                                             data: "mar_3_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Abr 4",
+                                            name: "Histórica (1960-1990) Abr 4",
                                             data: "abr_4_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) May 5",
+                                            name: "Histórica (1960-1990) May 5",
                                             data: "may_5_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Jun 6",
+                                            name: "Histórica (1960-1990) Jun 6",
                                             data: "jun_6_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Jul 7",
+                                            name: "Histórica (1960-1990) Jul 7",
                                             data: "jul_7_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Aug 8",
+                                            name: "Histórica (1960-1990) Aug 8",
                                             data: "aug_8_tmin",
                                             type: "raster",
                                             isSelected: false,
@@ -492,21 +492,21 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Oct 10",
+                                            name: "Histórica (1960-1990) Oct 10",
                                             data: "oct_10_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Nov 11",
+                                            name: "Histórica (1960-1990) Nov 11",
                                             data: "nov_11_tmin",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960-1990) Dec 12",
+                                            name: "Histórica (1960-1990) Dec 12",
                                             data: "dec_12_tmin",
                                             type: "raster",
                                             isSelected: false,
@@ -603,84 +603,84 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                       {
-                                        name: "Historica (1960 - 1990) Jan 1",
+                                        name: "Histórica (1960 - 1990) Jan 1",
                                         data: "jan_1_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Feb 2",
+                                        name: "Histórica (1960 - 1990) Feb 2",
                                         data: "feb_2_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Mar 3",
+                                        name: "Histórica (1960 - 1990) Mar 3",
                                         data: "mar_3_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Abr 4",
+                                        name: "Histórica (1960 - 1990) Abr 4",
                                         data: "abr_4_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) May 5",
+                                        name: "Histórica (1960 - 1990) May 5",
                                         data: "may_5_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Jun 6",
+                                        name: "Histórica (1960 - 1990) Jun 6",
                                         data: "jun_6_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Jul 7",
+                                        name: "Histórica (1960 - 1990) Jul 7",
                                         data: "jul_7_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Aug 8",
+                                        name: "Histórica (1960 - 1990) Aug 8",
                                         data: "aug_8_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Sep 9",
+                                        name: "Histórica (1960 - 1990) Sep 9",
                                         data: "sep_9_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Oct 10",
+                                        name: "Histórica (1960 - 1990) Oct 10",
                                         data: "oct_10_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Nov 11",
+                                        name: "Histórica (1960 - 1990) Nov 11",
                                         data: "nov_11_tmed",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Dec 12",
+                                        name: "Histórica (1960 - 1990) Dec 12",
                                         data: "dec_12_tmed",
                                         type: "raster",
                                         isSelected: false,
@@ -693,84 +693,84 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                       {
-                                        name: "Historica (1960 - 1990) Jan 1",
+                                        name: "Histórica (1960 - 1990) Jan 1",
                                         data: "jan_1_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Feb 2",
+                                        name: "Histórica (1960 - 1990) Feb 2",
                                         data: "feb_2_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Mar 3",
+                                        name: "Histórica (1960 - 1990) Mar 3",
                                         data: "mar_3_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Abr 4",
+                                        name: "Histórica (1960 - 1990) Abr 4",
                                         data: "abr_4_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) May 5",
+                                        name: "Histórica (1960 - 1990) May 5",
                                         data: "may_5_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Jun 6",
+                                        name: "Histórica (1960 - 1990) Jun 6",
                                         data: "jun_6_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Jul 7",
+                                        name: "Histórica (1960 - 1990) Jul 7",
                                         data: "jul_7_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Aug 8",
+                                        name: "Histórica (1960 - 1990) Aug 8",
                                         data: "aug_8_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Sep 9",
+                                        name: "Histórica (1960 - 1990) Sep 9",
                                         data: "sep_9_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Oct 10",
+                                        name: "Histórica (1960 - 1990) Oct 10",
                                         data: "oct_10_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Nov 11",
+                                        name: "Histórica (1960 - 1990) Nov 11",
                                         data: "nov_11_tmax",
                                         type: "raster",
                                         isSelected: false,
                                         opacity: 1.0
                                       },
                                       {
-                                        name: "Historica (1960 - 1990) Dec 12",
+                                        name: "Histórica (1960 - 1990) Dec 12",
                                         data: "dec_12_tmax",
                                         type: "raster",
                                         isSelected: false,
@@ -782,7 +782,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'precipHistoricaDmq',
-                            title: 'Precipitacion DMQ Historica',
+                            title: 'Precipitacion DMQ Histórica',
                             isOpen: false,
                             sections: [
                                 {
@@ -790,7 +790,7 @@ angular.module('quitoClimateStudyApp')
                                     layers:
                                     [
                                         {
-                                            name: 'Precipitacion DMQ Historica (SADMQ)',
+                                            name: 'Precipitación DMQ Histórica (SADMQ)',
                                             data: 'precip_hist',
                                             type: 'raster',
                                             isSelected: false,
@@ -802,7 +802,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'precipitacionMapas',
-                            title: 'Precipitacion Anual (fuente: WorldClim)',
+                            title: 'Precipitación Anual (fuente: WorldClim)',
                             isOpen: false,
                             sections: [
                                 {
@@ -810,7 +810,7 @@ angular.module('quitoClimateStudyApp')
                                     layers:
                                     [
                                         {
-                                            name: 'Historica (1960 - 1990)',
+                                            name: 'Histórica (1960 - 1990)',
                                             data: 'hist_prec_tot',
                                             type: 'raster',
                                             isSelected: false,
@@ -829,50 +829,50 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'precipitacionMapasMensual',
-                            title: 'Precipitacion Mensual (fuente: WorldClim)',
+                            title: 'Precipitación Mensual (fuente: WorldClim)',
                             isOpen: false,
                             sections: [
                                 {
-                                    section: 'Precipitacion Minima',
+                                    section: 'Precipitación Mínima',
                                     layers:
                                     [
                                           {
-                                            name: "Historica (1960 - 1990) Jan",
+                                            name: "Histórica (1960 - 1990) Jan",
                                             data: "jan_1_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Feb",
+                                            name: "Histórica (1960 - 1990) Feb",
                                             data: "feb_2_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Mar",
+                                            name: "Histórica (1960 - 1990) Mar",
                                             data: "mar_3_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Abr",
+                                            name: "Histórica (1960 - 1990) Abr",
                                             data: "abr_4_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) May",
+                                            name: "Histórica (1960 - 1990) May",
                                             data: "may_5_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Jun",
+                                            name: "Histórica (1960 - 1990) Jun",
                                             data: "jun_6_pr",
                                             type: "raster",
                                             isSelected: false,
@@ -886,42 +886,42 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Aug",
+                                            name: "Histórica (1960 - 1990) Aug",
                                             data: "aug_8_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Sep",
+                                            name: "Histórica (1960 - 1990) Sep",
                                             data: "sep_9_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Oct",
+                                            name: "Histórica (1960 - 1990) Oct",
                                             data: "oct_10_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Nov",
+                                            name: "Histórica (1960 - 1990) Nov",
                                             data: "nov_11_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Dec",
+                                            name: "Histórica (1960 - 1990) Dec",
                                             data: "dec_12_pr",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Ene",
+                                            name: "Histórica (1960 - 1990) Ene",
                                             data: "ene_pr_2050",
                                             type: "raster",
                                             isSelected: false,
@@ -935,70 +935,70 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Mar",
+                                            name: "Histórica (1960 - 1990) Mar",
                                             data: "mar_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Abr",
+                                            name: "Histórica (1960 - 1990) Abr",
                                             data: "abr_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) May",
+                                            name: "Histórica (1960 - 1990) May",
                                             data: "may_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Jun",
+                                            name: "Histórica (1960 - 1990) Jun",
                                             data: "jun_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Jul",
+                                            name: "Histórica (1960 - 1990) Jul",
                                             data: "jul_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Aug",
+                                            name: "Histórica (1960 - 1990) Aug",
                                             data: "aug_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Sep",
+                                            name: "Histórica (1960 - 1990) Sep",
                                             data: "sep_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Oct",
+                                            name: "Histórica (1960 - 1990) Oct",
                                             data: "oct_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Nov",
+                                            name: "Histórica (1960 - 1990) Nov",
                                             data: "nov_pr_2050",
                                             type: "raster",
                                             isSelected: false,
                                             opacity: 1.0
                                           },
                                           {
-                                            name: "Historica (1960 - 1990) Dic",
+                                            name: "Histórica (1960 - 1990) Dic",
                                             data: "dic_pr_2050",
                                             type: "raster",
                                             isSelected: false,
@@ -1015,9 +1015,9 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Agricultura',
-            description: 'Si bien cierto que la seguridad alimentaria de la población del DMQ no depende de la producción del sector agrícola del Distrito, los diferentes tipos de cultivos existentes y su relación con la elevación sobre el nivel del mar, pone en evidencia la  vulnerabilidad del sector frente a la variación climática en las diferentes zonas del DMQ (templada, sub-templada, y subtropical). Este estudio abarca el análisis de vulnerabilidad de los cultivos tradicionales producidos en la zona del Distrito.',
-            furtherInfoReport: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14',
-            analysisNarrative: 'Con respecto a los factores de exposición y sensibilidad. En primer lugar para determinar el nivel de exposición al incremento de temperatura, se estimó la acumulación de Unidades de Calor (UC) , a fin de establecer cómo los períodos de crecimiento del cultivo pueden ser afectados.  En segundo lugar, para determinar el nivel de sensibilidad de los cultivos a cambios de temperaturas, se cuantificaron las UC proyectadas al año 2050 para el escenario climático más adverso, es decir, con base en la ruta de mayores emisiones de carbono (RCP 8.5) . En particular se evalúan dos componentes de sensibilidad: I) sensibilidad en función del crecimiento y producción, a partir de la determinación del factor de  reducción de crecimiento por temperatura (RCT),  y (II) sensibilidad del ciclo de crecimiento de cultivos; análisis que se fundamenta en el cálculo y acumulación de las UC requeridas para alcanzar la madurez fisiológica de los cultivos. Finalmente, para determinar la vulnerabilidad de los páramos frente al incremento de temperatura, se analizaron las regiones con páramos en el DMQ y con elevación superior a los 3400 msnm. Examinaremos brevemente los principales resultados. En primera instancia se espera que el incremento de temperaturas tenga un efecto positivo en el desarrollo de los cultivos. Esto debido a que las temperaturas medias pronosticadas a futuro, serán similares a las temperaturas óptimas de desarrollo de los cultivos. Ahora bien, debido al incremento de temperaturas habrá una acumulación más rápida de las UC, con ello, los ciclos de crecimiento de los cultivos en el DMQ se pueden ver acortados en tiempo y duración. A su vez, se observa que la superficie en las bandas de elevación desde los 3600 a 4200 msnm, son susceptibles al incremento del área cultivada debido a los aumentos de temperatura. Así por ejemplo, podría ocurrir una migración de áreas de cultivo de papa a altitudes mayores, razón por la cual, las áreas de los páramos se verán amenazadas por la expansión de la frontera agrícola. Es imposible predecir con exactitud cuánto se expandirá la frontera agrícola, pero posiblemente, los páramos enfrentarán una amenaza significativa debido al avance de los cultivos, principalmente el cultivo de la papa y al crecimiento de la mancha urbana entre otros factores. Considerando los resultados obtenidos, se recomienda la implementación del modelo de crecimiento de plantas (PGM -  Plant Growth Method) de WEAP (Water Evaluation And Planning System), para determinar con mayor detalle y precisión la vulnerabilidad del  sector agrícola ante el cambio climático. El modelo PGM de WEAP estima el efecto potencial del cambio climático y el incremento en las concentraciones atmosféricas de CO2 en los rendimientos de cultivos agrícolas y sus requerimientos hídricos bajo condiciones futuras cambiantes.',
+            description: 'Si bien es cierto, la seguridad alimentaria de la población del DMQ no depende exclusivamente de la producción del sector agrícola del Distrito, los diferentes tipos de cultivos existentes en su territorio, pone en evidencia la vulnerabilidad de este sector frente a la variación climática en los diferentes rangos altitudinales de producción, que van desde los 500 hasta los 3600 msnm. y que comprenden zonas de clima templado, sub-templado hasta subtropical',
+            furtherInfoReport: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14', // Laura: this should be the name of a pdf document you include in the app/documents/ directory before publishing the site
+            analysisNarrative: 'Con respecto a los factores de exposición y sensibilidad inherentes a este sector, en primer lugar se evaluó el nivel de exposición al incremento de temperatura y se estimó la acumulación de Unidades de Calor (UC)  de los cultivos tradicionales, a fin de establecer cómo los períodos de crecimiento de los cultivo pueden ser afectados.  En segundo lugar, para determinar el nivel de sensibilidad de los cultivos a cambios de temperaturas, se cuantificaron las UC proyectadas al año 2050 para el escenario climático más adverso, es decir, con base en la ruta de mayores emisiones de carbono (RCP 8.5) . En forma específica se evaluó dos componentes de sensibilidad (I) sensibilidad en función del crecimiento y producción, a partir de la determinación del factor de  reducción de crecimiento por temperatura (RCT),  y (II) sensibilidad del ciclo de crecimiento de cultivos; análisis que se fundamenta en el cálculo y acumulación de las UC requeridas para alcanzar la madurez fisiológica de los cultivos. Como caso de interés y relacionado con el sector agua, se tomo un caso particular se determinó la vulnerabilidad de los páramos frente al incremento de temperatura en el rango de elevación superior a los 3600 msnm. Definidos los componentes de sensibilidad, en primera instancia se espera que el incremento de temperaturas tenga un efecto positivo en el desarrollo de los cultivos, principalmente caña de azúcar, maíz y cultivos anuales. Esto debido a que las temperaturas medias pronosticadas a futuro, serán similares a las temperaturas óptimas de desarrollo de los cultivos. Ahora bien, debido al incremento de temperaturas habrá una acumulación más rápida de las UC, con ello, los ciclos de crecimiento de los cultivos en el DMQ se pueden ver acortados en tiempo y duración. A su vez, se observa que la superficie en las bandas de elevación desde los 3600 a 4200 msnm, son susceptibles al incremento del área cultivada debido a los aumentos de temperatura. Así por ejemplo, podría ocurrir una migración de áreas de cultivo de papa a altitudes mayores, razón por la cual, las áreas de los páramos se verán amenazadas por la expansión de la frontera agrícola. Es imposible predecir con exactitud cuánto se expandirá la frontera agrícola, pero posiblemente, los páramos enfrentarán una amenaza significativa debido al avance de los cultivos, principalmente el cultivo de la papa y a la presión poblacional producida por el crecimiento de la mancha urbana entre otros factores. Considerando los resultados obtenidos, se recomienda la implementación del modelo de crecimiento de plantas (PGM -  Plant Growth Method) de WEAP (Water Evaluation And Planning System), para determinar con mayor detalle y precisión la vulnerabilidad del  sector agrícola ante el cambio climático. El modelo PGM de WEAP estima el efecto potencial del cambio climático y el incremento en las concentraciones atmosféricas de CO2 en los rendimientos de cultivos agrícolas y sus requerimientos hídricos bajo condiciones futuras cambiantes. También se sugiere el estudio de los sistemas agroforestales, los cuales son de importancia regional y un análisis más particular para determinar el efecto de la acumulación de horas frio entre otros factores.',
             questions:[
                 {
                     name: 'Reduccion en el Ciclo de Crecimiento',
@@ -1025,7 +1025,7 @@ angular.module('quitoClimateStudyApp')
                     categories: [
                         {        
                             id: 'base',                    
-                            title: 'Base Map',
+                            title: 'Mapa Base',
                             isOpen: true,
                             sections: [
                                 {
@@ -1040,7 +1040,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         },
                                         {
-                                            name: 'DMQ Outline',
+                                            name: 'Delimitaciones DMQ',
                                             data: 'DMQ_outline_wgs1984',
                                             type: 'vector',
                                             isSelected: true,
@@ -1054,7 +1054,7 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         },         
                                         {
-                                            name: 'Regiones Climaticas',
+                                            name: 'Regiones Climáticas',
                                             data: 'regiones_climaticas',
                                             type: 'vector',
                                             isSelected: false,
@@ -1074,21 +1074,21 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (1960 - 1990)',
+                                            name: 'Histórico (1960 - 1990)',
                                             data: 'hist_tmed_an',                                    
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Future (2050)',
+                                            name: 'Futuro (2050)',
                                             data: 'tmed_an_2050',
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1                          
                                         },
                                         {
-                                            name: 'Change (+ °C)',
+                                            name: 'Cambio (+ °C)',
                                             data: 'tmed_dif_alto',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -1100,7 +1100,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'sensitivity',
-                            title: 'Sensitivity',
+                            title: 'Sensibilidad',
                             isOpen: false,
                             sections:[
                                 {
@@ -1126,7 +1126,7 @@ angular.module('quitoClimateStudyApp')
                                     section: '',
                                     layers:[
                                         {
-                                            name: 'Vulnerabilidad de Regiones Climaticas ',
+                                            name: 'Vulnerabilidad de Regiones Climáticas ',
                                             data: 'Growth_Season_Vulnerability',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -1139,12 +1139,12 @@ angular.module('quitoClimateStudyApp')
                     ]                    
                 },
                 {
-                    name: 'Reduccion de Paramo frente la Frontera Agricultura',
+                    name: 'Reducción de Páramo frente la Frontera Agrícola',
                     description: '¿Cómo la variabilidad climática afectará la exposición de los cultivos a cambios en temperatura y su efecto en el crecimiento; así como los cambios de la frontera agrícola y, por consiguiente, la exposición de los páramos a cambios en dicha frontera?',
                     categories: [
                         {        
                             id: 'base',                    
-                            title: 'Base Map',
+                            title: 'Mapa Base',
                             isOpen: true,
                             sections: [
                                 {
@@ -1152,21 +1152,21 @@ angular.module('quitoClimateStudyApp')
                                     layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
                                     [
                                         {
-                                            name: 'Digital Elevation Map',
+                                            name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'DMQ Outline',
+                                            name: 'Delimitaciones DMQ',
                                             data: 'DMQ_outline_wgs1984',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Regiones de Paramo',
+                                            name: 'Regiones de Páramo',
                                             data: 'Paramo_Elevation_Bands',
                                             type: 'vector',
                                             isSelected: true,
@@ -1178,7 +1178,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'exposures',              
-                            title: 'Exposures',
+                            title: 'Exposición',
                             isOpen: false,
                             sections: [                                
                                 {
@@ -1186,21 +1186,21 @@ angular.module('quitoClimateStudyApp')
                                     layers: 
                                     [
                                         {
-                                            name: 'Historic (1960 - 1990)',
+                                            name: 'Histórico (1960 - 1990)',
                                             data: 'hist_tmed_an',                                    
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Future (2050)',
+                                            name: 'Futuro (2050)',
                                             data: 'tmed_an_2050',
                                             type: 'raster',
                                             isSelected: false,
                                             opacity: 1                          
                                         },
                                         {
-                                            name: 'Change (+ °C)',
+                                            name: 'Cambio (+ °C)',
                                             data: 'tmed_dif_alto',                                    
                                             type: 'raster',
                                             isSelected: false,
@@ -1212,14 +1212,14 @@ angular.module('quitoClimateStudyApp')
                         },
                         {
                             id: 'sensitivity',
-                            title: 'Sensitivity',
+                            title: 'Sensibilidad',
                             isOpen: false,
                             sections:[
                                 {
                                     section: '',
                                     layers:[
                                         {
-                                            name: 'Aumento en Areas Cultivadas Potencial',
+                                            name: 'Aumento en Áreas  Cultivadas Potencialmente',
                                             data: 'Paramo_Sensitivity',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -1238,7 +1238,7 @@ angular.module('quitoClimateStudyApp')
                                     section: '',
                                     layers:[
                                         {
-                                            name: 'Vulnerabilidad de Regiones Climaticas ',
+                                            name: 'Vulnerabilidad de Regiones Climáticas ',
                                             data: 'Growth_Season_Vulnerability',                                    
                                             type: 'vector',
                                             isSelected: false,
@@ -1254,9 +1254,9 @@ angular.module('quitoClimateStudyApp')
         }, 
         {
             name: 'Incendios',
-            description: 'El Distrito Metropolitano de Quito es uno de los municipios más afectados en el Ecuador por los incendios forestales. Cada verano la problemática se agudiza poniendo de manifiesto la situación de vulnerabilidad del Distrito. Existen 15 años de evidencia de una elevada intensidad y cantidad de incendios, particularmente durante el periodo 2001 al  2009. Así mismo, el año 2012 estuvo marcado por temperaturas extremas y fuertes sequías; factores que incrementaron la intensidad y frecuencia de los  incendios, causando daños en áreas protegidas de gran biodiversidad, en espacios de propiedad pública y privada de diferentes usos y, en general, efectos en el  bienestar de la población. Por lo tanto, la  Secretaria de Seguridad y Gobernabilidad y su Dirección de Riesgos y la Secretaria del Ambiente han venido implementado acciones de prevención, así como de mejoramiento en los planes de emergencia de incendios. Sin embargo, las formas de gestión son aún limitadas. Para complementar este esfuerzo, el estudio de vulnerabilidad apunta a desarrollar una herramienta para mejorar el conocimiento del comportamiento de los incendios en el DMQ frente a factores relacionados con actividades antrópicas y variables climáticas. ',
+            description: 'El Distrito Metropolitano de Quito es uno de los municipios más afectados en el Ecuador por los incendios forestales. Cada verano la problemática se agudiza poniendo de manifiesto la situación de vulnerabilidad del Distrito. Existen 15 años de evidencia de una elevada intensidad y cantidad de incendios, particularmente durante el periodo 2001 al  2009. Así mismo, el año 2012 estuvo marcado por temperaturas extremas y fuertes sequías; factores que incrementaron la intensidad y frecuencia de los  incendios, causando daños en áreas protegidas de gran biodiversidad, en espacios de propiedad pública y privada de diferentes usos y, en general, efectos en el  bienestar de la población. Por lo tanto, la  Secretaria de Seguridad y Gobernabilidad y su Dirección de Riesgos y la Secretaria del Ambiente han venido implementado acciones de prevención, así como de mejoramiento en los planes de emergencia de incendios. Sin embargo, las formas de gestión son aún limitadas. Para complementar este esfuerzo, el estudio de vulnerabilidad apunta a desarrollar una herramienta para mejorar el conocimiento del comportamiento de los incendios en el DMQ frente a factores relacionados con actividades antrópicas y variables climáticas.',
             furtherInfoReport: 'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14',
-            analysisNarrative: 'Para el análisis frente amenazas antrópicas se definen dos indicadores de sensibilidad: (I) un indicador espacial de inicio de fuego (ISMF)  (II) un indicador histórico de inicio de fuego (IHMF) . El cruce de estos indicadores determinan los niveles de presión antrópica sobre las áreas de incendios forestales. Por otro lado, se establece un indicador de sensibilidad climática (ISC) compuesto por (I) un indicador de régimen pluviométrico (IRP), (II) un indicador de régimen térmico (IRT). Finalmente, las zonas expuestas son las áreas en “riesgo o peligro”. El cruce de resultados de presión de inicio de fuego y del Indicador de sensibilidad climática determina las zonas donde, además de presión antropogénica, existen tendencias elevadas de propagación. El análisis del riesgo presente indica que el  78% del territorio del DMQ está en riesgo de incendio forestal alto ó moderado (35% y 43%) respectivamente. Las zonas más vulnerables son las parroquias ubicadas al nororiente del Municipio, en particular, Ilalo, Calacalí, Puellaro,  Perucho, Llano Chico, Calderón, Nayón y ciertas zonas muy puntuales de Calacali,  Nono y Lloa. Esto debido a una fuerte presión antropogénica, así como factores de iniciación y propagación de incendios. A su vez, son regiones en desarrollo, con alta densidad de población y varios proyectos estratégicos en proceso de implementación; factores que incrementan su condición de vulnerabilidad. Cabe resaltar que en un escenario a partir del incremento en los índices de sensibilidad climática al 2050, la tendencia de los riesgos de incendio forestal aumenta considerablemente en Quito y sus zonas aledañas. Se recomienda para futuros estudios complementar el análisis de factores antropogénicos considerando variables como: proyecciones de población, movilidad en función de las vías, y asentamientos humanos dispersos. Así como, mejorar la información geográfica de aquellas áreas donde se aplica la práctica de quemas voluntarias en agricultura. Además, mejorar la calidad y cantidad de información  histórica de incendios con indicadores de intensidad, superficie y tipología. Finalmente, se recomienda el uso de  esta herramienta para identificar en otros sectores relevantes como ecosistemas, las zonas de riesgo de incendios forestales.',
+            analysisNarrative: 'Para el análisis frente amenazas antrópicas se definen dos indicadores de sensibilidad: (I) un indicador espacial de inicio de fuego (ISMF)  (II) un indicador histórico de inicio de fuego (IHMF) . El análisis de estos indicadores determinan los niveles de presión antrópica sobre las áreas de incendios forestales. Por otro lado, se establece un indicador de sensibilidad climática (ISC) compuesto por (I) un indicador de régimen pluviométrico (IRP), (II) un indicador de régimen térmico (IRT). Finalmente, las zonas expuestas son las áreas en “riesgo o peligro”. El resultados de presión de inicio de fuego y del Indicador de sensibilidad climática determina las zonas donde, además de presión antropogénica, existen tendencias elevadas de propagación. El análisis del riesgo presente indica que el  78% del territorio del DMQ está en riesgo de incendio forestal alto ó moderado (35% y 43%) respectivamente. Las zonas más vulnerables son las parroquias ubicadas al nororiente del Municipio, en particular, Ilalo, Calacalí, Puellaro,  Perucho, Llano Chico, Calderón, Nayón y ciertas zonas muy puntuales de Calacali,  Nono y Lloa. Esto debido a una fuerte presión antropogénica, así como factores de iniciación y propagación de incendios. A su vez, son regiones en desarrollo, con alta densidad de población y varios proyectos estratégicos en proceso de implementación; factores que incrementan su condición de vulnerabilidad. Cabe resaltar que en un escenario a partir del incremento en los índices de sensibilidad climática al 2050, la tendencia de los riesgos de incendio forestal aumenta considerablemente en Quito y sus zonas aledañas. Se recomienda para futuros estudios complementar el análisis de factores antropogénicos considerando variables como: proyecciones de población, movilidad en función de las vías, y asentamientos humanos dispersos. Así como, mejorar la información geográfica de aquellas áreas donde se aplica la práctica de quemas voluntarias en agricultura. Además, mejorar la calidad y cantidad de información  histórica de incendios con indicadores de intensidad, superficie y tipología. Finalmente, se recomienda el uso de  esta herramienta para identificar en otros sectores relevantes como ecosistemas, las zonas de riesgo de incendios forestales.',
             questions:[
                 {
                     name: 'Incendios Forestales',
@@ -1267,9 +1267,9 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Ecosistemas',
-            description: 'El estudio sectorial de vulnerabilidad en el sector ecosistemas constituye la primera evaluación del grado de exposición y sensibilidad del DMQ frente a diferentes amenazas antrópicas y climáticas. Si bien es cierto que los ecosistemas nativos del DMQ representan el 60% de su territorio, el crecimiento acelerado de la mancha urbana entre otros factores, está ejerciendo una fuerte presión sobre los ecosistemas nativos, la cobertura vegetal y el uso del suelo. Cinco categorías de ecosistemas de interés del Municipio del DMQ son evaluados: (1) arbustales secos y relictos de bosque, (2) vegetación paramuna, (3) bosques húmedos y plantaciones forestales, (4) arbustos húmedos, y (5) vegetación en regeneración. ',
+            description: 'El estudio de vulnerabilidad en el sector ecosistemas constituye la primera evaluación del grado de exposición y sensibilidad del DMQ frente a diferentes amenazas antrópicas y climáticas. Si bien es cierto que los ecosistemas nativos del DMQ representan el 60% de su territorio, el crecimiento acelerado de la mancha urbana entre otros factores socioeconómicos, está ejerciendo una fuerte presión sobre los ecosistemas nativos, la cobertura vegetal y el uso del suelo. La Secretaría de Ambiente del DMQ, identificó cinco tipos de ecosistemas en el se tiene particular interés y que a continuación son evaluados: (1) arbustales secos y relictos de bosque seco, (2) vegetación paramuna, (3) bosques húmedos y plantaciones forestales, (4) arbustos húmedos, y (5) vegetación en regeneración. Identificado los elementos expuestos frente a la variación climática se presentan las preguntas relevantes del sector. ',
             furtherInfoReport: 'WP5 6 Vuln. CC Ecosistemas DMQ 17_feb_14',
-            analysisNarrative: 'El siguiente punto trata los factores de exposición y sensibilidad. Para empezar, los factores de exposición en este sector se definen en función de las amenazas climáticas y no climáticas. Por otro lado para las amenazas climáticas, la sensibilidad es evaluada en dos diferentes aspectos: (1) la capacidad de recuperación del ecosistema en el área directamente destruida o degradada por una amenaza, y (2) la capacidad de resiliencia y/o resistencia del ecosistema en el área indirectamente afectada por ella.  Adicionalmente, para evaluar la vulnerabilidad “actual” frente amenazas no-climáticas se cruzó el mapa de exposición de cada una de estas amenazas con el mapa de cobertura vegetal del año 2009. A su vez, el índice de vulnerabilidad frente a la amenaza climática fue desarrollado mediante la integración espacial de un indicador de exposición y cinco indicadores de sensibilidad que se calcularon para cada fragmento de ecosistema.  A continuación se describen los principales resultados: El ecosistema de arbustales secos y relictos de bosque seco se reconoce como el más vulnerable frente a las amenazas antrópicas. Es decir el 17% de su área total es considerada con altos niveles de vulnerabilidad. La vegetación paramuna (88%) de su área y los bosques húmedos (80%) de su área,  presenta niveles de vulnerabilidad bajos frente a factores antrópicos. La mayor parte del DMQ cubierta por arbustales secos y relictos de bosque seco (70%) y bosques húmedos/plantaciones forestales (68%) tiene una vulnerabilidad climática relativamente baja. Se evidencia que frente al incremento de temperatura bajo un escenario pesimista de emisiones de carbono, el ecosistema de páramo presenta niveles medios y altos de vulnerabilidad; 47% de su área total y  53% de su área total, respectivamente. Finalmente, se recomienda mejorar la calidad y cantidad de la información disponible. De tal manera que sea posible profundizar en estudios específicos sobre la biología/ecología de las especies y su respuesta frente a diferentes amenazas antrópicas y climáticas. Lo anterior, con el propósito de evaluar de manera más objetiva la vulnerabilidad de los ecosistemas en el DMQ.',
+            analysisNarrative: 'Bajo este contexto los factores de exposición en este sector se definen en función de las amenazas climáticas y no climáticas. Se debe considerar que las amenazas climáticas, la sensibilidad son evaluadas en diferentes aspectos: (1) la capacidad de recuperación del ecosistema en el área directamente destruida o degradada por una amenaza, y (2) la capacidad de resiliencia y/o resistencia del ecosistema en el área indirectamente afectada por ella.  Adicionalmente, para evaluar la vulnerabilidad “actual” frente amenazas no-climáticas se analizó el mapa de exposición de cada una de estas amenazas con el mapa de cobertura vegetal del año 2009. A su vez, el índice de vulnerabilidad frente a la amenaza climática fue desarrollado mediante la integración espacial de un indicador de exposición y cinco indicadores de sensibilidad que se calcularon para cada fragmento de ecosistema.  A continuación se describen los principales resultados:  El ecosistema de arbustales secos y relictos de bosque seco se reconoce como el más vulnerable frente a las amenazas antrópicas. Es decir el 17% de su área total es considerada con altos niveles de vulnerabilidad. La vegetación paramuna (88%) de su área y los bosques húmedos (80%) de su área,  presenta niveles de vulnerabilidad bajos frente a factores antrópicos. La mayor parte del DMQ cubierta por arbustales secos y relictos de bosque seco (70%) y bosques húmedos/plantaciones forestales (68%) tiene una vulnerabilidad climática relativamente baja. Se evidencia que frente al incremento de temperatura bajo un escenario pesimista de emisiones de carbono, el ecosistema de páramo presenta niveles medios y altos de vulnerabilidad; 47% de su área total y  53% de su área total, respectivamente. Finalmente, se recomienda mejorar la generación de información a detalle,de tal manera que sea posible profundizar en estudios específicos sobre la biología/ecología de las especies y su respuesta frente a diferentes amenazas antrópicas y climáticas. ',
             questions:[
                 {
                     name: 'Amenaza No Climáticas',

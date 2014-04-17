@@ -10,16 +10,40 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{9F987C
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup", "Setup\Setup.isproj", "{00CD248F-C64F-4303-A3FB-DA0654907E5C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022} = {80260C10-15B3-4E2C-8A8B-AFBC407D2022}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{80260C10-15B3-4E2C-8A8B-AFBC407D2022}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.Debug|Any CPU.ActiveCfg = DVD-5
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.Debug|Any CPU.Build.0 = DVD-5
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.DVD-5|Any CPU.Build.0 = DVD-5
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.Release|Any CPU.ActiveCfg = SingleImage
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.Release|Any CPU.Build.0 = SingleImage
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{00CD248F-C64F-4303-A3FB-DA0654907E5C}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
