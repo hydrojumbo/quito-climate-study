@@ -105,14 +105,16 @@ angular.module('quitoClimateStudyApp')
                                             data: 'annual_precip_historic',                                    
                                             type: 'vector',
                                             isSelected: false,
-                                            opacity: 1
+                                            opacity: 1,
+                                            isOutlined: true
                                         },
                                         {
                                             name: 'Sequía',
                                             data: 'annual_precip_drought',
                                             type: 'vector',
                                             isSelected: false,
-                                            opacity: 1                           
+                                            opacity: 1,
+                                            isOutlined: true
                                         }
                                     ]
                                 },

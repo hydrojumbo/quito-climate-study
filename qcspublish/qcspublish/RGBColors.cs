@@ -33,6 +33,7 @@ namespace qcspublish
 				this.red = color.R;
 				this.green = color.G;
 				this.blue = color.B;
+				this.hexColor = hexColor;
 			}
 			else if (!string.IsNullOrEmpty(rgb))
 			{
@@ -41,8 +42,8 @@ namespace qcspublish
 				this.red = Convert.ToInt32(clrs[0]);
 				this.green = Convert.ToInt32(clrs[1]);
 				this.blue = Convert.ToInt32(clrs[2]);
-			}						
-			this.hexColor = hexColor;
+				this.hexColor = "#" + (this.red.ToString("X2") + this.green.ToString("X2") + this.blue.ToString("X2"));
+			}									
 		}
 	}
 }

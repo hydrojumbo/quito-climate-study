@@ -44,23 +44,16 @@ namespace qcspublish
 				Console.WriteLine(string.Join(",", args));
 				throw new Exception("Required arguments are: path/to/parent-directory-of-gis-data path/to/app-folder-of-quito-climate-study-project");
 			}*/
-			Console.WriteLine("\n");
-			Console.WriteLine("Source:");
-			Console.WriteLine(args[0]);
-			Console.WriteLine("Destination:");
-			Console.WriteLine(args[1]);
+	
+#if DEBUG
 
-			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
-			string GDAL_HOME = @";c:\Program Files (x86)\FWTools2.4.7\bin";		
-			string path = Environment.GetEnvironmentVariable("PATH");
-			path += ";" + GDAL_HOME;
-			SetEnvironmentVariable("PATH", path);
-
-			//register gdal extensions
-			Gdal.AllRegister();
+			string srcDir = @"C:\data\Geoportal_Test";// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
+			string resultDir = @"C:\data\result"; //  @"C:\dev\quito\buildtest"; //args[1];						
+#else
 
 			string srcDir = args[0].Trim(); // @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
-			string resultDir = args[1].Trim(); //  @"C:\dev\quito\buildtest"; //args[1];			
+			string resultDir = args[1].Trim(); //  @"C:\dev\quito\buildtest"; //args[1];						
+#endif			
 			if (!srcDir.EndsWith("\\"))
 			{
 				srcDir += "\\";
@@ -69,6 +62,22 @@ namespace qcspublish
 			{
 				resultDir += "\\";
 			}
+
+			Console.WriteLine("\n");
+			Console.WriteLine("Source:");
+			Console.WriteLine(srcDir);
+			Console.WriteLine("Destination:");
+			Console.WriteLine(resultDir);
+
+			//verify gdal dlls are available; see: http://trac.osgeo.org/gdal/wiki/GdalOgrCsharpUsage
+			string GDAL_HOME = @";c:\Program Files (x86)\FWTools2.4.7\bin";
+			string path = Environment.GetEnvironmentVariable("PATH");
+			path += ";" + GDAL_HOME;
+			SetEnvironmentVariable("PATH", path);
+
+			//register gdal extensions
+			Gdal.AllRegister();
+
 			string copyToOut = @"";
 			string rasterout = @"raster\";
 			string vectorout = @"vector\";

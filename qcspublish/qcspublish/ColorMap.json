@@ -2217,6 +2217,56 @@
 			}
 		]
 	},
+        {
+        "fileName": "INDIC_SEN_EXP_SALUD_final.shp",
+        "resultName": "Indicador_de_poblacion_mayor_de_64_anios.json",
+        
+        "clrField": "IND_POBL_3",
+        "colorMaps": [
+            {
+                "categoricalValue": "Muy Bájo",
+                "rgb": "(56,168,0)"
+            },
+                        {
+                "categoricalValue": "Bájo",
+                "rgb": "(176,224,0)"
+            },
+                        {
+                "categoricalValue": "Alto",
+                "rgb": "(255,170,0)"
+            },
+                        {
+                "categoricalValue": "Muy Alto",
+                "rgb": "(255,0,0)"
+            }
+
+        ]
+    },
+        {
+        "fileName": "INDIC_SEN_EXP_SALUD_test.shp",
+        "resultName": "Indicador_de_poblacion_mayor_de_64_anios.json",
+        
+        "clrField": "IND_POBL_3",
+        "colorMaps": [
+            {
+                "categoricalValue": "Muy Bájo",
+                "rgb": "(56,168,0)"
+            },
+                        {
+                "categoricalValue": "Bájo",
+                "rgb": "(176,224,0)"
+            },
+                        {
+                "categoricalValue": "Alto",
+                "rgb": "(255,170,0)"
+            },
+                        {
+                "categoricalValue": "Muy Alto",
+                "rgb": "(255,0,0)"
+            }
+
+        ]
+    },
 	{
 		"fileName": "cuencas_final_weap_4.shp",
 		"resultName": "annual_precip_drought.json",
