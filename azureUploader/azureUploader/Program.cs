@@ -18,6 +18,7 @@
 		/// <param name="args">Azure storage account name, Azure storage account key, local path to quito-climate-study/dist directory.</param>
 		static void Main(string[] args)
 		{
+			List<string> skipDirectories = new List<string>();
 #if !DEBUG
 			if (args.Length < 3)
 			{
@@ -33,17 +34,22 @@
 			string accountName = args[0];
 			string actkey = args[1];
 			string localDir = args[2];
+
+			if (args.Any(a => a.StartsWith("-r")))
+			{ skipDirectories.Add("raster"); }
+			if (args.Any(a => a.StartsWith("-v")))
+			{ skipDirectories.Add("vector"); }			
 #else
-			/*string accountName = "quitoestudiodeclima";
+			string accountName = "quitoestudiodeclima";
 			string actkey = "HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA==";
-			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";*/
-			string accountName = args[0];
+			string localDir = "C:\\dev\\quito\\quito-climate-study\\dist";
+			/*string accountName = args[0];
 			string actkey = args[1];
-			string localDir = args[2];
+			string localDir = args[2];*/						
 #endif
 			Stopwatch sw = new Stopwatch();
 			sw.Start();
-			Task t = UploadFiles(accountName, actkey, localDir, new List<string>() { "raster", "vector" });
+			Task t = UploadFiles(accountName, actkey, localDir, skipDirectories);
 
 			t.ContinueWith((str) =>
 			{

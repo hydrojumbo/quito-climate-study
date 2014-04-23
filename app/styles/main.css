@@ -28,6 +28,13 @@ body {
   line-height: 40px;
   padding-bottom: 19px;
 }
+.headerImg {
+  padding-bottom: 10px;
+  height: 50px;
+}
+.navLogo {
+  height: 40px;
+}
 
 /* Custom page footer */
 .footer {

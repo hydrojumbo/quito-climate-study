@@ -26,10 +26,14 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
+    <!-- Add your site or application content here -->    
     <div class="header" data-ng-controller="HeaderCtrl">
+      <img class="headerImg" src="images/logoSecretariadeAmbienteConvertido.jpg" alt="Secretaria de Ambiente Logo">  
+      <img class="headerImg" src="images/cdkn-logo.png" alt="CDKN Logo">
+      <img class="headerImg" src="images/sei.jpg" alt="SEI Logo">
+      <class img="headerImg pull-right" src="images/qverde.png" alt="SEI Logo">
       <ul class="nav nav-pills">
-        <li data-ng-class="{active: isActive('/')}"><a data-ng-click="resetTitle()" href="#/index.html/">Inicio</a></li>
+        <li data-ng-class="{active: isActive('/')}"><a class="navLogo" data-ng-click="resetTitle()" href="#/index.html/"><i class="pull-right glyphicon glyphicon-home"></i></a></li>
         <li data-ng-class="{active: isActive('/Somos')}"><a data-ng-click="resetTitle()" href="#/Somos">Los participantes</a></li>
         <li data-ng-class="{active: isActive('/Metodologia')}"><a data-ng-click="resetTitle()" href="#/Metodologia">Metodología</a></li>
         <li data-ng-class="{active: isActive('/Principales')}"><a data-ng-click="resetTitle()" href="#/Principales">Principales logros</a></li>
@@ -41,11 +45,6 @@
     
     <!-- Top-level routing applied here -->
     <div class="container-fluid" data-ng-class="{mainArea: setPercentHeight}" data-ng-view></div>
-    
-    <div class="footer">
-      <img height="40" src="images/cdkn-logo.png" alt="CDKN Logo">
-      <img height="40" src="images/sei.jpg" alt="SEI Logo">
-    </div>    
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -80,6 +79,7 @@
     <script src="bower-components/angular-leaflet/dist/angular-leaflet-directive.min.js"></script>
     <script src="bower-components/underscore/underscore.js"></script>
     <script src="bower-components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="third-party/leaflet-omnivore.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

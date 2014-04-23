@@ -482,27 +482,28 @@ angular.module('quitoClimateStudyApp')
                                             data: 'Parrishes',
                                             type: 'vector',
                                             isSelected: true,
-                                            opacity: 1
+                                            opacity: 1,
+                                            isTopo: true
                                         },         
                                         {
                                             name: 'Poblados',
                                             data: 'Poblados',
                                             type: 'vector',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         }, 
                                         {
                                             name: 'Red Vial',
                                             data: 'Red_Vial',
                                             type: 'vector',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Rios',
                                             data: 'Rios',
                                             type: 'vector',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         }
                                     ]

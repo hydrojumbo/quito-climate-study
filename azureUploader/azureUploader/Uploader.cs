@@ -58,51 +58,55 @@ namespace azureUploader
 		private async Task UploadFilesOfDirectory(string localDirectory, string remoteContainerPath, CloudBlobClient client, IEnumerable<string> skipDirectories)
 		{
 			Console.WriteLine("");
-			Console.WriteLine("Uploading files from " + localDirectory + "...");
-			CloudBlobContainer container;
-			string filePrefix = "";
-			if (remoteContainerPath.Contains("/"))
-			{
-				string[] directoryStructure = remoteContainerPath.Split('/');
-				container = client.GetContainerReference(directoryStructure[0]);
-				filePrefix = string.Join("/", directoryStructure.Skip(1));
-			}
-			else
-			{ 
-				container = client.GetContainerReference(remoteContainerPath);
-				try
-				{
-					await container.CreateIfNotExistsAsync();
-					await container.SetPermissionsAsync(new BlobContainerPermissions()
-					{
-						PublicAccess = BlobContainerPublicAccessType.Blob
-					});
-				}
-				catch (Exception ex)
-				{
-					Console.WriteLine(string.Format("Exception configuring container. {0} may be an illegal name. \n Message: {1}. \n Inner exception: {2}. \n\n Press any key to exit.", remoteContainerPath, ex.Message, ex.InnerException));
-				}							
-			}
-									
 			DirectoryInfo local = new DirectoryInfo(localDirectory);
-			List<Task> uploads = new List<Task>();
-			foreach (FileInfo file in local.GetFiles())
+			if (!skipDirectories.Contains(local.Name))
 			{
-				uploads.Add(ProcessAndUploadFile(file, container, filePrefix));
-			}
-			if (uploads.Count() > 0)
-			{
-				await Task.WhenAll(uploads);
-			}			
+				Console.WriteLine("Uploading files from " + localDirectory + "...");
+				CloudBlobContainer container;
+				string filePrefix = "";
+				if (remoteContainerPath.Contains("/"))
+				{
+					string[] directoryStructure = remoteContainerPath.Split('/');
+					container = client.GetContainerReference(directoryStructure[0]);
+					filePrefix = string.Join("/", directoryStructure.Skip(1));
+				}
+				else
+				{ 
+					container = client.GetContainerReference(remoteContainerPath);
+					try
+					{
+						await container.CreateIfNotExistsAsync();
+						await container.SetPermissionsAsync(new BlobContainerPermissions()
+						{
+							PublicAccess = BlobContainerPublicAccessType.Blob
+						});
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine(string.Format("Exception configuring container. {0} may be an illegal name. \n Message: {1}. \n Inner exception: {2}. \n\n Press any key to exit.", remoteContainerPath, ex.Message, ex.InnerException));
+					}							
+				}
 			
-			foreach (DirectoryInfo child in local.GetDirectories())
-			{
-				//if (!skipDirectories.Contains(child.Name))
-				//{
+				
+				List<Task> uploads = new List<Task>();
+				foreach (FileInfo file in local.GetFiles())
+				{
+					uploads.Add(ProcessAndUploadFile(file, container, filePrefix));
+				}
+				if (uploads.Count() > 0)
+				{
+					await Task.WhenAll(uploads);
+				}
+
+				foreach (DirectoryInfo child in local.GetDirectories())
+				{
+					//if (!skipDirectories.Contains(child.Name))
+					//{
 					string nextContainer = remoteContainerPath.Contains("$root") ? child.Name : remoteContainerPath + "/" + child.Name;
 					await UploadFilesOfDirectory(child.FullName, nextContainer, client, skipDirectories);
-				//}				
-			}					
+					//}				
+				}						
+			}			
 			return;
 		}
 
@@ -300,7 +304,7 @@ namespace azureUploader
 			sp.HourMetrics.RetentionDays = 1;
 			sp.HourMetrics.Version = "1.0";
 			client.SetServiceProperties(sp,
-			new BlobRequestOptions() { MaximumExecutionTime = TimeSpan.FromSeconds(300) }
+			new BlobRequestOptions() { MaximumExecutionTime = TimeSpan.FromSeconds(3000) }
 			,
 			null);
 		}
