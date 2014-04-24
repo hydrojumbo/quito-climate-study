@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('quitoClimateStudyApp')
-  .controller('ReportCtrl', ['$scope', '$rootScope', '$routeParams', 'Vulnerabilidad', 'Introduction', 'Amenazas', 'Documents', 'Titleservice',
-  	function ($scope, $rootScope, $routeParams, Vulnerabilidad, Introduction, Amenazas, Documents, Titleservice) {  		  		
+  .controller('ReportCtrl', ['$scope', '$rootScope', '$routeParams', 'Vulnerabilidad', 'Introduction', 'Documents', 'Titleservice',
+  	function ($scope, $rootScope, $routeParams, Vulnerabilidad, Introduction, Documents, Titleservice) {  		  		
 
       $scope.setPercentHeight = true;
-      $scope.vulnerabilities = Vulnerabilidad.getVulnerabilityNames();
-  		$scope.amenazaNames = Amenazas.getAmanazaNames();
+      $scope.vulnerabilities = Vulnerabilidad.getVulnerabilityNames();  		
   		$scope.documents = Documents.getDocumentList();  		  	
   		$scope.introduction = Introduction;
   		$scope.currentVulnerability = undefined;

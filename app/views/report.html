@@ -1,35 +1,29 @@
 <div class="row mainArea">
 	<div class="col-md-3">  	
-		<h4>Ambitos de Estudio para el análisis de vulnerabilidad</h4>
+		<h4>Geoportal Sectores prioritarios</h4>
 		<!--<p><strong>Vulnerabilidad</strong></p>-->
 		<div data-ng-repeat="v in vulnerabilities" data-ng-click="changeFocus('vulnerability', v)"><a>{{ v }}</a></div>    
 		<!--<p><strong>Amenazas (lista)</strong></p>  		
 		<div data-ng-repeat="am in amenazaNames"><a>{{am}}</a></div>-->
 		<h4>Documentos/Publicaciones</h4>  		  		
-		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}">{{doc.name}}</a></div>	
+		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}" target="_blank">{{doc.name}}</a></div>	
 		</br>
 	</div>
 	<div class="col-md-9" data-ng-show="IsDefaultView()">
 		<h1>Estudio de Vulnerabilidad Climática Distrito Metropolitano de Quito</h1>
-		<img src="images/fotoportada.jpg"></img>	
+		<img class="pull-right" src="images/pic1.jpg"></img>	
 		</br>
 		</br>
-		<p><strong>La</strong> Secretaría de Ambiente del  Distrito Metropolitano de Quito,
-CDKN y el Instituto de Estocolmo lideran un esfuerzo orientado a 
-evaluar evaluar la situación actual de vulnerabilidad en el DMQ y 
-Examinar los factores que pueden contribuir a la vulnerabilidad 
-hasta el año 2050 en cinco sectores prioritarios: agua, salud, 
-agricultura, ecosistemas y riesgos.
-
-El estudio identifica los distintos elementos expuestos de cada uno 
-de los sectores y presenta sus nivele de sensibilidad y exposición para 
-evaluar su vulnerabilidad frente a la variabilidad climática.</p>	
+		<p>La Secretaría de Ambiente del  Distrito Metropolitano de Quito, Alianza, Clima y Desarrollo (CDKN) y el Instituto  del Ambiente de Estocolmo (SEI, por sus siglas en inglés) lideran desde el año 2012 un esfuerzo orientado a  evaluar la situación actual de vulnerabilidad en el DMQ y examinar los factores que pueden contribuir a la vulnerabilidad hasta el año 2050 en cinco sectores prioritarios: <strong>agua, salud, agricultura, ecosistemas y riesgos.</strong> El estudio identifica los distintos elementos expuestos en cada uno de los sectores, evalúa los diferentes niveles de sensibilidad frente amenazas climáticas y antrópicas para determinar la vulnerabilidad de cada sector frente a la variabilidad climática.
+		</p>	
+		<p><strong>Observación:</strong> “Algunas de las bases de datos desarrolladas en el marco de este estudio son muy complejas, es decir sobrepasan los límites de la actual tecnología web, en particular para compartir  información cartográfica a través de Internet (mapas). Estamos trabajando para encontrar una solución técnica, por lo tanto, en la medida que se identifiquen soluciones adecuadas, se podrá obtener más información."
+		</p>
 	</div>
 	<div class="col-md-9" data-ng-show="hasCurrentVulnerability()">
 			<h4>{{ currentVulnerability.name }}</h4>
 			<p>{{ currentVulnerability.description }}</p>		
 			<p>{{ currentVulnerability.analysisNarrative }}</p>	
-			<p>Para obtener más información, <a data-ng-href="{{ currentVulnerability.furtherInfoReport }}">descargue el informe.</a></p>
+			<p>Para obtener más información, <a data-ng-href="{{ currentVulnerability.furtherInfoReport }}.pdf">descargue el informe.</a></p>
 			</br>
 			<h4>Las Preguntas</h4>
 			<div data-ng-repeat="q in currentQuestions">

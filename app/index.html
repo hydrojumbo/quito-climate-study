@@ -30,14 +30,14 @@
     <div class="header" data-ng-controller="HeaderCtrl">
       <img class="headerImg" src="images/logoSecretariadeAmbienteConvertido.jpg" alt="Secretaria de Ambiente Logo">  
       <img class="headerImg" src="images/cdkn-logo.png" alt="CDKN Logo">
-      <img class="headerImg" src="images/sei.jpg" alt="SEI Logo">
-      <class img="headerImg pull-right" src="images/qverde.png" alt="SEI Logo">
+      <img class="headerImg2" src="images/sei.jpg" alt="SEI Logo">
+      <img class="headerImg pull-right" src="images/qverde.png" alt="qverde Logo">
       <ul class="nav nav-pills">
         <li data-ng-class="{active: isActive('/')}"><a class="navLogo" data-ng-click="resetTitle()" href="#/index.html/"><i class="pull-right glyphicon glyphicon-home"></i></a></li>
         <li data-ng-class="{active: isActive('/Somos')}"><a data-ng-click="resetTitle()" href="#/Somos">Los participantes</a></li>
-        <li data-ng-class="{active: isActive('/Metodologia')}"><a data-ng-click="resetTitle()" href="#/Metodologia">Metodología</a></li>
-        <li data-ng-class="{active: isActive('/Principales')}"><a data-ng-click="resetTitle()" href="#/Principales">Principales logros</a></li>
-        <li data-ng-class="{active: isActive('/Medidas')}"><a data-ng-click="resetTitle()" href="#/Medidas">Medidas de adaptación</a></li>
+        <li data-ng-class="{active: isActive('/Metodologia')}"><a data-ng-click="resetTitle()" href="#/Metodologia">Metodología WP 3</a></li>
+        <li data-ng-class="{active: isActive('/Principales')}"><a data-ng-click="resetTitle()" href="#/Vulnerabilidad">Vulnerabilidad WP 5&6</a></li>
+        <li data-ng-class="{active: isActive('/Medidas')}"><a data-ng-click="resetTitle()" href="#/Medidas">Adaptación WP 8 y 9</a></li>
         <!--<li><a href="#Vulnerability/agua&season">Test Vulnerability</a></li>-->
       </ul>
       <h3 class="text-muted">{{ getTitle() }}</h3>
@@ -86,8 +86,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>        
     <script src="scripts/services/documents.js"></script>
-    <script src="scripts/services/vulnerabilidad.js"></script>
-    <script src="scripts/services/amenazas.js"></script>        
+    <script src="scripts/services/vulnerabilidad.js"></script>    
     <script src="scripts/services/introduction.js"></script>
     <script src="scripts/services/legend.js"></script>
     <script src="scripts/controllers/report.js"></script>

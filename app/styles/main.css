@@ -30,7 +30,11 @@ body {
 }
 .headerImg {
   padding-bottom: 10px;
-  height: 50px;
+  height: 60px;
+}
+.headerImg2 {
+  padding-bottom: 10px;
+  height: 40px;
 }
 .navLogo {
   height: 40px;
