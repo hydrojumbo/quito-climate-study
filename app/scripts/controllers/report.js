@@ -17,9 +17,9 @@ angular.module('quitoClimateStudyApp')
         return (angular.isUndefined($scope.currentVulnerability) || $scope.currentVulnerability === null);
       };
 
-      $scope.chooseQuestion =function(question) {
+      $scope.chooseQuestion = function(question) {
         Titleservice.setAppLocation(question, 'question');
-      };
+      };    
 
   		$scope.changeFocus = function(itemType, item) {  			  		
   			if (itemType === 'vulnerability') {

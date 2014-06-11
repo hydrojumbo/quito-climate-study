@@ -120,7 +120,7 @@ namespace azureUploader
 		{
 			try
 			{
-				if (file.Extension.Contains("json") || file.Extension.Contains("html"))
+				if (file.Extension.Contains("json") || file.Extension.Contains("html") || file.Extension.Contains("topojson"))
 				{
 					using (MemoryStream ms = new MemoryStream())
 					{
@@ -168,6 +168,11 @@ namespace azureUploader
 			switch (file.Extension)
 			{
 				case ".json":
+					blob.Properties.ContentType = "application/json";
+					blob.Properties.ContentEncoding = "gzip";
+					break;
+
+				case ".topojson":
 					blob.Properties.ContentType = "application/json";
 					blob.Properties.ContentEncoding = "gzip";
 					break;

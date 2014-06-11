@@ -36,8 +36,8 @@
         <li data-ng-class="{active: isActive('/')}"><a class="navLogo" data-ng-click="resetTitle()" href="#/index.html/"><i class="pull-right glyphicon glyphicon-home"></i></a></li>
         <li data-ng-class="{active: isActive('/Somos')}"><a data-ng-click="resetTitle()" href="#/Somos">Los participantes</a></li>
         <li data-ng-class="{active: isActive('/Metodologia')}"><a data-ng-click="resetTitle()" href="#/Metodologia">Metodología WP 3</a></li>
-        <li data-ng-class="{active: isActive('/Principales')}"><a data-ng-click="resetTitle()" href="#/Vulnerabilidad">Vulnerabilidad WP 5&6</a></li>
-        <li data-ng-class="{active: isActive('/Medidas')}"><a data-ng-click="resetTitle()" href="#/Medidas">Adaptación WP 8 y 9</a></li>
+        <li data-ng-class="{active: isActive('/Vulnerabilidad')}"><a data-ng-click="resetTitle()" href="#/Vulnerabilidad">Vulnerabilidad WP 5&6</a></li>
+        <li data-ng-class="{active: isActive('/Adaptacion')}"><a data-ng-click="resetTitle()" href="#/Adaptacion">Adaptación WP 8 y 9</a></li>
         <!--<li><a href="#Vulnerability/agua&season">Test Vulnerability</a></li>-->
       </ul>
       <h3 class="text-muted">{{ getTitle() }}</h3>
@@ -79,7 +79,6 @@
     <script src="bower-components/angular-leaflet/dist/angular-leaflet-directive.min.js"></script>
     <script src="bower-components/underscore/underscore.js"></script>
     <script src="bower-components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-    <script src="third-party/leaflet-omnivore.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -98,6 +97,7 @@
     <script src="scripts/controllers/header.js"></script>
     <script src="scripts/services/titleService.js"></script>
     <script src="scripts/controllers/longflowController.js"></script>
+    <script src="scripts/third-party/leaflet-omnivore.min.js"></script>    
     <!-- endbuild -->
    </body>
 </html>

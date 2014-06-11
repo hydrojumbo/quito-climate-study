@@ -131,8 +131,10 @@ To run azureUploader:
 	For example (key is not real): 'azureUploader quitoestudiodeclima HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA== c:/dev/quito-climate-study/dist'
 3. The console application will list each file it uploads. When it is complete, you should be able to browse to http://<your-storage-account-name>.blob.core.windows.net/index.html to see the site.
 
-###Adding new rasters to the system
-1. Edit ColorMap.json in the qcspublish directory (wherever it was installed)
+###Adding new GIS Layers to the system
+At a high level, adding new layers to the system involves:
+1. Edit ColorMap.json in the qcspublish directory (wherever it was installed) to define the color scheme to apply to the file.
+2. Edit quito-climate-study/app/scripts/services/vulnerabilidad.js to define where the site should display the 
 
 ###Attribution
 The GIS build process of this system is based on the efforts of several open source projects and communities:

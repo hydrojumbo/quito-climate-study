@@ -7,7 +7,7 @@ angular.module('quitoClimateStudyApp')
         {
             name: 'Clima',
             description: 'En el Reporte “Análisis Integrado de Amenazas Relacionada con el Cambio Climático, aspectos naturales y socioeconómicos” describe un conjunto de datos climáticos a escala reducida de las Parroquias del DMQ con temperatura media mínima y máxima mensual y precipitación total mensual en una resolución de 0.5°. Para la corrección del sesgo se utilizó el método de desagregación espacial (BCSD) de Maurer et al. 2007 que consigna los datos de clima a una resolución gruesa de los GCMs (Modelos de Clima Global) y reduce la escala a la resolución más fina de 0.5° para varios modelos de circulación general, y para muchos de estos GCMs y miembros de ensamblaje múltiple.',
-            furtherInfoReport: 'Please make this the file name of a PDF document for more information as on Pagina 3 of spreadsheet',
+            furtherInfoReport: 'WP1-Analisis_Climatico-DMQ_Final_24abril14',
             analysisNarrative: '',
 
             questions:
@@ -797,7 +797,7 @@ angular.module('quitoClimateStudyApp')
                     name: 'Amenaza No Climáticas',
                     description: '¿Cuál es la vulnerabilidad actual de los ecosistemas de interés frente a las amenazas no climáticas de origen antrópico?',
                     categories: [
-                    {        
+                       {        
                             id: 'base',                    
                             title: 'Mapa Base',
                             isOpen: true,
@@ -892,7 +892,7 @@ angular.module('quitoClimateStudyApp')
                     name: 'Amenaza Climática',
                     description: '¿Cuál es la vulnerabilidad futura de los ecosistemas de interés frente a la amenaza climática de incremento gradual de temperatura promedio anual?',
                     categories: [
-                    {        
+                        {        
                             id: 'base',                    
                             title: 'Mapa Base',
                             isOpen: true,
@@ -1048,10 +1048,15 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Agricultura',
-            description: 'Si bien cierto que la seguridad alimentaria de la población del DMQ no depende de la producción del sector agrícola del Distrito, los diferentes tipos de cultivos existentes y su relación con la elevación sobre el nivel del mar, pone en evidencia la  vulnerabilidad del sector frente a la variación climática en las diferentes zonas del DMQ (templada, sub-templada, y subtropical). Este estudio abarca el análisis de vulnerabilidad de los cultivos tradicionales producidos en la zona del Distrito.',
+            description: 'Si bien es cierto, la seguridad alimentaria de la población del DMQ no depende exclusivamente de la producción del sector agrícola del Distrito, los diferentes tipos de cultivos existentes en su territorio, pone en evidencia la vulnerabilidad de este sector frente a la variación climática en los diferentes rangos altitudinales de producción, que van desde los 500 hasta los 3600 metros sobre el nivel del mar (msnm), y que comprenden zonas de clima templado, sub-templado hasta subtropical .  El estudio abarca el análisis de vulnerabilidad de los cultivos tradicionales producidos en la zona del Distrito, en respuesta a las siguientes preguntas relevantes para el sector:',
             furtherInfoReport: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14',
-            analysisNarrative: 'Con respecto a los factores de exposición y sensibilidad. En primer lugar para determinar el nivel de exposición al incremento de temperatura, se estimó la acumulación de Unidades de Calor (UC) , a fin de establecer cómo los períodos de crecimiento del cultivo pueden ser afectados.  En segundo lugar, para determinar el nivel de sensibilidad de los cultivos a cambios de temperaturas, se cuantificaron las UC proyectadas al año 2050 para el escenario climático más adverso, es decir, con base en la ruta de mayores emisiones de carbono (RCP 8.5) . En particular se evalúan dos componentes de sensibilidad: I) sensibilidad en función del crecimiento y producción, a partir de la determinación del factor de  reducción de crecimiento por temperatura (RCT),  y (II) sensibilidad del ciclo de crecimiento de cultivos; análisis que se fundamenta en el cálculo y acumulación de las UC requeridas para alcanzar la madurez fisiológica de los cultivos. Finalmente, para determinar la vulnerabilidad de los páramos frente al incremento de temperatura, se analizaron las regiones con páramos en el DMQ y con elevación superior a los 3400 msnm. Examinaremos brevemente los principales resultados. En primera instancia se espera que el incremento de temperaturas tenga un efecto positivo en el desarrollo de los cultivos. Esto debido a que las temperaturas medias pronosticadas a futuro, serán similares a las temperaturas óptimas de desarrollo de los cultivos. Ahora bien, debido al incremento de temperaturas habrá una acumulación más rápida de las UC, con ello, los ciclos de crecimiento de los cultivos en el DMQ se pueden ver acortados en tiempo y duración. A su vez, se observa que la superficie en las bandas de elevación desde los 3600 a 4200 msnm, son susceptibles al incremento del área cultivada debido a los aumentos de temperatura. Así por ejemplo, podría ocurrir una migración de áreas de cultivo de papa a altitudes mayores, razón por la cual, las áreas de los páramos se verán amenazadas por la expansión de la frontera agrícola. Es imposible predecir con exactitud cuánto se expandirá la frontera agrícola, pero posiblemente, los páramos enfrentarán una amenaza significativa debido al avance de los cultivos, principalmente el cultivo de la papa y al crecimiento de la mancha urbana entre otros factores. Considerando los resultados obtenidos, se recomienda la implementación del modelo de crecimiento de plantas (PGM -  Plant Growth Method) de WEAP (Water Evaluation And Planning System), para determinar con mayor detalle y precisión la vulnerabilidad del  sector agrícola ante el cambio climático. El modelo PGM de WEAP estima el efecto potencial del cambio climático y el incremento en las concentraciones atmosféricas de CO2 en los rendimientos de cultivos agrícolas y sus requerimientos hídricos bajo condiciones futuras cambiantes.',
+            analysisNarrative: '', //Con respecto a los factores de exposición y sensibilidad. En primer lugar para determinar el nivel de exposición al incremento de temperatura, se estimó la acumulación de Unidades de Calor (UC) , a fin de establecer cómo los períodos de crecimiento del cultivo pueden ser afectados.  En segundo lugar, para determinar el nivel de sensibilidad de los cultivos a cambios de temperaturas, se cuantificaron las UC proyectadas al año 2050 para el escenario climático más adverso, es decir, con base en la ruta de mayores emisiones de carbono (RCP 8.5) . En particular se evalúan dos componentes de sensibilidad: I) sensibilidad en función del crecimiento y producción, a partir de la determinación del factor de  reducción de crecimiento por temperatura (RCT),  y (II) sensibilidad del ciclo de crecimiento de cultivos; análisis que se fundamenta en el cálculo y acumulación de las UC requeridas para alcanzar la madurez fisiológica de los cultivos. Finalmente, para determinar la vulnerabilidad de los páramos frente al incremento de temperatura, se analizaron las regiones con páramos en el DMQ y con elevación superior a los 3400 msnm. Examinaremos brevemente los principales resultados. En primera instancia se espera que el incremento de temperaturas tenga un efecto positivo en el desarrollo de los cultivos. Esto debido a que las temperaturas medias pronosticadas a futuro, serán similares a las temperaturas óptimas de desarrollo de los cultivos. Ahora bien, debido al incremento de temperaturas habrá una acumulación más rápida de las UC, con ello, los ciclos de crecimiento de los cultivos en el DMQ se pueden ver acortados en tiempo y duración. A su vez, se observa que la superficie en las bandas de elevación desde los 3600 a 4200 msnm, son susceptibles al incremento del área cultivada debido a los aumentos de temperatura. Así por ejemplo, podría ocurrir una migración de áreas de cultivo de papa a altitudes mayores, razón por la cual, las áreas de los páramos se verán amenazadas por la expansión de la frontera agrícola. Es imposible predecir con exactitud cuánto se expandirá la frontera agrícola, pero posiblemente, los páramos enfrentarán una amenaza significativa debido al avance de los cultivos, principalmente el cultivo de la papa y al crecimiento de la mancha urbana entre otros factores. Considerando los resultados obtenidos, se recomienda la implementación del modelo de crecimiento de plantas (PGM -  Plant Growth Method) de WEAP (Water Evaluation And Planning System), para determinar con mayor detalle y precisión la vulnerabilidad del  sector agrícola ante el cambio climático. El modelo PGM de WEAP estima el efecto potencial del cambio climático y el incremento en las concentraciones atmosféricas de CO2 en los rendimientos de cultivos agrícolas y sus requerimientos hídricos bajo condiciones futuras cambiantes.',
             questions:[
+                /*{
+                    name: 'q1',
+                    description: '¿Cuál es la vulnerabilidad de los cultivos agrícolas a la variabilidad climática?',
+                    categories: []
+                },*/
                 {
                     name: 'Reduccion en el Ciclo de Crecimiento',
                     description: '¿Cuál es la sensibilidad de los cultivos y cómo pueden verse afectados en la duración de los ciclos de crecimiento por cambios en temperatura?',
@@ -1287,15 +1292,15 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Salud',
-            description: 'La vulnerabilidad del sector salud en el DMQ',
-            furtherInfoReport: 'Input Text',
-            analysisNarrative: 'Input Text',
+            description: 'Las implicaciones directas o indirectas de las variaciones del clima en la salud de los habitantes del DMQ es un tema de creciente interés institucional. Instituciones como el MDMQ, el Ministerio de Salud, Universidades e Institutos de investigación han orientado sus esfuerzos en identificar los factores que afectan la salud humana, particularmente, aquellos relacionados con el clima.  El presente análisis apunta a identificar que tan vulnerable es la población del DMQ frente enfermedades relacionadas con el clima y su relación con variables socioeconómicas. A continuación las preguntas que han sido definidas como relevantes:',
+            furtherInfoReport: 'WP1-Analisis_Climatico-DMQ_Final_24abril14',
+            analysisNarrative: '',
 
             questions:
             [
                 {
-                    name: 'Input Text',
-                    description: 'Input Text',
+                    name: 'Q1',
+                    description: '¿Cuál es la vulnerabilidad de la población a distintas enfermedades frente al cambio climático?',
                     categories: [
                         {        
                             id: 'base',                    
@@ -1489,7 +1494,22 @@ angular.module('quitoClimateStudyApp')
                             ]
                         }
                     ]                    
-                }
+                },
+                /*{
+                    name: 'Q2',
+                    description: '¿Cuáles enfermedades que afectan a la población del DMQ tienen una mayor relación con las variables climáticas?',
+                    categories: []                 
+                },
+                {
+                    name: 'Q3',
+                    description: '¿Qué rol juegan las condiciones socioeconómicas y la prevalencia de enfermedades, en el marco del análisis de la vulnerabilidad al cambio climático en el sector salud?',
+                    categories: []                 
+                },
+                {
+                    name: 'Q4',
+                    description: '¿Cómo se interrelacionan los tres tipos de variables consideradas en el análisis?',
+                    categories: []                 
+                }*/
             ]               
         },
         {
@@ -1502,7 +1522,7 @@ angular.module('quitoClimateStudyApp')
             [
                 {
                     name: 'Pregunta 1 dentro de un contexto de servicion de agua potable en el sector urbano',
-                    description: '¿Qué tan vulnerable es el sistema de abastecimiento de agua potable en el DMQ  en función de la oferta y demanda de agua  actual y futura?',
+                    description: '¿Qué tan vulnerable es el sistema de abastecimiento de agua potable en el DMQ en función de la oferta y demanda de agua actual y futura?',
                     categories: [
                         {        
                             id: 'base',                    
@@ -1554,7 +1574,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {              
                             id: 'exposures',              
-                            title: 'Exposures',
+                            title: 'Exposición',
                             isOpen: false,
                             sections: [                                
                                 {
@@ -1638,7 +1658,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {                 
                             id: 'sensitivity',   
-                            title: 'Sensitivity Analysis',
+                            title: 'Análisis de sensibilidad',
                             isOpen: false,
                             sections: [
                                 {
@@ -1679,7 +1699,7 @@ angular.module('quitoClimateStudyApp')
                         },
                         {                     
                             id: 'vulnerability',
-                            title: 'Vulnerability (2050)',
+                            title: 'Vulnerabilidad',
                             isOpen: false,
                             sections: [
                                 {
@@ -1728,11 +1748,22 @@ angular.module('quitoClimateStudyApp')
             furtherInfoReport: 'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14',
             analysisNarrative: 'Para el análisis frente amenazas antrópicas se definen dos indicadores de sensibilidad: (I) un indicador espacial de inicio de fuego (ISMF)  (II) un indicador histórico de inicio de fuego (IHMF) . El cruce de estos indicadores determinan los niveles de presión antrópica sobre las áreas de incendios forestales. Por otro lado, se establece un indicador de sensibilidad climática (ISC) compuesto por (I) un indicador de régimen pluviométrico (IRP), (II) un indicador de régimen térmico (IRT). Finalmente, las zonas expuestas son las áreas en “riesgo o peligro”. El cruce de resultados de presión de inicio de fuego y del Indicador de sensibilidad climática determina las zonas donde, además de presión antropogénica, existen tendencias elevadas de propagación. El análisis del riesgo presente indica que el  78% del territorio del DMQ está en riesgo de incendio forestal alto ó moderado (35% y 43%) respectivamente. Las zonas más vulnerables son las parroquias ubicadas al nororiente del Municipio, en particular, Ilalo, Calacalí, Puellaro,  Perucho, Llano Chico, Calderón, Nayón y ciertas zonas muy puntuales de Calacali,  Nono y Lloa. Esto debido a una fuerte presión antropogénica, así como factores de iniciación y propagación de incendios. A su vez, son regiones en desarrollo, con alta densidad de población y varios proyectos estratégicos en proceso de implementación; factores que incrementan su condición de vulnerabilidad. Cabe resaltar que en un escenario a partir del incremento en los índices de sensibilidad climática al 2050, la tendencia de los riesgos de incendio forestal aumenta considerablemente en Quito y sus zonas aledañas. Se recomienda para futuros estudios complementar el análisis de factores antropogénicos considerando variables como: proyecciones de población, movilidad en función de las vías, y asentamientos humanos dispersos. Así como, mejorar la información geográfica de aquellas áreas donde se aplica la práctica de quemas voluntarias en agricultura. Además, mejorar la calidad y cantidad de información  histórica de incendios con indicadores de intensidad, superficie y tipología. Finalmente, se recomienda el uso de  esta herramienta para identificar en otros sectores relevantes como ecosistemas, las zonas de riesgo de incendios forestales.',
             questions:[
+                /*{
+                    name: 'Zonas de mayor propagación',
+                    description: '¿Cuáles son las zonas de mayor propagación del fuego?',
+                    categories: []
+                },
+                {
+                    name: 'Incendios Relacionan',
+                    description: '¿Cómo se relacionan las acciones antrópicas en la generación de los incendios?',
+                    categories: []
+                },*/
                 {
                     name: 'Incendios Forestales',
-                    description: '¿Cuál es el efecto de la variabilidad climática en el aumento de los incendios?  ',
-                    categories: [
-                    {        
+                    description: '¿Cuál es el efecto de la variabilidad climática en el aumento de los incendios?',
+                    categories:
+                    [
+                        {        
                             id: 'base',                    
                             title: 'Mapa Base',
                             isOpen: true,
@@ -1959,7 +1990,8 @@ angular.module('quitoClimateStudyApp')
                 return {
                     vulnerability: name,
                     name: q.name,
-                    description: q.description
+                    description: q.description,
+                    isEmptyQuestion: _.isEmpty(q.categories)
                 };
             });
         },    
@@ -1969,8 +2001,8 @@ angular.module('quitoClimateStudyApp')
         },
 
         getPathOfVector: function(name) {
-            // return 'vector/' + name + '.json';
-            return 'vector/' + name + '.topojson';
+            return 'vector/' + name + '.json';
+            // return 'vector/' + name + '.topojson';
         },
 
         getPathToRootOfRaster: function(name) {

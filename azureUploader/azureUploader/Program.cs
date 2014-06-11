@@ -38,7 +38,10 @@
 			if (args.Any(a => a.StartsWith("-r")))
 			{ skipDirectories.Add("raster"); }
 			if (args.Any(a => a.StartsWith("-v")))
-			{ skipDirectories.Add("vector"); }			
+			{ skipDirectories.Add("vector"); }
+			if (args.Any(a => a.StartsWith("-b")))
+			{ skipDirectories.Add("bower-components"); }			
+	
 #else
 			string accountName = "quitoestudiodeclima";
 			string actkey = "HaN7FfuhVWZBGV/zhDnckn6GiT5Swna46aDmOFoAwXfjI4duQj3CCQ4IEDAgFac+oX/DCHzLPqu1dVDLK/1cnA==";

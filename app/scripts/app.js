@@ -39,8 +39,8 @@ angular.module('quitoClimateStudyApp', [
         controller: 'LongflowcontrollerCtrl'
       })
      
-      .when('/Medidas', {        
-        templateUrl: 'views/medidas.html',        
+      .when('/Adaptacion', {        
+        templateUrl: 'views/adaptacion.html',        
         controller: 'LongflowcontrollerCtrl'
       })
      

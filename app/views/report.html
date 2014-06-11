@@ -5,12 +5,12 @@
 		<div data-ng-repeat="v in vulnerabilities" data-ng-click="changeFocus('vulnerability', v)"><a>{{ v }}</a></div>    
 		<!--<p><strong>Amenazas (lista)</strong></p>  		
 		<div data-ng-repeat="am in amenazaNames"><a>{{am}}</a></div>-->
-		<h4>Documentos/Publicaciones</h4>  		  		
+		<h4>GeoPortal: Ámbitos de Estudio para el análisis de vulnerabilidad</h4>  		  		
 		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}" target="_blank">{{doc.name}}</a></div>	
 		</br>
 	</div>
 	<div class="col-md-9" data-ng-show="IsDefaultView()">
-		<h1>Estudio de Vulnerabilidad Climática Distrito Metropolitano de Quito</h1>
+		<h1>Estudio de Vulnerabilidad al Cambio Climático-DMQ</h1>
 		<img class="pull-right" src="images/pic1.jpg"></img>	
 		</br>
 		</br>
@@ -23,17 +23,16 @@
 			<h4>{{ currentVulnerability.name }}</h4>
 			<p>{{ currentVulnerability.description }}</p>		
 			<p>{{ currentVulnerability.analysisNarrative }}</p>	
-			<p>Para obtener más información, <a data-ng-href="{{ currentVulnerability.furtherInfoReport }}.pdf">descargue el informe.</a></p>
-			</br>
-			<h4>Las Preguntas</h4>
-			<div data-ng-repeat="q in currentQuestions">
-				<p>
-					<strong><a data-ng-click="chooseQuestion(q.name)" href="#Vulnerability/{{q.vulnerability}}&{{q.name}}">{{q.name}}: </a></strong>
-					{{q.description}}
-				</p>
-
+			<p>Para obtener más información, <a data-ng-href="/documents/{{ currentVulnerability.furtherInfoReport }}.pdf" target="_blank">descargue el informe.</a></p>
+			</br>						
+			<div class="well">
+				<h4>GeoPortal</h4>
+				<div data-ng-repeat="q in currentQuestions">					
+					<p><strong><a data-ng-click="chooseQuestion(q.name)" href="#Vulnerability/{{q.vulnerability}}&{{q.name}}">{{q.description}}</a></strong></p>
+				</div>							
 			</div>
-			<h4></h4>
-		
+			<p>
+				Para obtener más información descargue el <a href="/documents/WP2-3Summary17abril14-aprobadoSA.pdf" target="_blank">Resumen Ejecutivo del Análisis de Vulnerabilidad al Cambio Climático del Distrito Metropolitano de Quito para Sectores Prioritarios.</a>
+			</p>		
 	</div>
 </div>

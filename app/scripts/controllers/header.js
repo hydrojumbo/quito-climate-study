@@ -32,7 +32,7 @@ angular.module('quitoClimateStudyApp')
     });
 
     $scope.getTitle = function() {
-    	var title = 'Estudio de Vulnerabilidad al Cambio Climatico DMQ';
+    	var title = 'Estudio de Vulnerabilidad al Cambio Climático-DMQ';
     	if (!_.isUndefined(currentLocation.vuln)) {
     		title = title + ' / ' + currentLocation.vuln;
     	}
