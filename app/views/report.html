@@ -5,8 +5,9 @@
 		<div data-ng-repeat="v in vulnerabilities" data-ng-click="changeFocus('vulnerability', v)"><a>{{ v }}</a></div>    
 		<!--<p><strong>Amenazas (lista)</strong></p>  		
 		<div data-ng-repeat="am in amenazaNames"><a>{{am}}</a></div>-->
-		<h4>GeoPortal: Ámbitos de Estudio para el análisis de vulnerabilidad</h4>  		  		
-		<div data-ng-repeat="doc in documents"><a href="{{doc.file}}" target="_blank">{{doc.name}}</a></div>	
+		<h4>GeoPortal: Ámbitos de Estudio para el análisis de vulnerabilidad</h4>
+		<div data-ng-repeat="doc in documents"><a data-ng-href="{{doc.file}}" target="_blank"><i class="pull-left glyphicon glyphicon-cloud-download form-control-feedback"></i>   {{doc.name}}</a></div>
+		<!--<div data-ng-repeat="doc in documents"><a href="{{doc.file}}" target="_blank">{{doc.name}}</a></div>-->
 		</br>
 	</div>
 	<div class="col-md-9" data-ng-show="IsDefaultView()">

@@ -10,32 +10,20 @@ angular.module('quitoClimateStudyApp')
             file: 'Agenda Taller 20_feb_2014.pdf'
         },
         {
-    		name: 'Informe Percepciones CC DMQ mar 13',
+    		name: 'Informe Percepciones al Cambio Climático DMQ',
     		file: 'Informe Percepciones CC DMQ mar_13.rar'
     	},
     	{
-    		name: 'WP1 Análisis Integrado de Amenazas Relacionada con  el Cambio Climático, aspectos naturales y socioeconómicos',
-    		file: 'WP1-Analisis_Climatico-DMQ_Final_24abril14pdf'
+    		name: 'Análisis Integrado de Amenazas Relacionada con el Cambio Climático, aspectos naturales y socioeconómicos',
+    		file: 'Analisis_Vulnerabilidad_Climatica_DMQ.pdf'
     	},
     	{
-    		name: 'WP2 3 Metodología Vulnerabilidad DMQ',
-    		file: 'WP2-3-Metodologia-Vulnerabilidad-DMQ.pdf'
-    	},
-    	{
-    		name: 'WP5-6 Vuln. CC Agricultura DMQ 17_feb_14',
-    		file: 'WP5-6-Vuln-CC-Agricultura-DMQ-17_feb_14.pdf'
-    	},
-    	{
-    		name: 'WP5 6 Vuln. CC Agua DMQ 17_feb_14',
-    		file: 'WP5-6-Vuln.-CC-Agua-DMQ-17_feb_14.pdf'
-    	},
-    	{
-    		name: 'WP5 6 Vuln. CC Ecosistemas DMQ 17_feb_14',
-    		file: 'WP5-6-Vuln.-CC-Ecosistemas-DMQ-17_feb_14.pdf'
+    		name: 'Estructura de la Metodología Para la Estimación de la Vulnerabilidad al Cambio Climático en el Distrito Metropolitano de Quito',
+    		file: 'Metodologia_Vulnerabilidad_CambioClimatico_DMQ.pdf'
     	},
         {
-            name: 'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14',
-            file: 'WP5-6-Vuln.-CC-Riesgos-DMQ-17_feb_14.pdf'
+            name: 'Distrito Metropolitano de Quito: Resultados del Análisis de Vulnerabilidad Climática para los sectores prioritarios: Agricultura, Ecosistemas, Agua, Riesgos y Salud',
+            file: 'Analisis_Vulnerabilidad_Climatica_DMQ.pdf'
         },
         {
             name: 'White Paper: Propuesta metodológica para la Estimación de la Vulnerabilidad al Cambio Climático en el DMQ',

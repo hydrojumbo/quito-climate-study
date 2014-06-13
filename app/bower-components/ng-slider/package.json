@@ -1,7 +1,7 @@
 {
   "name": "ng-slider",
   "description": "AngularJS directive slider control.",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "author": {
     "name": "Julien Valéry",
     "email": "darul75@gmail.com"
@@ -27,6 +27,7 @@
     "grunt-contrib-copy": "~0.4.1",    
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-uglify": "latest",
+    "grunt-bower-task": "~0.3.4",
     "grunt-contrib-cssmin": "~0.6.0"    
   }
 }
