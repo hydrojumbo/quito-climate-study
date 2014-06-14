@@ -158,6 +158,7 @@
     <Compile Include="ColorMapTests.cs" />
     <Compile Include="GdalConfiguration.cs" />
     <Compile Include="GdalNativeConfiguration.cs" />
+    <Compile Include="HexColorConverter.cs" />
     <Compile Include="LegendItem.cs" />
     <Compile Include="LegendRepository.cs" />
     <Compile Include="ValueColorMap.cs" />

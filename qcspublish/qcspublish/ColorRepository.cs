@@ -19,6 +19,8 @@ namespace qcspublish
 			jsondata = JsonConvert.DeserializeObject<ColorMap[]>(
 				File.ReadAllText(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\ColorMap.json")).ToList();
 			files = jsondata.Select(a => a.fileName.ToString()).ToList();
+			jsondata.Where(r => r.colorMaps.All(a => string.IsNullOrEmpty(a.color) && !string.IsNullOrEmpty(a.rgb))).ToList()
+				.ForEach(aa => aa.colorMaps.ToList().ForEach(cm => cm.color = cm.rgb.HexColorOfRgbString()));
 		}
 
 		public Boolean HasColorMappingOfFile(string fileName)

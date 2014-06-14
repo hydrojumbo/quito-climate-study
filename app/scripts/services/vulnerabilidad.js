@@ -9,7 +9,6 @@ angular.module('quitoClimateStudyApp')
             description: 'En el Reporte “Análisis Integrado de Amenazas Relacionada con el Cambio Climático, aspectos naturales y socioeconómicos” se describe un conjunto de datos climáticos a escala reducida de las Parroquias del DMQ con temperatura media mínima y máxima mensual y precipitación total mensual en una resolución de 0.5°. Para la corrección del sesgo se utilizó el método de desagregación espacial (BCSD) de Maurer et al. 2007 que consigna los datos de clima a una resolución gruesa de los GCMs (Modelos de Clima Global) y reduce la escala a la resolución más fina de 0.5° para varios modelos de circulación general, y para muchos de estos GCMs y miembros de ensamblaje múltiple.',
             furtherInfoReport: 'Analisis_Amenazas_CambioClimático', //'WP1-Analisis_Climatico-DMQ_Final_24abril14',
             analysisNarrative: '',
-
             questions:
             [
                 {
@@ -29,7 +28,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de elevación digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -44,14 +43,20 @@ angular.module('quitoClimateStudyApp')
                                             data: 'Parrishes',
                                             type: 'vector',
                                             isSelected: true,
-                                            opacity: 1,
-                                            isTopo: true
-                                        },         
+                                            opacity: 1
+                                        },
                                         {
                                             name: 'Poblados',
                                             data: 'Poblados',
                                             type: 'vector',
                                             isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
                                             opacity: 1
                                         }, 
                                         {
@@ -810,7 +815,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -821,47 +826,124 @@ angular.module('quitoClimateStudyApp')
                                             opacity: 1
                                         },
                                         {
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cobertura Vegetal',
+                                            data: 'cob_veg_II',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Ecosistemas 1986',
+                                            data: 'Ecosistema_1986',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {        
+                            id: 'exposures',                    
+                            title: 'Exposición',
+                            isOpen: false,
+                            sections: [
+                                {
+                                    section: '',
+                                    layers: // name for title, data for source file (raster directory if tiles, name minus type suffix if vector), type for ui binding
+                                    [ 
+                                        {
                                             name: 'Alta Tensión Líneas Eléctricas',
                                             data: 'Alta_Tension',
                                             type: 'vector',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Oleoductos',
                                             data: 'Oleoductos',
                                             type: 'vector',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
-                                        }/* ==> TOO BIG,,
+                                        },
                                         {
                                             name: 'Cultivos',
                                             data: 'Cultivos',
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
-                                        }*/,
+                                        },
                                         {
                                             name: 'Recurrencia de Incendios (1991 - 2009)',
-                                            data: 'Incendios_Recurrencia',
-                                            type: 'vector',
+                                            data: 'incendios_recurrencia',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
-                                        }/* ==> TOO BIG,
+                                        },
                                         {
-                                            name: 'Uso de Suelo 1986',
-                                            data: 'USO_SUELO_1986',
+                                            name: 'Mancha Urbana 2009',
+                                            data: 'mancha_urbana',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Red Vial',
+                                            data: 'Red_Vial',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
-                                            name: 'Uso de Suelo 2009',
-                                            data: 'USO_SUELO_2009',
-                                            type: 'vector',
+                                            name: 'Exposición Agregada',
+                                            data: 'Ind_Exp',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
-                                        }*/
+                                        }
+                                        
+                                        
+                                    ]
+                                }
+                            ]
+                        },
+                        {                 
+                            id: 'sensitivity',   
+                            title: 'Sensibilidad',
+                            isOpen: false,
+                            sections: [
+                                {
+                                    section: '',
+                                    layers: 
+                                    [
+                                        {
+                                            name: 'Ecosistemas 2009',
+                                            data: 'Ecosistema_2009',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1                           
+                                        }
                                     ]
                                 }
                             ]
@@ -878,7 +960,7 @@ angular.module('quitoClimateStudyApp')
                                         {
                                             name: 'Índice de Vulnerabilidad',
                                             data: 'IND_VULNER_NO_CC',
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         }
@@ -905,7 +987,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                        {
@@ -914,14 +996,42 @@ angular.module('quitoClimateStudyApp')
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
-                                        }/* ==> TOO BIG,
+                                        },
                                         {
-                                            name: 'Ecosistemas',
-                                            data: 'Ecosistemas',
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
-                                        }*/
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cobertura Vegetal',
+                                            data: 'cob_veg_II',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Ecosistemas',
+                                            data: 'Ecosistema_2009',
+                                            type: 'raster',
+                                            isSelected: true,
+                                            opacity: 1
+                                        }
                                     ]
                                 }
                             ]
@@ -937,8 +1047,8 @@ angular.module('quitoClimateStudyApp')
                                     [
                                         {
                                             name: 'Exposición de Ecosistemas',
-                                            data: 'Estrcutura_Ecosistema',
-                                            type: 'vector',
+                                            data: 'estrcutura_ecosistema',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
@@ -979,42 +1089,42 @@ angular.module('quitoClimateStudyApp')
                                         {
                                             name: 'Funcionalidad de Ecosistemas',
                                             data: 'FuncionalidadEcosistema',
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Índice de Aislamiento',
-                                            data: 'IND_Aislamiento',
-                                            type: 'vector',
+                                            data: 'ind_aislamiento',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Índice Área de Fragmento',
-                                            data: 'IND_Area_de_Fragmento',
-                                            type: 'vector',
+                                            data: 'ind_area_de_fragmento',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Índice del Área Núcleo',
-                                            data: 'IND_AreaNucleo_AreBorde',
-                                            type: 'vector',
+                                            data: 'ind_areanucleo_areaborde',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Índice Perímetro',
-                                            data: 'Ind_Perimetro',
-                                            type: 'vector',
+                                            data: 'ind_perimetro',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Sensibilidad Promedio',
-                                            data: 'Sensibilidad_Promedio',
-                                            type: 'vector',
+                                            data: 'sensibilidad_promedio',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         }
@@ -1033,8 +1143,8 @@ angular.module('quitoClimateStudyApp')
                                     [
                                         {
                                             name: 'Vulnerabilidad',
-                                            data: 'Vulnerabilidad_ECO',
-                                            type: 'vector',
+                                            data: 'vulnerabilidad',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         }
@@ -1074,7 +1184,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de elevación digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -1083,14 +1193,42 @@ angular.module('quitoClimateStudyApp')
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
-                                        }/* ==> TOO BIG,,
+                                        },
                                         {
-                                            name: 'Cultivos',
-                                            data: 'Cultivos',
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
-                                        }*/,
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Tipos de Cultivos',
+                                            data: 'Cultivos_spec',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cobertura Vegetal',
+                                            data: 'cob_veg_II',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
                                         {
                                             name: 'Regiones Climáticas',
                                             data: 'regiones_climaticas',
@@ -1146,8 +1284,8 @@ angular.module('quitoClimateStudyApp')
                                     layers:[
                                         {
                                             name: 'Sensibilidad de los Ciclos de Crecimiento por Cultivos',
-                                            data: 'Growth_Season_Sensitivity',                                    
-                                            type: 'vector',
+                                            data: 'Sensibilidad_regiones_ciclos',                                    
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         }
@@ -1193,7 +1331,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de elevación digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -1201,6 +1339,34 @@ angular.module('quitoClimateStudyApp')
                                             data: 'DMQ_outline_wgs1984',
                                             type: 'vector',
                                             isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cobertura Vegetal',
+                                            data: 'cob_veg_II',
+                                            type: 'raster',
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -1315,14 +1481,21 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Parroquias',
-                                            data: 'Parroquias_Poly',                                    
+                                            data: 'Parrishes',
                                             type: 'vector',
                                             isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
+                                            type: 'vector',
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -1514,7 +1687,7 @@ angular.module('quitoClimateStudyApp')
         },
         {
             name: 'Agua',
-            description: 'El análisis de  vulnerabilidad del sector agua en el DMQ, radica principalmente en estimar la sensibilidad y exposición de las fuentes de agua para el abastecimiento de agua potable de una población estimada en 2´4 millones de habitantes. Cabe resaltar, que este estudio comprende el análisis de vulnerabilidad en función del abastecimiento de agua potable en las áreas de servicio atendidas por la Empresa Metropolitana de Alcantarillado y Agua Potable de Quito (EPMAPS), ubicadas en zonas aledañas al Distrito. El estudio, considera dos tipos de unidades de análisis: (I) las cuencas hidrográficas aportantes de agua “cruda” y (II) las zonas de servicio de agua potable. En relación a los factores de exposición y sensibilidad, en primer lugar se definen dos componentes para exposición: (I) la variación climática en las cuencas aportantes en función de la temperatura y  la precipitación, y (II) el área que es ocupada por el páramo en las cuencas aportantes. En segundo lugar, para estimar el nivel de sensibilidad se analiza (I) la cobertura del suministro de agua potable en relación al consumo per cápita y  (II) el número de habitantes en las zonas de servicio del DMQ. Finalmente, para determinar la vulnerabilidad en el caso particular del sector agua, se utiliza el modelo WEAP (Water Evaluation And Planning System) (Sieber and Purkey 2011) . Con los componentes mencionados anteriormente, se evaluaron cinco escenarios de vulnerabilidad que podrían perturbar el servicio de abastecimiento de agua potable del EPMAPS al año 2050. A continuación se describen los principales resultados; se evidencia que la demanda de agua potable en el área urbana del DMQ durante la década del 2000 al 2010 fue cubierta en un 100%. De la misma manera, se determina que la cobertura del servicio de agua potable para el área urbana del DMQ, proyectada al año 2050 será afectada parcialmente por la variación climática, se debe destacar que este escenario es sin considerar futuros proyectos como es el caso de Ríos Orientales . Considerando los resultados de modelamiento en WEAP en la última década 2040-2050, se puede pensar que en un futuro habrá problemas en el abastecimiento de agua potable en el DMQ. Esta aseveración se la realiza bajo los supuestos considerados en los Escenarios 1 a 5 (ver figura) del presente estudio: (1) crecimiento de población, (2) crecimiento de la población y aumento de la temperatura, (3) crecimiento de población, aumento de la temperatura y períodos prolongados de sequía, (4) crecimiento de población, aumento de la temperatura y la pérdida del páramo, (5) crecimiento de población, aumento de temperatura, períodos prolongados de sequía, y la pérdida de páramo. En los escenarios más extremos (Escenario 3 y 5), se estima que habrá una reducción de la cobertura en el servicio urbano de agua potable en un 10%. Es decir, solo el 90% de la demanda podrá ser atendida, de ahí que el sistema es considerado altamente vulnerable. A partir de los resultados obtenidos, se sugiere implementar una segunda fase en colaboración con EPMAPS que incluya incertidumbres no consideradas en el estudio. Por ejemplo las interacciones con el sector agrícola, las cuales son caracterizadas por grandes volúmenes demandados de agua e incluir el sector rural dentro del análisis de las demandas. Cabe resaltar la importancia de considerar además el uso de herramientas, como la toma de decisiones robustas bajo escenarios de incertidumbre en sistemas hídricos, para desarrollar análisis integrados de recursos hídricos.',
+            description: 'El análisis de  vulnerabilidad del sector agua en el DMQ, radica principalmente en estimar la sensibilidad y exposición de las fuentes de agua para el abastecimiento de agua potable de una población estimada en 2´4 millones de habitantes. Cabe resaltar, que este estudio comprende el análisis de vulnerabilidad en función del abastecimiento de agua potable en las áreas de servicio atendidas por la Empresa Metropolitana de Alcantarillado y Agua Potable de Quito (EPMAPS), ubicadas en zonas aledañas al Distrito. El estudio, considera dos tipos de unidades de análisis: (I) las cuencas hidrográficas aportantes de agua “cruda” y (II) las zonas de servicio de agua potable. En relación a los factores de exposición y sensibilidad, en primer lugar se definen dos componentes para exposición: (I) la variación climática en las cuencas aportantes en función de la temperatura y  la precipitación, y (II) el área que es ocupada por el páramo en las cuencas aportantes. En segundo lugar, para estimar el nivel de sensibilidad se analiza (I) la cobertura del suministro de agua potable en relación al consumo per cápita y  (II) el número de habitantes en las zonas de servicio del DMQ. Finalmente, para determinar la vulnerabilidad en el caso particular del sector agua, se utiliza el modelo WEAP (Water Evaluation And Planning System) (Sieber and Purkey 2011) . Con los componentes mencionados anteriormente, se evaluaron cinco escenarios de vulnerabilidad que podrían perturbar el servicio de abastecimiento de agua potable del EPMAPS al año 2050. A continuación se describen los principales resultados; se evidencia que la demanda de agua potable en el área urbana del DMQ durante la década del 2000 al 2010 fue cubierta en un 100%. De la misma manera, se determina que la cobertura del servicio de agua potable para el área urbana del DMQ, proyectada al año 2050 será afectada parcialmente por la variación climática, se debe destacar que este escenario es sin considerar futuros proyectos como es el caso de Ríos Orientales. Considerando los resultados de modelamiento en WEAP en la última década 2040-2050, se puede pensar que en un futuro habrá problemas en el abastecimiento de agua potable en el DMQ. Esta aseveración se la realiza bajo los supuestos considerados en los Escenarios 1 a 5 (ver figura) del presente estudio: (1) crecimiento de población, (2) crecimiento de la población y aumento de la temperatura, (3) crecimiento de población, aumento de la temperatura y períodos prolongados de sequía, (4) crecimiento de población, aumento de la temperatura y la pérdida del páramo, (5) crecimiento de población, aumento de temperatura, períodos prolongados de sequía, y la pérdida de páramo. En los escenarios más extremos (Escenario 3 y 5), se estima que habrá una reducción de la cobertura en el servicio urbano de agua potable en un 10%. Es decir, solo el 90% de la demanda podrá ser atendida, de ahí que el sistema es considerado altamente vulnerable. A partir de los resultados obtenidos, se sugiere implementar una segunda fase en colaboración con EPMAPS que incluya incertidumbres no consideradas en el estudio. Por ejemplo las interacciones con el sector agrícola, las cuales son caracterizadas por grandes volúmenes demandados de agua e incluir el sector rural dentro del análisis de las demandas. Cabe resaltar la importancia de considerar además el uso de herramientas, como la toma de decisiones robustas bajo escenarios de incertidumbre en sistemas hídricos, para desarrollar análisis integrados de recursos hídricos.',
             furtherInfoReport: 'Análisis_Vulnerabilidad_Climática_DMQ', //'WP5 6 Vuln. CC Agua DMQ 17_feb_14',
             analysisNarrative: '',
             questions:
@@ -1536,12 +1709,33 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Delimitación del DMQ',
                                             data: 'DMQ_outline_wgs1984',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
+                                            type: 'vector',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
@@ -1745,7 +1939,6 @@ angular.module('quitoClimateStudyApp')
             name: 'Riesgos',
             description: 'El Distrito Metropolitano de Quito es uno de los municipios más afectados en el Ecuador por los incendios forestales. Cada verano la problemática se agudiza poniendo de manifiesto la situación de vulnerabilidad del Distrito. Existen 15 años de evidencia de una elevada intensidad y cantidad de incendios, particularmente durante el periodo 2001 al  2009. Así mismo, el año 2012 estuvo marcado por temperaturas extremas y fuertes sequías; factores que incrementaron la intensidad y frecuencia de los  incendios, causando daños en áreas protegidas de gran biodiversidad, en espacios de propiedad pública y privada de diferentes usos y, en general, efectos en el  bienestar de la población. Por lo tanto, la  Secretaria de Seguridad y Gobernabilidad y su Dirección de Riesgos y la Secretaria del Ambiente han venido implementado acciones de prevención, así como de mejoramiento en los planes de emergencia de incendios. Sin embargo, las formas de gestión son aún limitadas. Para complementar este esfuerzo, el estudio de vulnerabilidad apunta a desarrollar una herramienta para mejorar el conocimiento del comportamiento de los incendios en el DMQ frente a factores relacionados con actividades antrópicas y variables climáticas. ',
             furtherInfoReport: 'Análisis_Vulnerabilidad_Climática_DMQ', //'WP5 6 Vuln. CC Riesgos DMQ 17_feb_14',
-
             analysisNarrative: 'Para el análisis frente amenazas antrópicas se definen dos indicadores de sensibilidad: (I) un indicador espacial de inicio de fuego (ISMF)  (II) un indicador histórico de inicio de fuego (IHMF) . El análisis de estos indicadores determinan los niveles de presión antrópica sobre las áreas de incendios forestales. Por otro lado, se establece un indicador de sensibilidad climática (ISC) compuesto por (I) un indicador de régimen pluviométrico (IRP), (II) un indicador de régimen térmico (IRT). Finalmente, las zonas expuestas son las áreas en “riesgo o peligro”. El resultados de presión de inicio de fuego y del Indicador de sensibilidad climática determina las zonas donde, además de presión antropogénica, existen tendencias elevadas de propagación. El análisis del riesgo presente indica que el  78% del territorio del DMQ está en riesgo de incendio forestal alto ó moderado (35% y 43%) respectivamente. Las zonas más vulnerables son las parroquias ubicadas al nororiente del Municipio, en particular, Ilalo, Calacalí, Puellaro,  Perucho, Llano Chico, Calderón, Nayón y ciertas zonas muy puntuales de Calacali,  Nono y Lloa. Esto debido a una fuerte presión antropogénica, así como factores de iniciación y propagación de incendios. A su vez, son regiones en desarrollo, con alta densidad de población y varios proyectos estratégicos en proceso de implementación; factores que incrementan su condición de vulnerabilidad. Cabe resaltar que en un escenario a partir del incremento en los índices de sensibilidad climática al 2050, la tendencia de los riesgos de incendio forestal aumenta considerablemente en Quito y sus zonas aledañas. Se recomienda para futuros estudios complementar el análisis de factores antropogénicos considerando variables como: proyecciones de población, movilidad en función de las vías, y asentamientos humanos dispersos. Así como, mejorar la información geográfica de aquellas áreas donde se aplica la práctica de quemas voluntarias en agricultura. Además, mejorar la calidad y cantidad de información  histórica de incendios con indicadores de intensidad, superficie y tipología. Finalmente, se recomienda el uso de  esta herramienta para identificar en otros sectores relevantes como ecosistemas, las zonas de riesgo de incendios forestales.',
             questions:[
                 /*{
@@ -1776,7 +1969,7 @@ angular.module('quitoClimateStudyApp')
                                             name: 'Mapa de Elevación Digital',
                                             data: 'dem',                                    
                                             type: 'raster',
-                                            isSelected: true,
+                                            isSelected: false,
                                             opacity: 1
                                         },
                                         {
@@ -1785,28 +1978,49 @@ angular.module('quitoClimateStudyApp')
                                             type: 'vector',
                                             isSelected: true,
                                             opacity: 1
-                                        }/* ==> TOO BIG,,
+                                        },
                                         {
-                                            name: 'Cultivos',
-                                            data: 'Cultivos',
+                                            name: 'Parroquias',
+                                            data: 'Parrishes',
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Poblados',
+                                            data: 'Poblados',
                                             type: 'vector',
                                             isSelected: false,
                                             opacity: 1
-                                        }*/,
+                                        },
+                                        {
+                                            name: 'Cabeceras Parroquiales',
+                                            data: 'cabeceras_parroquiales',                                    
+                                            type: 'vector',
+                                            isSelected: true,
+                                            opacity: 1
+                                        },
+                                        {
+                                            name: 'Cobertura Vegetal',
+                                            data: 'cob_veg_II',
+                                            type: 'raster',
+                                            isSelected: false,
+                                            opacity: 1
+                                        },
                                         {
                                             name: 'Recurrencia de Incendios (1991 - 2009)',
-                                            data: 'Incendios_Recurrencia',
-                                            type: 'vector',
+                                            data: 'incendios_recurrencia',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
-                                        }/* ==> TOO BIG,,
+                                        },
                                         {
                                             name: 'Uso de Suelo 2009',
                                             data: 'USO_SUELO_2009',
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
-                                        }*/
+                                        }
                                     ]
                                 }
                             ]
@@ -1849,15 +2063,15 @@ angular.module('quitoClimateStudyApp')
                                     [
                                         {
                                             name: 'Amenaza Incendios Forestales Potencial',
-                                            data: 'amenaza_incendios_Forestales_Potencial',
-                                            type: 'vector',
+                                            data: 'amenaza_incendios_forestales_potencial',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         },
                                         {
                                             name: 'Incendio Inicio Histórico',
-                                            data: 'Incendio_Inicio_Historico_IPMF',
-                                            type: 'vector',
+                                            data: 'incendio_inicio_historico_ipmf',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1                           
                                         }
@@ -1910,15 +2124,15 @@ angular.module('quitoClimateStudyApp')
                                     [
                                         {
                                             name: 'Factor de Amenaza de Incendio Histórico (1960 - 1990)',
-                                            data: 'Inicio_Propagación_iipf_h',                                    
-                                            type: 'vector',
+                                            data: 'inicio_propagacion_iipf_h',                                    
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Factor de Amenaza de Incendio a Futuro (2010 - 2050)',
-                                            data: 'Inicio_Propagación_iipf_h',                                    
-                                            type: 'vector',
+                                            data: 'inicio_propagacion_iipf_f',                                    
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         }
@@ -1931,14 +2145,14 @@ angular.module('quitoClimateStudyApp')
                                         {
                                             name: 'Peligro de Incendios Histórico (1960 - 1990)',
                                             data: 'Peligro_isip_h',                                    
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         },
                                         {
                                             name: 'Peligro de Incendios Futuro (2010 - 2050)',
                                             data: 'Peligro_isip_h',                                    
-                                            type: 'vector',
+                                            type: 'raster',
                                             isSelected: false,
                                             opacity: 1
                                         }

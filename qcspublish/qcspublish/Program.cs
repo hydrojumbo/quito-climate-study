@@ -47,8 +47,8 @@ namespace qcspublish
 	
 #if DEBUG
 
-			string srcDir = @"C:\data\Geoportal_Test";// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
-			string resultDir = @"C:\data\result"; //  @"C:\dev\quito\buildtest"; //args[1];						
+			string srcDir = @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS"; //  @"C:\data\Geoportal_Test";// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
+			string resultDir = @"C:\dev\quito\Final_Results"; //  @"C:\data\result"; //  @"C:\dev\quito\buildtest"; //args[1];						
 #else
 
 			string srcDir = args[0].Trim(); // @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";// args[0];// @"C:\dev\quito\For_Geoportal_WGS\For_Geoportal_WGS\";
@@ -123,7 +123,8 @@ namespace qcspublish
 			{
 				Console.WriteLine("Exception processing raster files ");
 				Console.WriteLine(rastEx.Message);
-				Console.WriteLine(rastEx.InnerException.ToString());
+				Console.WriteLine(rastEx.StackTrace);
+				Console.WriteLine(rastEx.InnerException);
 			}
 			
 			try
@@ -136,7 +137,7 @@ namespace qcspublish
 			{
 				Console.WriteLine("Exception processing grid files ");
 				Console.WriteLine(gridEx.Message);
-				Console.WriteLine(gridEx.InnerException.ToString());
+				Console.WriteLine(gridEx.InnerException);
 			}
 			
 			try
@@ -149,7 +150,7 @@ namespace qcspublish
 			{
 				Console.WriteLine("Exception processing vector files ");
 				Console.WriteLine(vex.Message);
-				Console.WriteLine(vex.InnerException.ToString());
+				Console.WriteLine(vex.InnerException);
 			}			
 			
 			//output legend file
