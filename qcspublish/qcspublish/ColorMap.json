@@ -6,6 +6,737 @@
         "colorMaps": []
     },
     {
+        "fileName": "Cultivos.tif",
+        "resultName": "Cultivos.tif",
+        "legendFile": "Cultivos.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,85,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "mancha_urbana.tif",
+        "resultName": "mancha_urbana.tif",
+        "legendFile": "mancha_urbana.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(78,78,78)"
+            }
+        ]
+    },
+    {
+        "fileName": "USO_SUELO_2009.tif",
+        "resultName": "USO_SUELO_2009.tif",
+        "legendFile": "USO_SUELO_2009.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(168,168,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(85,255,0)"
+            },
+            {
+                "upperBoundary": 7,
+                "rgb": "(38,115,0)"
+            },
+            {
+                "upperBoundary": 8,
+                "rgb": "(0,92,230)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,190)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,170,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(156,156,156)"
+            },
+            {
+                "upperBoundary": 6,
+                "rgb": "(255,190,190)"
+            }
+
+        ]
+    },
+    {
+        "fileName": "Cultivos_spec.tif",
+        "resultName": "Cultivos_spec.tif",
+        "legendFile": "Cultivos_spec.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(218,90,224)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(99,235,103)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(48,116,133)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(224,118,85)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(0,197,255)"
+            },
+            {
+                "upperBoundary": 6,
+                "rgb": "(168,168,0)"
+            },
+            {
+                "upperBoundary": 7,
+                "rgb": "(70,61,130)"
+            },
+            {
+                "upperBoundary": 8,
+                "rgb": "(128,148,92)"
+            },
+            {
+                "upperBoundary": 9,
+                "rgb": "(227,145,186)"
+            }
+
+        ]
+    },
+    {
+        "fileName": "incendios_recurrencia.tif",
+        "resultName": "incendios_recurrencia.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,170,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(255,0,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(168,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "FunctionalidadEcosistema.tif",
+        "resultName": "FunctionalidadEcosistema.tif",
+        "legendFile": "B_M_A.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "sensibilidad_promedio.tif",
+        "resultName": "sensibilidad_promedio.tif",
+        "legendFile": "B_M_A.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "vulnerabilidad.tif",
+        "resultName": "vulnerabilidad.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "incendio_inicio_historico_ipmf.tif",
+        "resultName": "incendio_inicio_historico_ipmf.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "amenaza_incendios_forestales_potencial.tif",
+        "resultName": "amenaza_incendios_forestales_potencial.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,255,255)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 6,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "Sensibilidad_regiones_ciclos.tif",
+        "resultName": "Sensibilidad_regiones_ciclos.tif",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(255,255,0)"
+            },
+                        {
+                "upperBoundary": 3,
+                "rgb": "(255,255,255)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "estructura_ecosistema.tif",
+        "resultName": "estructura_ecosistema.tif",
+        "legendFile": "B_A.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "inicio_propagacion_iipf_f.tif",
+        "resultName": "inicio_propagacion_iipf_f.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "inicio_propagacion_iipf_h.tif",
+        "resultName": "inicio_propagacion_iipf_h.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "Peligro_isip_f.tif",
+        "resultName": "Peligro_isip_f.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "Peligro_isip_h.tif",
+        "resultName": "Peligro_isip_h.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "ind_perimetro.tif",
+        "resultName": "ind_perimetro.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "ind_area_de_fragmento.tif",
+        "resultName": "ind_area_de_fragmento.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "ind_aislamiento.tif",
+        "resultName": "ind_aislamiento.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "ind_areanucleo_areaborde.tif",
+        "resultName": "ind_areanucleo_areaborde.tif",
+        "legendFile": "MB_B_M_A_MA.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(139,209,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(255,255,0)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,128,0)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(255,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "Ecosistema_1986.tif",
+        "resultName": "Ecosistema_1986.tif",
+        "legendFile": "Ecosistemas_1986.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,255,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(170,255,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(0,115,76)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,115,223)"
+            }
+        ]
+    },
+    {
+        "fileName": "Ecosistema_2009.tif",
+        "resultName": "Ecosistema_2009.tif",
+        "legendFile": "Ecosistemas_2009.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,255,0)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(170,255,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(0,115,76)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(255,115,223)"
+            }
+        ]
+    },
+    {
+        "fileName": "Ind_Exp.tif",
+        "resultName": "Ind_Exp.tif",
+        "legendFile": "Ind_Exp.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 1,
+                "rgb": "(255,255,128)"
+            },
+                        {
+                "upperBoundary": 2,
+                "rgb": "(250,209,85)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(242,167,46)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(173,83,19)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(107,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "IND_VULNER_NO_CC.tif",
+        "resultName": "IND_VULNER_NO_CC.tif",
+        "legendFile": "IND_VULNER_NO_CC.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 15,
+                "rgb": "(255,235,175)"
+            },
+                        {
+                "upperBoundary": 12,
+                "rgb": "(255,211,127)"
+            },
+            {
+                "upperBoundary": 13,
+                "rgb": "(255,170,0)"
+            },
+            {
+                "upperBoundary": 14,
+                "rgb": "(230,152,0)"
+            },
+            {
+                "upperBoundary": 18,
+                "rgb": "(168,112,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(190,232,255)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(115,223,255)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(0,197,255)"
+            },
+            {
+                "upperBoundary": 10,
+                "rgb": "(0,169,230)"
+            },
+            {
+                "upperBoundary": 16,
+                "rgb": "(0,132,168)"
+            },
+            {
+                "upperBoundary": 1,
+                "rgb": "(211,255,190)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(163,255,115)"
+            },
+            {
+                "upperBoundary": 6,
+                "rgb": "(85,255,0)"
+            },
+            {
+                "upperBoundary": 11,
+                "rgb": "(76,230,0)"
+            },
+            {
+                "upperBoundary": 17,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 9,
+                "rgb": "(255,190,190)"
+            },
+            {
+                "upperBoundary": 8,
+                "rgb": "(255,127,127)"
+            },
+            {
+                "upperBoundary": 7,
+                "rgb": "(255,0,0)"
+            },
+            {
+                "upperBoundary": 19,
+                "rgb": "(230,0,0)"
+            },
+            {
+                "upperBoundary": 20,
+                "rgb": "(168,0,0)"
+            }
+        ]
+    },
+    {
+        "fileName": "cob_veg_II.tif",
+        "resultName": "cob_veg_II.tif",
+        "legendFile": "cob_veg_II.jpg",
+        "colorMaps": [
+            {
+                "upperBoundary": 12,
+                "rgb": "(151,219,242)"
+            },
+                        {
+                "upperBoundary": 13,
+                "rgb": "(0,77,168)"
+            },
+            {
+                "upperBoundary": 1,
+                "rgb": "(56,168,0)"
+            },
+            {
+                "upperBoundary": 14,
+                "rgb": "(255,190,190)"
+            },
+            {
+                "upperBoundary": 5,
+                "rgb": "(38,115,0)"
+            },
+            {
+                "upperBoundary": 16,
+                "rgb": "(168,168,0)"
+            },
+            {
+                "upperBoundary": 7,
+                "rgb": "(255,85,0)"
+            },
+            {
+                "upperBoundary": 2,
+                "rgb": "(245,122,182)"
+            },
+            {
+                "upperBoundary": 15,
+                "rgb": "(255,255,190)"
+            },
+            {
+                "upperBoundary": 8,
+                "rgb": "(104,104,104)"
+            },
+            {
+                "upperBoundary": 10,
+                "rgb": "(230,230,0)"
+            },
+            {
+                "upperBoundary": 3,
+                "rgb": "(225,225,225)"
+            },
+            {
+                "upperBoundary": 6,
+                "rgb": "(168,56,0)"
+            },
+            {
+                "upperBoundary": 11,
+                "rgb": "(132,0,168)"
+            },
+            {
+                "upperBoundary": 9,
+                "rgb": "(197,0,255)"
+            },
+            {
+                "upperBoundary": 4,
+                "rgb": "(233,255,190)"
+            }
+        ]
+    },
+    {
         "fileName": "abr_4_tmin",
         "resultName": "abr_4_tmin.tif",
         "colorMaps": [
@@ -2234,14 +2965,6 @@
         "colorMaps": []
     },
     {
-        "fileName": "Cultivos.shp",
-        "resultName": "Cultivos.json",
-        
-        "clrField": "",
-        "singleColorValue": "#FF7F7F",
-        "colorMaps": []
-    },
-    {
         "fileName": "Oleoductos.shp",
         "resultName": "Oleoductos.json",
         
@@ -2256,222 +2979,6 @@
         "clrField": "",
         "singleColorValue": "#000000",
         "colorMaps": []
-    },
-    {
-        "fileName": "Incendios_Recurrencia.shp",
-        "resultName": "Incendios_Recurrencia.json",
-        
-        "clrField": "RECURR",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(255,170,0)"
-            },
-                        {
-                "categoricalValue": "2",
-                "rgb": "(255,0,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(168,0,0)"
-            }
-
-        ]
-    },
-    {
-        "fileName": "USO_SUELO_1986.shp",
-        "resultName": "USO_SUELO_1986.json",
-        
-        "clrField": "USO_1986",
-        "colorMaps": [
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos",
-                "rgb": "(168,168,0)"
-            },
-                        {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración",
-                "rgb": "(85,255,0)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales",
-                "rgb": "(38,115,0)"
-            },
-            {
-                "categoricalValue": "Cuerpos de agua",
-                "rgb": "(0,92,230)"
-            },
-            {
-                "categoricalValue": "Espacios abiertos",
-                "rgb": "(255,255,190)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna",
-                "rgb": "(255,170,0)"
-            },
-            {
-                "categoricalValue": "Áreas artificiales",
-                "rgb": "(156,156,156)"
-            },
-            {
-                "categoricalValue": "Áreas cultivadas",
-                "rgb": "(255,190,190)"
-            }
-
-        ]
-    },
-    {
-        "fileName": "USO_SUELO_2009.shp",
-        "resultName": "USO_SUELO_2009.json",
-        
-        "clrField": "USO_2009",
-        "colorMaps": [
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos",
-                "rgb": "(168,168,0)"
-            },
-                        {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración",
-                "rgb": "(85,255,0)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales",
-                "rgb": "(38,115,0)"
-            },
-            {
-                "categoricalValue": "Cuerpos de agua",
-                "rgb": "(0,92,230)"
-            },
-            {
-                "categoricalValue": "Espacios abiertos",
-                "rgb": "(255,255,190)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna",
-                "rgb": "(255,170,0)"
-            },
-            {
-                "categoricalValue": "Áreas artificiales",
-                "rgb": "(156,156,156)"
-            },
-            {
-                "categoricalValue": "Áreas cultivadas",
-                "rgb": "(255,190,190)"
-            }
-
-        ]
-    },
-    {
-        "fileName": "IND_VULNER_NO_CC.shp",
-        "resultName": "IND_VULNER_NO_CC.json",
-        
-        "clrField": "ECO_VULN",
-        "colorMaps": [
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos, 1",
-                "rgb": "(255,235,175)"
-            },
-                        {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos, 2",
-                "rgb": "(255,211,127)"
-            },
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos, 3",
-                "rgb": "(255,170,0)"
-            },
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos, 4",
-                "rgb": "(230,152,0)"
-            },
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos, 5",
-                "rgb": "(168,112,0)"
-            },
-            {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración, 1",
-                "rgb": "(190,232,255)"
-            },
-            {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración, 2",
-                "rgb": "(115,223,255)"
-            },
-            {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración, 3",
-                "rgb": "(0,197,255)"
-            },
-            {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración, 4",
-                "rgb": "(0,169,230)"
-            },
-            {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración, 5",
-                "rgb": "(0,132,168)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales, 1",
-                "rgb": "(211,255,190)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales, 2",
-                "rgb": "(163,255,115)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales, 3",
-                "rgb": "(85,255,0)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales, 4",
-                "rgb": "(76,230,0)"
-            },
-            {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales, 5",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna, 1",
-                "rgb": "(255,190,190)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna, 2",
-                "rgb": "(255,127,127)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna, 3",
-                "rgb": "(255,0,0)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna, 4",
-                "rgb": "(230,0,0)"
-            },
-            {
-                "categoricalValue": "Vegetación paramuna, 5",
-                "rgb": "(168,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Ecosistemas2009.shp",
-        "resultName": "Ecosistemas.json",
-        
-        "clrField": "Uso_2009",
-        "colorMaps": [
-            {
-                "categoricalValue": "Arbustales secos y relictos de bosques secos",
-                "rgb": "(168,168,0)"
-            },
-                        {
-                "categoricalValue": "Arbustos húmedos y vegetación en regeneración",
-                "rgb": "(85,255,0)"
-            },
-                        {
-                "categoricalValue": "Bosques húmedos y plantaciones forestales",
-                "rgb": "(38,115,0)"
-            },
-                        {
-                "categoricalValue": "Vegetación paramuna",
-                "rgb": "(255,170,0)"
-            }
-
-        ]
     },
     {
         "fileName": "INDIC_SEN_EXP_SALUD_final.shp",
@@ -2496,347 +3003,6 @@
                 "rgb": "(255,0,0)"
             }
 
-        ]
-    },
-    {
-        "fileName": "Estructura_Ecosistema.shp",
-        "resultName": "Estrcutura_Ecosistema.json",
-        
-        "clrField": "IND_EXP",
-        "colorMaps": [
-            {
-                "categoricalValue": "Bájo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,0,0)"
-            }
-
-        ]
-    },
-    {
-        "fileName": "FuncionalidadEcosistema.shp",
-        "resultName": "FuncionalidadEcosistema.json",
-        
-        "clrField": "IND_S",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Ind_Aislamiento.shp",
-        "resultName": "IND_Aislamiento.json",
-        
-        "clrField": "IND_AISL",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "5",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Ind_Area_de_Fragmento.shp",
-        "resultName": "IND_Area_de_Fragmento.json",
-        
-        "clrField": "IND_AF",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "5",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Ind_AreaNucleo_AreBorde.shp",
-        "resultName": "IND_AreaNucleo_AreBorde.json",
-        
-        "clrField": "IND_AN_AB",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "5",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Ind_Perimetro.shp",
-        "resultName": "Ind_Perimetro.json",
-        
-        "clrField": "IND_PF_PC",
-        "colorMaps": [
-            {
-                "categoricalValue": "1",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "5",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Sensibilidad_Promedio.shp",
-        "resultName": "Sensibilidad_Promedio.json",
-        
-        "clrField": "IND_VULN",
-        "colorMaps": [
-            {
-                "categoricalValue": "2",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "amenaza_incendios_forestales_potencial.shp",
-        "resultName": "amenaza_incendios_Forestales_Potencial.json",
-        
-        "clrField": "RANGO",
-        "colorMaps": [
-            {
-                "categoricalValue": "",
-                "rgb": "(0,0,0)"
-            },
-            {
-                "categoricalValue": "Muy Bájo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bájo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy alto",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Inicio_Propagación_iipf_f.shp",
-        "resultName": "Inicio_Propagación_iipf_f.json",
-        
-        "clrField": "iipf_1",
-        "colorMaps": [
-            {
-                "categoricalValue": "Muy Bájo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bájo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy Alto",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Inicio_Propagación_iipf_h.shp",
-        "resultName": "Inicio_Propagación_iipf_h.json",
-        
-        "clrField": "iipf_1",
-        "colorMaps": [
-            {
-                "categoricalValue": "Muy Bájo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bájo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy Alto",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Peligro_isip_f.shp",
-        "resultName": "Peligro_isip_f.json",
-        
-        "clrField": "Drisip",
-        "colorMaps": [
-            {
-                "categoricalValue": "Muy bajo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bajo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy alto",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Peligro_isip_h.shp",
-        "resultName": "Peligro_isip_h.json",
-        
-        "clrField": "Drisip",
-        "colorMaps": [
-            {
-                "categoricalValue": "Muy Bajo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bajo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy Alto",
-                "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Incendio_Inicio_Historico_IPMF.shp",
-        "resultName": "Incendio_Inicio_Historico_IPMF.json",
-        
-        "clrField": "IPMF_Clase",
-        "colorMaps": [
-            {
-                "categoricalValue": "Muy Bajo",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "Bajo",
-                "rgb": "(139,209,0)"
-            },
-            {
-                "categoricalValue": "Moderado",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "Alto",
-                "rgb": "(255,128,0)"
-            },
-            {
-                "categoricalValue": "Muy Alto",
-                "rgb": "(255,0,0)"
-            }
         ]
     },
     {
@@ -2976,74 +3142,6 @@
             {
                 "categoricalValue": "Muy Alto",
                 "rgb": "(255,0,0)"
-            }
-        ]
-    },
-    {
-        "fileName": "Vulnerabilidad.shp",
-        "resultName": "Vulnerabilidad_ECO.json",
-        
-        "clrField": "NEW_VULN",
-        "colorMaps": [
-            {
-                "categoricalValue": "1.2",
-                "rgb": "(56,168,0)"
-            },
-            {
-                "categoricalValue": "1.4",
-                "rgb": "(77,179,0)"
-            },
-            {
-                "categoricalValue": "1.6",
-                "rgb": "(102,191,0)"
-            },
-            {
-                "categoricalValue": "1.8",
-                "rgb": "(126,204,0)"
-            },
-            {
-                "categoricalValue": "2",
-                "rgb": "(155,217,0)"
-            },
-            {
-                "categoricalValue": "2.2",
-                "rgb": "(187,230,0)"
-            },
-            {
-                "categoricalValue": "2.4",
-                "rgb": "(222,242,0)"
-            },
-            {
-                "categoricalValue": "2.6",
-                "rgb": "(255,255,0)"
-            },
-            {
-                "categoricalValue": "2.8",
-                "rgb": "(255,221,0)"
-            },
-            {
-                "categoricalValue": "3",
-                "rgb": "(255,183,0)"
-            },
-            {
-                "categoricalValue": "3.2",
-                "rgb": "(255,145,0)"
-            },
-            {
-                "categoricalValue": "3.4",
-                "rgb": "(255,111,0)"
-            },
-            {
-                "categoricalValue": "3.6",
-                "rgb": "(255,72,0)"
-            },
-            {
-                "categoricalValue": "3.8",
-                "rgb": "(255,38,0)"
-            },
-            {
-                "categoricalValue": "4",
-                "rgb": "(255,38,0)"
             }
         ]
     },
@@ -3915,32 +4013,6 @@
                 
                 "categoricalValue": "Tropical muy húmedo",
                 "color": "#FF7F7F"
-            }
-        ]
-    },
-    {
-        "fileName": "POLIT_BIOGEO_COBER_VEGET_diss_cult_3.shp",
-        "resultName": "Growth_Season_Sensitivity.json",        
-        "clrField": "Seasn_Sens",
-        "colorMaps": [
-			{				                
-                "categoricalValue": "((default))",
-                "color": "#9C9C9C"
-            },
-            {
-                
-                "categoricalValue": "Bajo",
-                "color": "#FFEBBE"
-            },
-            {
-                
-                "categoricalValue": "Medio",
-                "color": "#FFA77F"
-            },
-            {
-                
-                "categoricalValue": "Alto",
-                "color": "#A80000"
             }
         ]
     },
